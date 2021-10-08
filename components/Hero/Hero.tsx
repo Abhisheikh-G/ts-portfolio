@@ -71,13 +71,13 @@ export default function Hero() {
             from New Jersey, USA. I make applications using{" "}
             <span className={classes.highlight}>
               React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB
-            </span>{" "}
+            </span>
             as well as provide expertise in{" "}
             <span className={classes.highlight}>
               Linux System Administration, Networking, and CyberSecurity.
             </span>
           </Typography>
-          <Box display="flex" justifyContent="center" mb={2}>
+          <Box display="flex" justifyContent="center" mt={2} mb={2}>
             <Image
               src="/code-slash.svg"
               height={50}

@@ -1,0 +1,12 @@
+{
+  "certificates": [
+    {
+      "imgSrc": "security+.png",
+      "alt": "TypeScript logo"
+    },
+    {
+      "imgSrc": "network+.png",
+      "alt": "JavaScript logo"
+    }
+  ]
+}
