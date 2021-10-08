@@ -71,7 +71,7 @@ export default function Hero() {
             from New Jersey, USA. I make applications using{" "}
             <span className={classes.highlight}>
               React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB
-            </span>
+            </span>{" "}
             as well as provide expertise in{" "}
             <span className={classes.highlight}>
               Linux System Administration, Networking, and CyberSecurity.

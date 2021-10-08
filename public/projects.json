@@ -8,6 +8,13 @@
       "projectLink": "https://thecoffeebrake.cafe"
     },
     {
+      "title": "ProShop",
+      "description": "ProShop is an e-Commerce application created using React.js, Redux, Express.js, Node.js, and MongoDB. Payments are handled using PayPal.",
+      "work": "This website was created using create-react-app and node/express.js for the backend. I used react-bootstrap for all of the componenets. It features a full dashboard for an administrator and handles payments securely with PayPal.",
+      "image": "proshop.webp",
+      "projectLink": "https://proshop0.herokuapp.com/"
+    },
+    {
       "title": "Crown Clothing",
       "description": "Some of the features and technologues used in this e-Commerce application are React.js, Firebase for data storage and user authentication, and payment processing using Stripe's API.",
       "work": "This website was created using Create-React-App and then further enhanced with a custom Node.js server to handle payments. All the elements are designed using Styled Components. To process payments, I used Stripe's Checkout API, which optimizes conversion rates and safely handles payments on Stripe's servers. ",
