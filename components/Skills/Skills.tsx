@@ -13,8 +13,8 @@ const useStyles: Function = makeStyles((theme: any) => ({
   },
   skillBlock: {
     margin: theme.spacing(2),
-    height: theme.spacing(22),
-    width: theme.spacing(22),
+    height: "7em",
+    width: "7em",
     borderRadius: theme.spacing(20),
     transition: theme.transitions.create(["all"], {
       duration: theme.transitions.complex,
@@ -24,24 +24,23 @@ const useStyles: Function = makeStyles((theme: any) => ({
     "&:hover": {
       backgroundColor: (props: any) => props.hover,
     },
-    [theme.breakpoints.down("sm")]: {
-      height: theme.spacing(16),
-      width: theme.spacing(16),
-    },
+    // [theme.breakpoints.down("sm")]: {
+    //   height: "5em",
+    //   width: "5em",
+    // },
   },
   skillImg: {
-    height: 72,
-    width: 72,
+    height: "4em",
+    width: "4em",
     marginBottom: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
-      height: 64,
-      width: 64,
+      height: "3.5em",
+      width: "3.5em",
     },
   },
   skillText: {
-    fontSize: "1.25rem",
     [theme.breakpoints.down("sm")]: {
-      fontSize: ".9rem",
+      fontSize: ".95rem",
     },
   },
   title: {
@@ -71,12 +70,12 @@ function SkillBlock(props: any) {
     >
       <Image
         src={`/${imgSrc}`}
-        height={72}
-        width={72}
+        height={48}
+        width={48}
         className={classes.skillImg}
         alt={alt}
       />
-      <Typography variant="h6" component={"p"} className={classes.skillText}>
+      <Typography variant="body2" component={"p"} className={classes.skillText}>
         {text}
       </Typography>
     </Box>

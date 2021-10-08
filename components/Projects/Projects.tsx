@@ -81,9 +81,10 @@ export function Project(props: Project) {
             width={600}
             quality={100}
             src={`/${image}`}
-            alt="Project Photo"
+            alt={`${title} Photo`}
           />
         </CardMedia>
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
