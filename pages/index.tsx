@@ -12,7 +12,7 @@ import Skills from "../components/Skills/Skills";
 import Footer from "../components/Footer/Footer";
 // import { Project } from "../components/Projects/Projects";
 
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 export default function Index(props: any) {
   const { projects, skills } = props;
@@ -43,7 +43,7 @@ export default function Index(props: any) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   let res = await fetch(`${process.env.URL}/projects.json`);
   let data = await res.json();
   const { projects } = data;

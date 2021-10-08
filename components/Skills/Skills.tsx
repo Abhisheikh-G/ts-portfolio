@@ -56,7 +56,7 @@ const useStyles: Function = makeStyles((theme: any) => ({
 
 function SkillBlock(props: any) {
   const classes = useStyles(props);
-  const { imgSrc, text, alt } = props;
+  const { imgSrc, text, alt, color, textColor } = props;
   return (
     <Box
       display="flex"
@@ -64,6 +64,10 @@ function SkillBlock(props: any) {
       alignItems="center"
       justifyContent="center"
       className={classes.skillBlock}
+      style={{
+        color: textColor,
+        backgroundColor: color,
+      }}
     >
       <Image
         src={`/${imgSrc}`}
