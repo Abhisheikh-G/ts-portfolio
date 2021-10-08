@@ -1,0 +1,76 @@
+{
+    "skills": [
+        {
+            "color": "#fdd835",
+            "hover": "#ffee58",
+            "text": "JavaScript",
+            "textColor": "#000",
+            "imgSrc": "javascript.png",
+            "alt": "JavaScript logo"
+        },
+        {
+            "color": "#0d47a1",
+            "hover": "#1565c0",
+            "text": "React.js",
+            "textColor": "#fff",
+            "imgSrc": "react.svg",
+            "alt": "React.js logo"
+        },
+        {
+            "color": "#1b5e20",
+            "hover": "#2e7d32",
+            "text": "Node.js",
+            "textColor": "#fff",
+            "imgSrc": "node.svg",
+            "alt": "Node.js logo"
+        },
+        {
+            "color": "#9c27b0",
+            "hover": "#ab47bc",
+            "text": "Gatsby.js",
+            "textColor": "#fff",
+            "imgSrc": "gatsby.svg",
+            "alt": "Gatsby.js logo"
+        },
+        {
+            "color": "#bdbdbd",
+            "hover": "#eeeeee",
+            "text": "Next.js",
+            "textColor": "#000",
+            "imgSrc": "next.svg",
+            "alt": "Next.js logo"
+        },
+        {
+            "color": "#fff",
+            "hover": "#bdbdbd",
+            "text": "Git",
+            "textColor": "#000",
+            "imgSrc": "git.png",
+            "alt": "Git logo"
+        },
+        {
+            "color": "#66bb6a",
+            "hover": "#81c784",
+            "text": "MongoDB",
+            "textColor": "#000",
+            "imgSrc": "mongo.png",
+            "alt": "MongoDB logo"
+        },
+        {
+            "color": "#01579b",
+            "hover": "#0277bd",
+            "text": "PostgreSQL",
+            "textColor": "#fff",
+            "imgSrc": "postgresql.svg",
+            "alt": "PostgreSQL logo"
+        },
+        {
+            "color": "#fff",
+            "hover": "#bdbdbd",
+            "text": "Linux",
+            "textColor": "#000",
+            "imgSrc": "tux.svg",
+            "alt": "Linux logo"
+        }
+    ]
+}
