@@ -1,18 +1,18 @@
 {
-    "projects": [
-        {
-            "title": "The Coffee Brake",
-            "description": "Some of the features and technologues used in this e-Commerce application are Gatsby.js, a headless node.js CMS called Strapi where all of the data is stored in a PostgreSQL database, and payment processing is handled using Stripe's APIs.",
-            "work": "This website was designed using Material design principles in mind. To ensure speed and performance, I used Gatsby.js to create a lightning fast front-end. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
-            "image": "bg.webp",
-            "projectLink": "https://thecoffeebrake.cafe"
-        },
-        {
-            "title": "Crown Clothing",
-            "description": "Some of the features and technologues used in this e-Commerce application are React.js, Firebase for data storage and user authentication, and payment processing using Stripe's API.",
-            "work": "This website was created using Create-React-App and then further enhanced with a custom Node.js server to handle payments. All the elements are designed using Styled Components. To process payments, I used Stripe's Checkout API, which optimizes conversion rates and safely handles payments on Stripe's servers. ",
-            "image": "bg.webp",
-            "projectLink": "https://crwn-clothes-ag.herokuapp.com/"
-        }
-    ]
+  "projects": [
+    {
+      "title": "The Coffee Brake",
+      "description": "Some of the features and technologues used in this e-Commerce application are Gatsby.js, a headless node.js CMS called Strapi where all of the data is stored in a PostgreSQL database, and payment processing is handled using Stripe's APIs.",
+      "work": "This website was designed using Material design principles in mind. To ensure speed and performance, I used Gatsby.js to create a lightning fast front-end. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
+      "image": "coffeebrake.webp",
+      "projectLink": "https://thecoffeebrake.cafe"
+    },
+    {
+      "title": "Crown Clothing",
+      "description": "Some of the features and technologues used in this e-Commerce application are React.js, Firebase for data storage and user authentication, and payment processing using Stripe's API.",
+      "work": "This website was created using Create-React-App and then further enhanced with a custom Node.js server to handle payments. All the elements are designed using Styled Components. To process payments, I used Stripe's Checkout API, which optimizes conversion rates and safely handles payments on Stripe's servers. ",
+      "image": "crwn-clothes.webp",
+      "projectLink": "https://crwn-clothes-ag.herokuapp.com/"
+    }
+  ]
 }

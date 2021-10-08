@@ -40,10 +40,10 @@ const useStyles: Function = makeStyles((theme: any) => ({
   title: {
     textAlign: "center",
     textTransform: "uppercase",
-    color: theme.palette.common.white,
+    color: theme.palette.common.black,
   },
   highlight: {
-    color: theme.palette.secondary.contrastText,
+    color: theme.palette.secondary.dark,
   },
 }));
 
@@ -147,7 +147,7 @@ export default function Projects(props: any) {
           component={"p"}
           gutterBottom
         >
-          My Work
+          My <span className={classes.highlight}>Work</span>
         </Typography>
         <Grid container justifyContent="space-evenly" spacing={4}>
           {projects.map((project: Project) => (

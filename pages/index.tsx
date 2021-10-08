@@ -44,11 +44,11 @@ export default function Index(props: any) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  let res = await fetch("https://agill-portfolio.herokuapp.com/projects.json");
+  let res = await fetch(`${process.env.URL}/projects.json`);
   let data = await res.json();
   const { projects } = data;
 
-  res = await fetch("https://agill-portfolio.herokuapp.com/skills.json");
+  res = await fetch(`${process.env.URL}/skills.json`);
   data = await res.json();
   const { skills } = data;
   return {
