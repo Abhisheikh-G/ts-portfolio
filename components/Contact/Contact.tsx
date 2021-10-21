@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <React.Fragment>
       <Box id="contact" component="section" className={classes.section}>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Typography
             className={classes.title}
             variant="h3"
