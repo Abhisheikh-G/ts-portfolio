@@ -29,12 +29,6 @@ const useStyles: Function = makeStyles((theme: any) => ({
     boxShadow: theme.shadows[0],
     maxWidth: 600,
     height: "auto",
-    // [theme.breakpoints.up("sm")]: {
-    //   width: 400,
-    // },
-    // [theme.breakpoints.up("md")]: {
-    //   width: 500,
-    // },
   },
   title: {
     textAlign: "center",
