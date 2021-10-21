@@ -53,7 +53,15 @@ const useStyles: Function = makeStyles((theme: any) => ({
   },
 }));
 
-function SkillBlock(props: any) {
+interface SkillBlockProps {
+  imgSrc: String;
+  text: String;
+  alt: String;
+  color: String;
+  textColor: String;
+}
+
+function SkillBlock(props: SkillBlockProps) {
   const classes = useStyles(props);
   const { imgSrc, text, alt, color, textColor } = props;
   return (
@@ -64,8 +72,8 @@ function SkillBlock(props: any) {
       justifyContent="center"
       className={classes.skillBlock}
       style={{
-        color: textColor,
-        backgroundColor: color,
+        color: `${textColor}`,
+        backgroundColor: `${color}`,
       }}
     >
       <Image
@@ -73,7 +81,7 @@ function SkillBlock(props: any) {
         height={48}
         width={48}
         className={classes.skillImg}
-        alt={alt}
+        alt={`${alt}`}
       />
       <Typography variant="body2" component={"p"} className={classes.skillText}>
         {text}
@@ -91,14 +99,17 @@ interface Skill {
   alt: string;
 }
 
-export default function Skills(props: any) {
-  const classes = useStyles(props);
-  const { skills } = props;
+interface SkillsProps {
+  skills: Array<Skill>;
+}
 
+export default function Skills(props: SkillsProps) {
+  const classes = useStyles();
+  const { skills } = props;
   return (
     <React.Fragment>
       <Box className={classes.section} component="section">
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Typography
             className={classes.title}
             variant="h3"
@@ -108,11 +119,10 @@ export default function Skills(props: any) {
             My <span className={classes.highlight}>Skills</span>
           </Typography>
           <Grid container justifyContent="space-evenly">
-            {skills.map((skill: Skill) => (
+            {skills.map((skill) => (
               <Grid item key={skill.text}>
                 <SkillBlock
                   color={skill.color}
-                  hover={skill.hover}
                   text={skill.text}
                   textColor={skill.textColor}
                   imgSrc={skill.imgSrc}
