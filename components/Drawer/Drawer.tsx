@@ -10,11 +10,10 @@ import {
 import { makeStyles } from "@mui/styles";
 import { Mail, Work } from "@mui/icons-material";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import clsx from "clsx";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     flexGrow: 1,
   },
@@ -52,10 +51,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Drawer = ({ open, setOpen }) => {
+interface DrawerProps {
+  open: boolean;
+  setOpen: Function;
+}
+const Drawer = (props: DrawerProps) => {
+  const { open, setOpen } = props;
   const router = useRouter();
   const classes = useStyles();
-  const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
+  const drawerLink = clsx([classes.drawerLink, classes.link]);
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
