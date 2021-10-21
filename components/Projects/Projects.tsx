@@ -1,7 +1,5 @@
 import { makeStyles } from "@mui/styles";
-
 import Container from "@mui/material/Container";
-
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
@@ -16,6 +14,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Collapse from "@mui/material/Collapse";
 import Image from "next/image";
 import React, { useState } from "react";
+import Link from "../../src/Link";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
@@ -55,10 +54,6 @@ interface Project {
   projectLink: string;
 }
 
-interface Projects {
-  projects: [];
-}
-
 export function Project(props: Project) {
   const { title, description, work, image, projectLink } = props;
   const [expanded, setExpanded] = useState(false);
@@ -76,13 +71,15 @@ export function Project(props: Project) {
         raised={false}
       >
         <CardMedia>
-          <Image
-            height={250}
-            width={600}
-            quality={100}
-            src={`/${image}`}
-            alt={`${title} Photo`}
-          />
+          <Link target="_blank" rel="noopener" href={projectLink}>
+            <Image
+              height={250}
+              width={600}
+              quality={100}
+              src={`/${image}`}
+              alt={`${title} Photo`}
+            />
+          </Link>
         </CardMedia>
 
         <CardContent>
@@ -135,7 +132,11 @@ export function Project(props: Project) {
   );
 }
 
-export default function Projects(props: any) {
+interface Projects {
+  projects: Array<Project>;
+}
+
+export default function Projects(props: Projects) {
   const { projects } = props;
   const classes = useStyles();
 
@@ -151,7 +152,7 @@ export default function Projects(props: any) {
           My <span className={classes.highlight}>Work</span>
         </Typography>
         <Grid container justifyContent="space-evenly" spacing={4}>
-          {projects.map((project: Project) => (
+          {projects.map((project) => (
             <Grid item key={project.title}>
               <Project
                 title={project.title}
