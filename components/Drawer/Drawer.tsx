@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Dispatch, SetStateAction } from "react";
 import {
   List,
   ListItem,
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme: any) => ({
 
 interface DrawerProps {
   open: boolean;
-  setOpen: (open: boolean) => boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }
 const Drawer = (props: DrawerProps) => {
   const { open, setOpen } = props;
