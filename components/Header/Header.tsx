@@ -34,7 +34,7 @@ export default function Header() {
           </IconButton>
           <Drawer open={open} setOpen={setOpen} />
 
-          <Box ml={1} mt={1}>
+          <Box mb={1} mt={1}>
             <Image
               priority
               src="/logo.svg"
