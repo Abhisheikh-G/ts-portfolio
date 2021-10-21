@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: any) => ({
 
 interface DrawerProps {
   open: boolean;
-  setOpen: Function;
+  setOpen: (open: boolean) => boolean;
 }
 const Drawer = (props: DrawerProps) => {
   const { open, setOpen } = props;
