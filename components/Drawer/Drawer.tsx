@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme: any) => ({
 
     backgroundColor: theme.palette.primary.dark,
   },
-
   link: {
     textDecoration: "none",
     color: theme.palette.common.white,

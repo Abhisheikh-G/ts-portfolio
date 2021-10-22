@@ -53,15 +53,15 @@ const useStyles: Function = makeStyles((theme: any) => ({
   },
 }));
 
-interface SkillBlockProps {
-  imgSrc: String;
-  text: String;
-  alt: String;
-  color: String;
-  textColor: String;
+interface SkillBlock {
+  imgSrc: string;
+  text: string;
+  alt: string;
+  color: string;
+  textColor: string;
 }
 
-function SkillBlock(props: SkillBlockProps) {
+function SkillBlock(props: SkillBlock) {
   const classes = useStyles(props);
   const { imgSrc, text, alt, color, textColor } = props;
   return (
@@ -90,17 +90,8 @@ function SkillBlock(props: SkillBlockProps) {
   );
 }
 
-interface Skill {
-  color: string;
-  hover: string;
-  text: string;
-  textColor: string;
-  imgSrc: string;
-  alt: string;
-}
-
 interface SkillsProps {
-  skills: Array<Skill>;
+  skills: Array<SkillBlock>;
 }
 
 export default function Skills(props: SkillsProps) {
