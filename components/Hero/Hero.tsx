@@ -1,11 +1,4 @@
-import {
-  Container,
-  Typography,
-  Box,
-  Button,
-  Divider,
-  useTheme,
-} from "@mui/material";
+import { Container, Typography, Box, Button, useTheme } from "@mui/material";
 
 import React from "react";
 import { makeStyles } from "@mui/styles";
