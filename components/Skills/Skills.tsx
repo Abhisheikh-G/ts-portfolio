@@ -15,14 +15,14 @@ const useStyles: Function = makeStyles((theme: any) => ({
     margin: theme.spacing(2),
     height: "7em",
     width: "7em",
-    borderRadius: theme.spacing(20),
+    borderRadius: 0,
+    backgroundColor: "grey",
     transition: theme.transitions.create(["all"], {
       duration: theme.transitions.complex,
     }),
-    color: (props: any) => props.textColor,
-    backgroundColor: (props: any) => props.color,
     "&:hover": {
-      backgroundColor: (props: any) => props.hover,
+      borderRadius: theme.spacing(5),
+      marginTop: "5px",
     },
     // [theme.breakpoints.down("sm")]: {
     //   height: "5em",
@@ -74,9 +74,13 @@ function SkillBlock(props: SkillBlock) {
       alignItems="center"
       justifyContent="center"
       className={classes.skillBlock}
-      style={{
+      sx={{
         color: `${textColor}`,
         backgroundColor: `${color}`,
+
+        ["&:hover"]: {
+          backgroundColor: `${color}`,
+        },
       }}
     >
       <Image
