@@ -6,8 +6,6 @@ import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
-    width: "100%",
-    height: "100%",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     // background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
