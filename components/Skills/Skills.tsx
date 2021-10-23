@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import React from "react";
+import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
@@ -9,7 +10,8 @@ const useStyles: Function = makeStyles((theme: any) => ({
     height: "100%",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
+    // background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
+    background: ` ${theme.palette.primary.dark}`,
   },
   skillBlock: {
     margin: theme.spacing(2),
@@ -44,12 +46,15 @@ const useStyles: Function = makeStyles((theme: any) => ({
     },
   },
   title: {
-    textAlign: "center",
+    textAlign: "left",
     textTransform: "uppercase",
     color: theme.palette.common.white,
   },
   highlight: {
     color: theme.palette.secondary.main,
+  },
+  secondaryHighlight: {
+    color: theme.palette.custom.yellow,
   },
 }));
 
@@ -106,10 +111,13 @@ export default function Skills(props: SkillsProps) {
             variant="h3"
             component={"p"}
             gutterBottom
+            width="4.75em"
           >
-            My <span className={classes.highlight}>Skills</span>
+            <span className={classes.highlight}>My</span>{" "}
+            <span className={classes.secondaryHighlight}>Skills</span>
+            <Underline />
           </Typography>
-          <Grid container justifyContent="space-evenly">
+          <Grid container justifyContent="left">
             {skills.map((skill) => (
               <Grid item key={skill.text}>
                 <SkillBlock
