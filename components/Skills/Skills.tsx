@@ -119,7 +119,7 @@ export default function Skills(props: SkillsProps) {
             <span className={classes.secondaryHighlight}>Skills</span>
             <Underline />
           </Typography>
-          <Grid container justifyContent="left">
+          <Grid container justifyContent="flex-start">
             {skills.map((skill) => (
               <Grid item key={skill.text}>
                 <SkillBlock
