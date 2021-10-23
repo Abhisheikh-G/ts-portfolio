@@ -1,4 +1,11 @@
-import { Container, Typography, Box, Button } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  Button,
+  Divider,
+  useTheme,
+} from "@mui/material";
 
 import React from "react";
 import { makeStyles } from "@mui/styles";
@@ -9,6 +16,27 @@ const useStyles: Function = makeStyles((theme: any) => ({
   highlight: {
     color: theme.palette.secondary.light,
   },
+  secondaryHighlight: {
+    color: theme.palette.custom.yellow,
+  },
+  underline: {
+    width: "inherit",
+    height: 5,
+    background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
+    borderRadius: 10,
+  },
+  button: {
+    margin: ".25em",
+    borderColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.main,
+    transition: "all 0.2s ease-in",
+    textDecoration: "none",
+    "&:hover": {
+      borderColor: theme.palette.custom.yellow,
+      color: theme.palette.custom.yellow,
+    },
+  },
+
   content: {
     display: "flex",
     flexDirection: "column",
@@ -44,28 +72,40 @@ const useStyles: Function = makeStyles((theme: any) => ({
 export default function Hero() {
   const classes = useStyles();
   const router = useRouter();
+  const theme = useTheme();
   // const [title, setTitle] = useState(false);
   // const [body, setBody] = useState(false);
 
   return (
     <React.Fragment>
       <Box className={classes.content}>
-        <Container maxWidth="lg" sx={{ mt: "1em" }}>
-          <Typography variant="h4" gutterBottom={true} align="center">
+        <Container maxWidth="md" sx={{ mt: "1em" }}>
+          <Typography variant="h5" gutterBottom={true} align="left">
             Hello, my name is
-            <span className={classes.highlight}>{` Abhisheikh Gill.`}</span>
+          </Typography>
+
+          <Typography
+            variant="h3"
+            gutterBottom
+            align="left"
+            sx={{ marginBottom: theme.spacing(2), maxWidth: "8em" }}
+          >
+            <span className={classes.highlight}>Abhisheikh</span>{" "}
+            <span className={classes.secondaryHighlight}>Gill</span>
+            <Box className={classes.underline} />
           </Typography>
 
           <Typography
             variant="h6"
             component={"p"}
             gutterBottom={true}
-            align="center"
+            align="left"
+            maxWidth="30em"
           >
             Nice to meet you, I'm a{" "}
             <span className={classes.highlight}>full stack web developer</span>{" "}
             and{" "}
-            <span className={classes.highlight}>
+            <span className={classes.secondaryHighlight}>
               ceritified IT solutions expert
             </span>{" "}
             from New Jersey, USA. I make applications using{" "}
@@ -73,11 +113,11 @@ export default function Hero() {
               React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB
             </span>{" "}
             as well as provide expertise in{" "}
-            <span className={classes.highlight}>
+            <span className={classes.secondaryHighlight}>
               Linux System Administration, Networking, and CyberSecurity.
             </span>
           </Typography>
-          <Box display="flex" justifyContent="center" mt={2} mb={2}>
+          <Box display="flex" justifyContent="flex-start" mt={2} mb={2}>
             <Image
               src="/code-slash.svg"
               height={50}
@@ -86,12 +126,11 @@ export default function Hero() {
             />
           </Box>
 
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="flex-start">
             <Button
               onClick={() => router.push("#contact")}
               variant="outlined"
-              sx={{ textDecoration: "none", mr: "1em" }}
-              color="secondary"
+              className={classes.button}
             >
               Contact Me
             </Button>
@@ -99,8 +138,7 @@ export default function Hero() {
             <Button
               variant="outlined"
               onClick={() => router.push("#mywork")}
-              sx={{ textDecoration: "none", ml: "1em" }}
-              color="secondary"
+              className={classes.button}
             >
               My Work
             </Button>

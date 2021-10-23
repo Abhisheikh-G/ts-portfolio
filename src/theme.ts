@@ -1,5 +1,5 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import { red, blueGrey, cyan } from "@mui/material/colors";
+import { red, blueGrey, cyan, yellow } from "@mui/material/colors";
 
 declare module "@mui/material/styles/createPalette" {
   interface Palette {
@@ -21,10 +21,14 @@ let theme = createTheme({
     },
     custom: {
       red: red[800],
+      yellow: yellow[500],
     },
     error: {
       main: red.A400,
     },
+  },
+  typography: {
+    fontFamily: ["Encode Sans"].join(","),
   },
 });
 

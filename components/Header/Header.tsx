@@ -35,13 +35,15 @@ export default function Header() {
           <Drawer open={open} setOpen={setOpen} />
 
           <Box mb={1} mt={1}>
-            <Image
-              priority
-              src="/logo.svg"
-              alt="logo"
-              height={100}
-              width={100}
-            />
+            <Link href="/">
+              <Image
+                priority
+                src="/logo.svg"
+                alt="logo"
+                height={100}
+                width={100}
+              />
+            </Link>
           </Box>
           <Box>
             <Link
