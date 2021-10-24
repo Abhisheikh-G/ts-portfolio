@@ -3,7 +3,7 @@ import { Container, Typography, Box, Button, useTheme } from "@mui/material";
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
-import Image from "next/image";
+// import Image from "next/image";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   highlight: {
@@ -19,8 +19,11 @@ const useStyles: Function = makeStyles((theme: any) => ({
     borderRadius: 10,
   },
   button: {
+    height: theme.spacing(6),
+    fontSize: "1.25em",
     margin: ".25em",
     borderColor: theme.palette.secondary.main,
+    borderRadius: theme.spacing(20),
     color: theme.palette.secondary.main,
     transition: "all 0.2s ease-in",
     textDecoration: "none",
@@ -94,6 +97,7 @@ export default function Hero() {
             gutterBottom={true}
             align="left"
             maxWidth="30em"
+            sx={{ marginBottom: "1em" }}
           >
             Nice to meet you, I'm a{" "}
             <span className={classes.highlight}>full stack web developer</span>{" "}
@@ -110,14 +114,14 @@ export default function Hero() {
               Linux System Administration, Networking, and CyberSecurity.
             </span>
           </Typography>
-          <Box display="flex" justifyContent="flex-start" mt={2} mb={2}>
+          {/* <Box display="flex" justifyContent="flex-start" mt={2} mb={2}>
             <Image
               src="/code-slash.svg"
               height={50}
               width={50}
               alt="Code block icon"
             />
-          </Box>
+          </Box> */}
 
           <Box display="flex" justifyContent="flex-start">
             <Button

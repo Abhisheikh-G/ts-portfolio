@@ -7,12 +7,17 @@ import {
   ListItemText,
   ListItemIcon,
   SwipeableDrawer,
+  IconButton,
+  Box,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Mail, Work } from "@mui/icons-material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import clsx from "clsx";
+import Link from "../../src/Link";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -90,9 +95,9 @@ const Drawer = (props: DrawerProps) => {
           </ListItemIcon>
           <ListItemText primary={"Contact Me"} />
         </ListItem>
-      </List>
-      <Divider />
-      <List className={classes.list}>
+
+        <Divider />
+
         <ListItem
           className={drawerLink}
           button
@@ -106,7 +111,28 @@ const Drawer = (props: DrawerProps) => {
           </ListItemIcon>
           <ListItemText primary={"My Work"} />
         </ListItem>
+        <Divider />
       </List>
+
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box m={2}>
+          <Link href="https://github.com/Abhisheikh-G" target="_blank">
+            <IconButton sx={{ color: "white" }}>
+              <GitHubIcon fontSize="large" />
+            </IconButton>
+          </Link>
+        </Box>
+        <Box m={2}>
+          <Link
+            href="https://www.linkedin.com/in/abhisheikh-gill/"
+            target="_blank"
+          >
+            <IconButton sx={{ color: "white" }}>
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+          </Link>
+        </Box>
+      </Box>
     </React.Fragment>
   );
 
