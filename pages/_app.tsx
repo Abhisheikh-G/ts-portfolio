@@ -29,7 +29,9 @@ export default function MyApp(props: MyAppProps) {
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
         />
-        <meta property="og:image" content="meta-image.webp" />
+        <meta property="og:image" content="meta-image.png" />
+
+        <meta property="twitter:image" content="meta-image.webp" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <ThemeProvider theme={theme}>
