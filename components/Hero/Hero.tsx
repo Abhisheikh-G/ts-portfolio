@@ -72,7 +72,7 @@ export default function Hero() {
   return (
     <React.Fragment>
       <Box className={classes.content}>
-        <Container maxWidth="md" sx={{ mt: "1em" }}>
+        <Container maxWidth="md" sx={{ mt: "2em" }}>
           <Typography variant="h5" gutterBottom={true} align="left">
             Hello, my name is
           </Typography>
