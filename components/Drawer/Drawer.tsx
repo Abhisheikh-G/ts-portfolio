@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
   drawer: {
     backgroundColor: theme.palette.primary.dark,
-    borderRight: `1px solid ${theme.palette.secondary.main}`,
+    borderRight: `1px solid ${theme.palette.common.white}`,
   },
   logo: {
     marginTop: theme.spacing(1),
@@ -93,7 +93,7 @@ const Drawer = (props: DrawerProps) => {
           <ListItemIcon>
             <Mail className={classes.drawerIcon} />
           </ListItemIcon>
-          <ListItemText primary={"Contact Me"} />
+          <ListItemText primary={"CONTACT ME"} />
         </ListItem>
 
         <Divider />
@@ -109,7 +109,7 @@ const Drawer = (props: DrawerProps) => {
           <ListItemIcon>
             <Work className={classes.drawerIcon} />
           </ListItemIcon>
-          <ListItemText primary={"My Work"} />
+          <ListItemText primary={"MY WORK"} />
         </ListItem>
         <Divider />
       </List>
