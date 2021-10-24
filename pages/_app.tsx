@@ -29,7 +29,6 @@ export default function MyApp(props: MyAppProps) {
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
         />
-
         <meta content="index, follow" name={`robots`} />
 
         <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
