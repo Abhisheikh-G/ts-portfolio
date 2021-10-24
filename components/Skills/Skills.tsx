@@ -2,7 +2,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import React from "react";
-// import Underline from "../Underline/Underline";
+import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
@@ -117,6 +117,7 @@ export default function Skills(props: SkillsProps) {
           >
             <span className={classes.highlight}>My</span>{" "}
             <span className={classes.secondaryHighlight}>Skills</span>
+            <Underline />
           </Typography>
 
           <Grid container justifyContent="center">
