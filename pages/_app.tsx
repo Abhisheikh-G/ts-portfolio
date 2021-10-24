@@ -29,10 +29,51 @@ export default function MyApp(props: MyAppProps) {
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
         />
-        <meta name="image" content="meta-image.png" />
-        <meta property="og:image" content="meta-image.png" />
+
         <meta content="index, follow" name={`robots`} />
-        <meta property="twitter:image" content="meta-image.webp" />
+
+        <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
+        <meta
+          itemProp="description"
+          content="Hello, my name is Abhisheikh Gill. 
+        I'm a full stack web developer and an IT solutions expert. 
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+        I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
+        />
+        <meta
+          itemProp="image"
+          content="https://abhisheikhgill.com/meta-image.png"
+        />
+
+        <meta property="og:url" content="https://abhisheikhgill.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Abhisheikh Gill | My Portfolio" />
+        <meta
+          property="og:description"
+          content="Hello, my name is Abhisheikh Gill. 
+        I'm a full stack web developer and an IT solutions expert. 
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+        I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
+        />
+        <meta
+          property="og:image"
+          content="https://abhisheikhgill.com/meta-image.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Abhisheikh Gill | My Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Hello, my name is Abhisheikh Gill. 
+        I'm a full stack web developer and an IT solutions expert. 
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+        I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
+        />
+        <meta
+          name="twitter:image"
+          content="https://abhisheikhgill.com/meta-image.png"
+        />
+
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <ThemeProvider theme={theme}>
