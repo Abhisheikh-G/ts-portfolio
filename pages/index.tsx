@@ -6,10 +6,7 @@ import Contact from "../components/Contact/Contact";
 import Certifications from "../components/Certifications/Certifications";
 import Skills from "../components/Skills/Skills";
 import Footer from "../components/Footer/Footer";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import IconButton from "@mui/material/IconButton";
 
-import Link from "../src/Link";
 import { GetStaticProps } from "next";
 
 export default function Index(props: any) {
