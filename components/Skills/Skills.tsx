@@ -20,14 +20,17 @@ const useStyles: Function = makeStyles((theme: any) => ({
     margin: theme.spacing(2),
     height: "7em",
     width: "7em",
-    borderRadius: 0,
+    borderRadius: theme.spacing(2),
     backgroundColor: "grey",
+    filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
+
     transition: theme.transitions.create(["all"], {
       duration: theme.transitions.complex,
     }),
     "&:hover": {
       borderRadius: theme.spacing(5),
       marginTop: "5px",
+      filter: "none",
     },
     // [theme.breakpoints.down("sm")]: {
     //   height: "5em",
@@ -41,6 +44,9 @@ const useStyles: Function = makeStyles((theme: any) => ({
     [theme.breakpoints.down("sm")]: {
       height: "3.5em",
       width: "3.5em",
+    },
+    "&:hover": {
+      filter: "none",
     },
   },
   skillText: {
@@ -116,9 +122,9 @@ export default function Skills(props: SkillsProps) {
           <Typography
             className={classes.title}
             variant="h3"
-            component={"p"}
             gutterBottom
             width="4.75em"
+            align="left"
           >
             <span className={classes.highlight}>My</span>{" "}
             <span className={classes.secondaryHighlight}>Skills</span>
