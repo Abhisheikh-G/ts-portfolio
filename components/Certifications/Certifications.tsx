@@ -11,6 +11,12 @@ const useStyles: Function = makeStyles((theme: any) => ({
     paddingBottom: theme.spacing(2),
     background: theme.palette.common.white,
   },
+  underline: {
+    width: "inherit",
+    height: 5,
+    background: `linear-gradient(to right, ${theme.palette.custom.red},${theme.palette.secondary.dark})`,
+    borderRadius: 10,
+  },
   certBlock: {
     margin: theme.spacing(2),
     height: "auto",
@@ -30,12 +36,15 @@ const useStyles: Function = makeStyles((theme: any) => ({
     },
   },
   title: {
-    textAlign: "center",
+    textAlign: "left",
     textTransform: "uppercase",
     color: theme.palette.common.black,
   },
   highlight: {
     color: theme.palette.secondary.dark,
+  },
+  secondaryHighlight: {
+    color: theme.palette.custom.red,
   },
 }));
 
@@ -65,14 +74,18 @@ export default function Certifications(props: any) {
   return (
     <React.Fragment>
       <Box className={classes.section} component="section">
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Typography
             className={classes.title}
             variant="h3"
-            component={"p"}
+            align="left"
+            width="9.15em"
             gutterBottom
+            sx={{ marginBottom: "1em", marginTop: "1em" }}
           >
-            My <span className={classes.highlight}>Certifications</span>
+            <span className={classes.highlight}>My</span>{" "}
+            <span className={classes.secondaryHighlight}>Certifications</span>
+            <Box className={classes.underline} />
           </Typography>
           <Grid container justifyContent="space-evenly" spacing={2}>
             {certificates.map((certification: Certification) => (

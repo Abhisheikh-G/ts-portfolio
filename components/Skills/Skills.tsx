@@ -28,8 +28,7 @@ const useStyles: Function = makeStyles((theme: any) => ({
       duration: theme.transitions.complex,
     }),
     "&:hover": {
-      borderRadius: theme.spacing(5),
-      marginTop: "5px",
+      borderRadius: theme.spacing(20),
       filter: "none",
     },
     // [theme.breakpoints.down("sm")]: {
@@ -125,6 +124,7 @@ export default function Skills(props: SkillsProps) {
             gutterBottom
             width="4.75em"
             align="left"
+            sx={{ marginTop: "1em" }}
           >
             <span className={classes.highlight}>My</span>{" "}
             <span className={classes.secondaryHighlight}>Skills</span>
