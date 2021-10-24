@@ -7,20 +7,24 @@ import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import React from "react";
+import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
     background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.primary.dark})`,
   },
   title: {
-    textAlign: "center",
+    textAlign: "left",
     textTransform: "uppercase",
     color: theme.palette.common.white,
   },
   highlight: {
     color: theme.palette.secondary.light,
+  },
+  secondaryHighlight: {
+    color: theme.palette.custom.yellow,
   },
   textfield: {
     width: "100%",
@@ -56,12 +60,15 @@ export default function Contact() {
           <Typography
             className={classes.title}
             variant="h3"
-            component={"p"}
+            align="left"
             gutterBottom
+            sx={{ width: "6.1em", marginBottom: "1em" }}
           >
-            Interested In Working With Me? <br />
-            <span className={classes.highlight}>Send Me A Message</span>
+            <span className={classes.highlight}>Contact</span>{" "}
+            <span className={classes.secondaryHighlight}>Me</span>
+            <Underline />
           </Typography>
+
           <Box
             component="form"
             className={classes.form}

@@ -8,13 +8,13 @@ const useStyles: Function = makeStyles((theme: any) => ({
     width: "100%",
     height: "100%",
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    background: theme.palette.common.white,
+    paddingBottom: theme.spacing(8),
+    background: theme.palette.primary.main,
   },
   underline: {
     width: "inherit",
     height: 5,
-    background: `linear-gradient(to right, ${theme.palette.custom.red},${theme.palette.secondary.dark})`,
+    background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
     borderRadius: 10,
   },
   certBlock: {
@@ -41,10 +41,10 @@ const useStyles: Function = makeStyles((theme: any) => ({
     color: theme.palette.common.black,
   },
   highlight: {
-    color: theme.palette.secondary.dark,
+    color: theme.palette.secondary.main,
   },
   secondaryHighlight: {
-    color: theme.palette.custom.red,
+    color: theme.palette.custom.yellow,
   },
 }));
 
@@ -55,7 +55,7 @@ function CertificationBlock(props: any) {
     <Image
       src={`/${imgSrc}`}
       height={150}
-      width={150}
+      width={160}
       className={classes.certImage}
       alt={alt}
     />

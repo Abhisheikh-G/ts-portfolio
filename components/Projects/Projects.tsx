@@ -15,13 +15,15 @@ import Collapse from "@mui/material/Collapse";
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from "../../src/Link";
+import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
 
-    background: `linear-gradient( ${theme.palette.common.white},${theme.palette.primary.main})`,
+    // background: `linear-gradient( ${theme.palette.common.white},${theme.palette.primary.main})`,
+    background: theme.palette.primary.dark,
   },
   root: {
     margin: "auto",
@@ -31,12 +33,15 @@ const useStyles: Function = makeStyles((theme: any) => ({
     height: "auto",
   },
   title: {
-    textAlign: "center",
+    textAlign: "left",
     textTransform: "uppercase",
     color: theme.palette.common.black,
   },
   highlight: {
-    color: theme.palette.secondary.dark,
+    color: theme.palette.secondary.main,
+  },
+  secondaryHighlight: {
+    color: theme.palette.custom.yellow,
   },
 }));
 
@@ -136,14 +141,17 @@ export default function Projects(props: Projects) {
 
   return (
     <Box id="mywork" component="section" className={classes.section}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Typography
           className={classes.title}
           variant="h3"
-          component={"p"}
+          width="4.8em"
           gutterBottom
+          sx={{ marginBottom: "1em" }}
         >
-          My <span className={classes.highlight}>Work</span>
+          <span className={classes.highlight}>My</span>{" "}
+          <span className={classes.secondaryHighlight}>Work</span>
+          <Underline />
         </Typography>
         <Grid container justifyContent="space-evenly" spacing={4}>
           {projects.map((project) => (

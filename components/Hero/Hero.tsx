@@ -37,7 +37,7 @@ const useStyles: Function = makeStyles((theme: any) => ({
     background: `linear-gradient( ${theme.palette.primary.dark},${theme.palette.primary.main})`,
     color: theme.palette.primary.contrastText,
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(8),
     height: "auto",
     alignItems: "center",
     justifyContent: "center",

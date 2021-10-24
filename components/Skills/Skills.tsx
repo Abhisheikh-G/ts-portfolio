@@ -6,7 +6,7 @@ import React from "react";
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(8),
     // background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
     background: ` ${theme.palette.primary.dark}`,
   },
