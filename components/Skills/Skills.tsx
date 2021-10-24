@@ -2,7 +2,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import React from "react";
-import Underline from "../Underline/Underline";
 
 const useStyles: Function = makeStyles((theme: any) => ({
   section: {
@@ -10,6 +9,12 @@ const useStyles: Function = makeStyles((theme: any) => ({
     paddingBottom: theme.spacing(2),
     // background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
     background: ` ${theme.palette.primary.dark}`,
+  },
+  underline: {
+    width: "inherit",
+    height: 5,
+    background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
+    borderRadius: 10,
   },
   skillBlock: {
     margin: theme.spacing(2),
@@ -117,7 +122,7 @@ export default function Skills(props: SkillsProps) {
           >
             <span className={classes.highlight}>My</span>{" "}
             <span className={classes.secondaryHighlight}>Skills</span>
-            <Underline />
+            <Box className={classes.underline} />
           </Typography>
 
           <Grid container justifyContent="center">
