@@ -9,7 +9,11 @@ import IconButton from "@mui/material/IconButton";
 import Link from "../../src/Link";
 function Copyright() {
   return (
-    <Typography variant="body1" align="center">
+    <Typography
+      variant="body1"
+      align="center"
+      sx={{ color: "secondary.light" }}
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://abhisheikhgill.com/">
         Abhisheikh Gill
