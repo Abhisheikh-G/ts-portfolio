@@ -62,7 +62,7 @@ export default function Hero() {
             </Box>{" "}
             and{" "}
             <Box component="span" sx={{ color: "custom.yellow" }}>
-              ceritified IT solutions expert
+              ceritified I.T solutions expert
             </Box>{" "}
             from New Jersey, USA. I make applications using{" "}
             <Box component="span" sx={{ color: "secondary.main" }}>
