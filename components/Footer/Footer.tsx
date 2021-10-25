@@ -15,7 +15,12 @@ function Copyright() {
       sx={{ color: "secondary.light" }}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://abhisheikhgill.com/">
+      <Link
+        color="inherit"
+        href="https://abhisheikhgill.com/"
+        rel="noopener"
+        aria-label="Return Home"
+      >
         Abhisheikh Gill
       </Link>{" "}
       {new Date().getFullYear()}
@@ -39,9 +44,14 @@ export default function StickyFooter() {
         <Container maxWidth="sm">
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Box m={2}>
-              <Link href="https://github.com/Abhisheikh-G" target="_blank">
+              <Link
+                href="https://github.com/Abhisheikh-G"
+                target="_blank"
+                rel="noopener"
+                aria-label="Link to Abhisheikh's Git Hub"
+              >
                 <IconButton sx={{ color: "white" }}>
-                  <GitHubIcon fontSize="large" />
+                  <GitHubIcon fontSize="large" aria-label="Github Icon" />
                 </IconButton>
               </Link>
             </Box>
@@ -49,9 +59,11 @@ export default function StickyFooter() {
               <Link
                 href="https://www.linkedin.com/in/abhisheikh-gill/"
                 target="_blank"
+                rel="noopener"
+                aria-label="Link to Abhisheikh's Linked In"
               >
                 <IconButton sx={{ color: "white" }}>
-                  <LinkedInIcon fontSize="large" />
+                  <LinkedInIcon fontSize="large" aria-label="Linked In Icon" />
                 </IconButton>
               </Link>
             </Box>

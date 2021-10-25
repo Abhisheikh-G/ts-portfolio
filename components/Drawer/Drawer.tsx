@@ -105,9 +105,13 @@ const Drawer = (props: DrawerProps) => {
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box m={2}>
-          <Link href="https://github.com/Abhisheikh-G" target="_blank">
+          <Link
+            href="https://github.com/Abhisheikh-G"
+            target="_blank"
+            rel="noopener"
+          >
             <IconButton sx={{ color: "white" }}>
-              <GitHubIcon fontSize="large" />
+              <GitHubIcon fontSize="large" aria-label="Github Icon" />
             </IconButton>
           </Link>
         </Box>
@@ -115,9 +119,10 @@ const Drawer = (props: DrawerProps) => {
           <Link
             href="https://www.linkedin.com/in/abhisheikh-gill/"
             target="_blank"
+            rel="noopener"
           >
             <IconButton sx={{ color: "white" }}>
-              <LinkedInIcon fontSize="large" />
+              <LinkedInIcon fontSize="large" aria-label="Linked In Icon" />
             </IconButton>
           </Link>
         </Box>

@@ -10,12 +10,26 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.secondary.main} />
+          <meta name="theme-color" content={theme.palette.primary.dark} />
           <meta charSet="UTF-8" />
           <link
             href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
             rel="stylesheet"
           />
+          <link rel="manifest" href="/manifest.json" />
+          <link
+            href="/icons/favicon-192x192.png"
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+          />
+          <link
+            href="/icons/favicon-256x256.png"
+            rel="icon"
+            type="image/png"
+            sizes="256x256"
+          />
+          <link rel="apple-touch-icon" href="/icons/apple-icon.png" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         </Head>
         <body>
