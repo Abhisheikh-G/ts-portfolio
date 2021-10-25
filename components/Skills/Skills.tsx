@@ -1,68 +1,35 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/styles";
+import Underline from "../Underline/Underline";
 import Image from "next/image";
 import React from "react";
 
-const useStyles: Function = makeStyles((theme: any) => ({
-  section: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(8),
-    // background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.common.white})`,
-    background: ` ${theme.palette.primary.dark}`,
+const Skill = styled(Box)(({ theme }) => ({
+  margin: theme.spacing(2),
+  height: "7em",
+  width: "7em",
+  borderRadius: theme.spacing(2),
+  backgroundColor: "grey",
+  filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
+  transition: theme.transitions.create(["all"], {
+    duration: theme.transitions.duration.complex,
+  }),
+  "&:hover": {
+    borderRadius: theme.spacing(20),
+    filter: "none",
   },
-  underline: {
-    width: "inherit",
-    height: 5,
-    background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
-    borderRadius: 10,
-  },
-  skillBlock: {
-    margin: theme.spacing(2),
-    height: "7em",
-    width: "7em",
-    borderRadius: theme.spacing(2),
-    backgroundColor: "grey",
-    filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
+}));
 
-    transition: theme.transitions.create(["all"], {
-      duration: theme.transitions.complex,
-    }),
-    "&:hover": {
-      borderRadius: theme.spacing(20),
-      filter: "none",
-    },
-    // [theme.breakpoints.down("sm")]: {
-    //   height: "5em",
-    //   width: "5em",
-    // },
+const SkillImage = styled(Image)(({ theme }) => ({
+  height: "4em",
+  width: "4em",
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.down("sm")]: {
+    height: "3.5em",
+    width: "3.5em",
   },
-  skillImg: {
-    height: "4em",
-    width: "4em",
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.down("sm")]: {
-      height: "3.5em",
-      width: "3.5em",
-    },
-    "&:hover": {
-      filter: "none",
-    },
-  },
-  skillText: {
-    [theme.breakpoints.down("sm")]: {
-      fontSize: ".95rem",
-    },
-  },
-  title: {
-    textAlign: "left",
-    textTransform: "uppercase",
-    color: theme.palette.common.white,
-  },
-  highlight: {
-    color: theme.palette.secondary.main,
-  },
-  secondaryHighlight: {
-    color: theme.palette.custom.yellow,
+  "&:hover": {
+    filter: "none",
   },
 }));
 
@@ -75,35 +42,26 @@ interface SkillBlock {
 }
 
 function SkillBlock(props: SkillBlock) {
-  const classes = useStyles(props);
   const { imgSrc, text, alt, color, textColor } = props;
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      className={classes.skillBlock}
+    <Skill
       sx={{
         color: `${textColor}`,
         backgroundColor: `${color}`,
-
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         ["&:hover"]: {
           backgroundColor: `${color}`,
         },
       }}
     >
-      <Image
-        src={`/${imgSrc}`}
-        height={48}
-        width={48}
-        className={classes.skillImg}
-        alt={`${alt}`}
-      />
-      <Typography variant="body2" component={"p"} className={classes.skillText}>
+      <SkillImage src={`/${imgSrc}`} height={48} width={48} alt={`${alt}`} />
+      <Typography variant="body2" component={"p"}>
         {text}
       </Typography>
-    </Box>
+    </Skill>
   );
 }
 
@@ -112,23 +70,42 @@ interface SkillsProps {
 }
 
 export default function Skills(props: SkillsProps) {
-  const classes = useStyles();
   const { skills } = props;
   return (
     <React.Fragment>
-      <Box className={classes.section} component="section">
+      <Box
+        sx={{
+          paddingTop: 2,
+          paddingBottom: 8,
+          backgroundColor: "primary.dark",
+        }}
+        component="section"
+      >
         <Container maxWidth="md">
           <Typography
-            className={classes.title}
             variant="h3"
             gutterBottom
             width="4.75em"
             align="left"
-            sx={{ marginTop: "1em" }}
+            sx={{
+              marginTop: "1em",
+              color: "common.white",
+              textAlign: "left",
+              textTransform: "uppercase",
+            }}
           >
-            <span className={classes.highlight}>My</span>{" "}
-            <span className={classes.secondaryHighlight}>Skills</span>
-            <Box className={classes.underline} />
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              My
+            </Box>{" "}
+            <Box
+              component={"span"}
+              sx={{
+                color: "custom.yellow",
+              }}
+            >
+              Skills
+            </Box>
+            <Underline />
           </Typography>
 
           <Grid container justifyContent="center">

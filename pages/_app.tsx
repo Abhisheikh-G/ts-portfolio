@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 import { StylesProvider, createGenerateClassName } from "@mui/styles";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
@@ -20,6 +21,7 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
   return (
     <StylesProvider generateClassName={generateClassName}>
       <CacheProvider value={emotionCache}>

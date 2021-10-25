@@ -19,7 +19,7 @@ import Link from "../../src/Link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles: Function = makeStyles((theme: any) => ({
   root: {
     flexGrow: 1,
   },

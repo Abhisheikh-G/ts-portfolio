@@ -1,13 +1,22 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { red, blueGrey, cyan, yellow } from "@mui/material/colors";
+import { Theme } from "@mui/material";
 
 declare module "@mui/material/styles/createPalette" {
   interface Palette {
-    custom: Palette["primary"];
+    custom: {
+      yellow?: string;
+      red?: string;
+    };
   }
   interface PaletteOptions {
     custom: Object;
   }
+}
+
+declare module "@mui/styles/defaultTheme" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface (remove this line if you don't have the rule enabled)
+  interface DefaultTheme extends Theme {}
 }
 
 // Create a theme instance.
