@@ -1,4 +1,3 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
@@ -14,7 +13,6 @@ export default function Index(props: any) {
   return (
     <Box>
       <Box sx={{ mt: "6em" }} />
-
       <Hero />
       <Skills skills={skills} />
       <Certifications certificates={certificates} />

@@ -1,5 +1,5 @@
-import * as React from "react";
 import Head from "next/head";
+import { StylesProvider, createGenerateClassName } from "@mui/styles";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,6 +10,9 @@ import Header from "../components/Header/Header";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
+const generateClassName = createGenerateClassName({
+  productionPrefix: "c",
+});
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -75,12 +78,14 @@ export default function MyApp(props: MyAppProps) {
 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <Header />
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <StylesProvider generateClassName={generateClassName}>
+        <ThemeProvider theme={theme}>
+          <Header />
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StylesProvider>
     </CacheProvider>
   );
 }
