@@ -15,7 +15,7 @@ const CustomButton = ({
       onClick={onClick}
       sx={{
         height: theme.spacing(6),
-        fontSize: "1.25em",
+        fontSize: "1.1em",
         margin: ".25em",
         borderColor: theme.palette.secondary.main,
         borderRadius: theme.spacing(20),

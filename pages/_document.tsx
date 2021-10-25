@@ -23,7 +23,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
             rel="stylesheet"
           />
-
           <link rel="manifest" href="/manifest.json" />
           <link
             href="/icons/favicon-192x192.png"

@@ -49,7 +49,7 @@ export default function Hero() {
           </Typography>
 
           <Typography
-            variant="h6"
+            variant="body1"
             component={"p"}
             gutterBottom={true}
             align="left"
