@@ -1,4 +1,3 @@
-import { makeStyles } from "@mui/styles";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -8,83 +7,80 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import React from "react";
 import Underline from "../Underline/Underline";
-
-const useStyles: Function = makeStyles((theme: any) => ({
-  section: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    background: `linear-gradient( ${theme.palette.primary.main},${theme.palette.primary.dark})`,
-  },
-  title: {
-    textAlign: "left",
-    textTransform: "uppercase",
-    color: theme.palette.common.white,
-  },
-  highlight: {
-    color: theme.palette.secondary.light,
-  },
-  secondaryHighlight: {
-    color: theme.palette.custom.yellow,
-  },
-  textfield: {
-    width: "100%",
-    margin: theme.spacing(1),
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: theme.palette.common.white,
-    zIndex: 10,
-    padding: theme.spacing(2),
-    margin: "auto",
-    width: "100%",
-    [theme.breakpoints.up("lg")]: {
-      width: "80%",
-    },
-  },
-}));
+import { useTheme } from "@mui/system";
 
 export default function Contact() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     console.log(data, register);
   };
-
-  const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <React.Fragment>
-      <Box id="contact" component="section" className={classes.section}>
+      <Box
+        id="contact"
+        component="section"
+        sx={{
+          paddingTop: 8,
+          paddingBottom: 8,
+          backgroundColor: `primary.dark`,
+        }}
+      >
         <Container maxWidth="md">
           <Typography
-            className={classes.title}
             variant="h3"
             align="left"
             gutterBottom
-            sx={{ width: "6.1em", marginBottom: "1em" }}
+            sx={{
+              width: "6.1em",
+              marginBottom: "1em",
+              textTransform: "uppercase",
+            }}
           >
-            <span className={classes.highlight}>Contact</span>{" "}
-            <span className={classes.secondaryHighlight}>Me</span>
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              Contact
+            </Box>{" "}
+            <Box component="span" sx={{ color: "custom.yellow" }}>
+              Me
+            </Box>
             <Underline />
           </Typography>
 
           <Box
             component="form"
-            className={classes.form}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              backgroundColor: "common.white",
+              zIndex: 10,
+              padding: 2,
+              margin: "auto",
+              width: "100%",
+              [theme.breakpoints.up("lg")]: {
+                width: "80%",
+              },
+            }}
             boxShadow={8}
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormLabel
               htmlFor="name"
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               required
               focused
             >
               Name
             </FormLabel>
             <TextField
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               type="text"
               id="name"
               name="name"
@@ -93,14 +89,20 @@ export default function Contact() {
 
             <FormLabel
               htmlFor="email"
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               focused
               required
             >
               Email
             </FormLabel>
             <TextField
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               type="text"
               id="email"
               placeholder="Enter your email here.."
@@ -108,7 +110,10 @@ export default function Contact() {
             />
             <FormLabel
               htmlFor="message"
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               focused
               required
             >
@@ -116,7 +121,10 @@ export default function Contact() {
             </FormLabel>
             <TextField
               multiline
-              className={classes.textfield}
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
               id="message"
               name="message"
               placeholder="Enter your message here.."
