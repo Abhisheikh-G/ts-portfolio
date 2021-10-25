@@ -1,37 +1,8 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { styled } from "@mui/styles";
+import { useTheme } from "@mui/styles";
 import Underline from "../Underline/Underline";
 import Image from "next/image";
 import React from "react";
-
-const Skill = styled(Box)(({ theme }) => ({
-  margin: theme.spacing(2),
-  height: "7em",
-  width: "7em",
-  borderRadius: theme.spacing(2),
-  backgroundColor: "grey",
-  filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
-  transition: theme.transitions.create(["all"], {
-    duration: theme.transitions.duration.complex,
-  }),
-  "&:hover": {
-    borderRadius: theme.spacing(20),
-    filter: "none",
-  },
-}));
-
-const SkillImage = styled(Image)(({ theme }) => ({
-  height: "4em",
-  width: "4em",
-  marginBottom: theme.spacing(2),
-  [theme.breakpoints.down("sm")]: {
-    height: "3.5em",
-    width: "3.5em",
-  },
-  "&:hover": {
-    filter: "none",
-  },
-}));
 
 interface SkillBlock {
   imgSrc: string;
@@ -43,21 +14,33 @@ interface SkillBlock {
 
 function SkillBlock(props: SkillBlock) {
   const { imgSrc, text, alt, color, textColor } = props;
+  const theme = useTheme();
   return (
-    <Skill
+    <Box
       sx={{
+        margin: theme.spacing(2),
+        height: "7em",
+        width: "7em",
+        borderRadius: theme.spacing(2),
+
+        filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
+        transition: theme.transitions.create(["all"], {
+          duration: theme.transitions.duration.complex,
+        }),
+        "&:hover": {
+          borderRadius: theme.spacing(20),
+          filter: "none",
+          backgroundColor: `${color}`,
+        },
         color: `${textColor}`,
         backgroundColor: `${color}`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        ["&:hover"]: {
-          backgroundColor: `${color}`,
-        },
       }}
     >
-      <SkillImage
+      <Image
         priority={true}
         src={`/${imgSrc}`}
         height={48}
@@ -67,7 +50,7 @@ function SkillBlock(props: SkillBlock) {
       <Typography variant="body2" component={"p"}>
         {text}
       </Typography>
-    </Skill>
+    </Box>
   );
 }
 

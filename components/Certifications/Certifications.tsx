@@ -1,22 +1,29 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { styled } from "@mui/styles";
+import { useTheme } from "@mui/styles";
 import Image from "next/image";
 import React from "react";
 import Underline from "../Underline/Underline";
 
-const CertImage = styled(Image)(({ theme }) => ({
-  height: "4em",
-  width: "4em",
-  marginBottom: theme.spacing(2),
-  [theme.breakpoints.down("sm")]: {
-    height: "3.5em",
-    width: "3.5em",
-  },
-}));
-
 function CertificationBlock(props: any) {
   const { imgSrc, alt } = props;
-  return <CertImage src={`/${imgSrc}`} height={150} width={160} alt={alt} />;
+  const theme = useTheme();
+  return (
+    <Box
+      sx={{
+        ">div": {
+          height: "12.5em",
+          width: "12.5em",
+          margin: 4,
+          [theme.breakpoints.down("sm")]: {
+            height: "8em",
+            width: "8em",
+          },
+        },
+      }}
+    >
+      <Image src={`/${imgSrc}`} height={150} width={160} alt={alt} />
+    </Box>
+  );
 }
 
 interface Certification {

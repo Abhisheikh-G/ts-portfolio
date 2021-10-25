@@ -1,25 +1,10 @@
-import { Container, Typography, Box, Button, useTheme } from "@mui/material";
+import { Container, Typography, Box, useTheme } from "@mui/material";
 
 import React from "react";
-import { styled } from "@mui/styles";
 import { useRouter } from "next/router";
 import Underline from "../Underline/Underline";
 // import Image from "next/image";
-
-const CustomButton = styled(Button)(({ theme }) => ({
-  height: theme.spacing(6),
-  fontSize: "1.25em",
-  margin: ".25em",
-  borderColor: theme.palette.secondary.main,
-  borderRadius: theme.spacing(20),
-  color: theme.palette.secondary.main,
-  transition: "all 0.2s ease-in",
-  textDecoration: "none",
-  "&:hover": {
-    borderColor: theme.palette.custom.yellow,
-    color: theme.palette.custom.yellow,
-  },
-}));
+import CustomButton from "../CustomButton/CustomButton";
 
 export default function Hero() {
   const router = useRouter();
@@ -98,17 +83,11 @@ export default function Hero() {
           </Box> */}
 
           <Box display="flex" justifyContent="flex-start">
-            <CustomButton
-              onClick={() => router.push("#contact")}
-              variant="outlined"
-            >
+            <CustomButton onClick={() => router.push("#contact")}>
               Contact Me
             </CustomButton>
 
-            <CustomButton
-              variant="outlined"
-              onClick={() => router.push("#mywork")}
-            >
+            <CustomButton onClick={() => router.push("#mywork")}>
               My Work
             </CustomButton>
           </Box>

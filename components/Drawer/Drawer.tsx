@@ -10,51 +10,13 @@ import {
   IconButton,
   Box,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { Mail, Work } from "@mui/icons-material";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import clsx from "clsx";
+
 import Link from "../../src/Link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
-const useStyles: Function = makeStyles((theme: any) => ({
-  root: {
-    flexGrow: 1,
-  },
-  list: {
-    width: 240,
-
-    backgroundColor: theme.palette.primary.dark,
-  },
-  link: {
-    textDecoration: "none",
-    color: theme.palette.common.white,
-    "&:hover": {
-      textDecoration: "none",
-    },
-  },
-  drawerLink: {
-    color: theme.palette.common.white,
-  },
-  drawerIcon: {
-    color: theme.palette.common.white,
-  },
-  drawerHeader: {
-    height: 150,
-    justifyContent: "center",
-    display: "flex",
-  },
-  drawer: {
-    backgroundColor: theme.palette.primary.dark,
-    borderRight: `1px solid ${theme.palette.common.white}`,
-  },
-  logo: {
-    marginTop: theme.spacing(1),
-    marginLeft: theme.spacing(6),
-  },
-}));
 
 interface DrawerProps {
   open: boolean;
@@ -63,27 +25,44 @@ interface DrawerProps {
 const Drawer = (props: DrawerProps) => {
   const { open, setOpen } = props;
   const router = useRouter();
-  const classes = useStyles();
-  const drawerLink = clsx([classes.drawerLink, classes.link]);
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const list = () => (
     <React.Fragment>
-      <List className={classes.list}>
-        <ListItem className={classes.drawerHeader}>
-          <Image
-            className={classes.logo}
-            src="/logo.svg"
-            alt="logo"
-            priority
-            height={125}
-            width={125}
-          />
+      <List
+        sx={{
+          width: 240,
+
+          backgroundColor: "primary.dark",
+        }}
+      >
+        <ListItem
+          sx={{
+            height: 150,
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <Box
+            sx={{
+              "> div": { marginTop: "1em", marginLeft: "6em" },
+            }}
+          >
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              priority
+              height={125}
+              width={125}
+            />
+          </Box>
         </ListItem>
         <Divider />
         <ListItem
-          className={drawerLink}
+          sx={{
+            color: "common.white",
+          }}
           button
           onClick={() => {
             setOpen(!open);
@@ -91,7 +70,11 @@ const Drawer = (props: DrawerProps) => {
           }}
         >
           <ListItemIcon>
-            <Mail className={classes.drawerIcon} />
+            <Mail
+              sx={{
+                color: "common.white",
+              }}
+            />
           </ListItemIcon>
           <ListItemText primary={"CONTACT ME"} />
         </ListItem>
@@ -99,7 +82,9 @@ const Drawer = (props: DrawerProps) => {
         <Divider />
 
         <ListItem
-          className={drawerLink}
+          sx={{
+            color: "common.white",
+          }}
           button
           onClick={() => {
             setOpen(!open);
@@ -107,7 +92,11 @@ const Drawer = (props: DrawerProps) => {
           }}
         >
           <ListItemIcon>
-            <Work className={classes.drawerIcon} />
+            <Work
+              sx={{
+                color: "common.white",
+              }}
+            />
           </ListItemIcon>
           <ListItemText primary={"MY WORK"} />
         </ListItem>
@@ -139,7 +128,11 @@ const Drawer = (props: DrawerProps) => {
   return (
     <SwipeableDrawer
       open={open}
-      classes={{ paper: classes.drawer }}
+      sx={{
+        ".MuiDrawer-paper": {
+          backgroundColor: "primary.dark",
+        },
+      }}
       disableBackdropTransition={!iOS}
       disableDiscovery={iOS}
       onOpen={() => setOpen(true)}
