@@ -1,4 +1,3 @@
-import { makeStyles } from "@mui/styles";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
@@ -17,34 +16,6 @@ import React, { useState } from "react";
 import Link from "../../src/Link";
 import Underline from "../Underline/Underline";
 
-const useStyles: Function = makeStyles((theme: any) => ({
-  section: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-
-    // background: `linear-gradient( ${theme.palette.common.white},${theme.palette.primary.main})`,
-    background: theme.palette.primary.dark,
-  },
-  root: {
-    margin: "auto",
-    borderRadius: 0,
-    boxShadow: theme.shadows[0],
-    maxWidth: 600,
-    height: "auto",
-  },
-  title: {
-    textAlign: "left",
-    textTransform: "uppercase",
-    color: theme.palette.common.black,
-  },
-  highlight: {
-    color: theme.palette.secondary.main,
-  },
-  secondaryHighlight: {
-    color: theme.palette.custom.yellow,
-  },
-}));
-
 interface Project {
   title: string;
   description: string;
@@ -56,7 +27,6 @@ interface Project {
 export function Project(props: Project) {
   const { title, description, work, image, projectLink } = props;
   const [expanded, setExpanded] = useState(false);
-  const classes = useStyles();
 
   function handleExpand() {
     setExpanded(!expanded);
@@ -65,8 +35,13 @@ export function Project(props: Project) {
   return (
     <Box display="flex" flexDirection="column" margin="auto" boxShadow={4}>
       <Card
-        className={classes.root}
-        classes={{ root: classes.root }}
+        sx={{
+          margin: "auto",
+          borderRadius: 0,
+          boxShadow: 0,
+          maxWidth: 600,
+          height: "auto",
+        }}
         raised={false}
       >
         <CardMedia>
@@ -137,20 +112,30 @@ interface Projects {
 
 export default function Projects(props: Projects) {
   const { projects } = props;
-  const classes = useStyles();
 
   return (
-    <Box id="mywork" component="section" className={classes.section}>
+    <Box
+      id="mywork"
+      component="section"
+      sx={{
+        paddingTop: 8,
+        paddingBottom: 8,
+        backgroundColor: "primary.dark",
+      }}
+    >
       <Container maxWidth="md">
         <Typography
-          className={classes.title}
           variant="h3"
           width="4.8em"
           gutterBottom
           sx={{ marginBottom: "1em" }}
         >
-          <span className={classes.highlight}>My</span>{" "}
-          <span className={classes.secondaryHighlight}>Work</span>
+          <Box component="span" sx={{ color: "secondary.main" }}>
+            My
+          </Box>{" "}
+          <Box component="span" sx={{ color: "custom.yellow" }}>
+            Work
+          </Box>
           <Underline />
         </Typography>
         <Grid container justifyContent="space-evenly" spacing={4}>

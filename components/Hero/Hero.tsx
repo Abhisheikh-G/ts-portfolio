@@ -1,72 +1,27 @@
 import { Container, Typography, Box, Button, useTheme } from "@mui/material";
 
 import React from "react";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/styles";
 import { useRouter } from "next/router";
+import Underline from "../Underline/Underline";
 // import Image from "next/image";
 
-const useStyles: Function = makeStyles((theme: any) => ({
-  highlight: {
-    color: theme.palette.secondary.light,
-  },
-  secondaryHighlight: {
+const CustomButton = styled(Button)(({ theme }) => ({
+  height: theme.spacing(6),
+  fontSize: "1.25em",
+  margin: ".25em",
+  borderColor: theme.palette.secondary.main,
+  borderRadius: theme.spacing(20),
+  color: theme.palette.secondary.main,
+  transition: "all 0.2s ease-in",
+  textDecoration: "none",
+  "&:hover": {
+    borderColor: theme.palette.custom.yellow,
     color: theme.palette.custom.yellow,
-  },
-  underline: {
-    width: "inherit",
-    height: 5,
-    background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
-    borderRadius: 10,
-  },
-  button: {
-    height: theme.spacing(6),
-    fontSize: "1.25em",
-    margin: ".25em",
-    borderColor: theme.palette.secondary.main,
-    borderRadius: theme.spacing(20),
-    color: theme.palette.secondary.main,
-    transition: "all 0.2s ease-in",
-    textDecoration: "none",
-    "&:hover": {
-      borderColor: theme.palette.custom.yellow,
-      color: theme.palette.custom.yellow,
-    },
-  },
-
-  content: {
-    display: "flex",
-    flexDirection: "column",
-    textTransform: "uppercase",
-    background: `linear-gradient( ${theme.palette.primary.dark},${theme.palette.primary.main})`,
-    color: theme.palette.primary.contrastText,
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(8),
-    height: "auto",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    textAlign: "left",
-  },
-  avatarLarge: {
-    width: theme.spacing(20),
-    height: theme.spacing(20),
-    margin: theme.spacing(1),
-  },
-  link: {
-    marginLeft: "1em",
-    marginRight: "1em",
-    textDecoration: "none",
-
-    color: theme.palette.common.white,
-    "&:hover": {
-      textDecoration: "none",
-    },
   },
 }));
 
 export default function Hero() {
-  const classes = useStyles();
   const router = useRouter();
   const theme = useTheme();
   // const [title, setTitle] = useState(false);
@@ -74,7 +29,20 @@ export default function Hero() {
 
   return (
     <React.Fragment>
-      <Box className={classes.content}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textTransform: "uppercase",
+          backgroundColor: `primary.main`,
+          color: "primary.contrastText",
+          paddingTop: 2,
+          paddingBottom: 8,
+          height: "auto",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Container maxWidth="md" sx={{ mt: "2em" }}>
           <Typography variant="h5" gutterBottom={true} align="left">
             Hello, my name is
@@ -86,9 +54,13 @@ export default function Hero() {
             align="left"
             sx={{ marginBottom: theme.spacing(2), maxWidth: "8em" }}
           >
-            <span className={classes.highlight}>Abhisheikh</span>{" "}
-            <span className={classes.secondaryHighlight}>Gill</span>
-            <Box className={classes.underline} />
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              Abhisheikh
+            </Box>{" "}
+            <Box component="span" sx={{ color: "custom.yellow" }}>
+              Gill
+            </Box>
+            <Underline />
           </Typography>
 
           <Typography
@@ -100,19 +72,21 @@ export default function Hero() {
             sx={{ marginBottom: "1em" }}
           >
             Nice to meet you, I'm a{" "}
-            <span className={classes.highlight}>full stack web developer</span>{" "}
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              full stack web developer
+            </Box>{" "}
             and{" "}
-            <span className={classes.secondaryHighlight}>
+            <Box component="span" sx={{ color: "custom.yellow" }}>
               ceritified IT solutions expert
-            </span>{" "}
+            </Box>{" "}
             from New Jersey, USA. I make applications using{" "}
-            <span className={classes.highlight}>
+            <Box component="span" sx={{ color: "secondary.main" }}>
               React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB
-            </span>{" "}
+            </Box>{" "}
             as well as provide expertise in{" "}
-            <span className={classes.secondaryHighlight}>
+            <Box component="span" sx={{ color: "custom.yellow" }}>
               Linux System Administration, Networking, and CyberSecurity.
-            </span>
+            </Box>
           </Typography>
           {/* <Box display="flex" justifyContent="flex-start" mt={2} mb={2}>
             <Image
@@ -124,21 +98,19 @@ export default function Hero() {
           </Box> */}
 
           <Box display="flex" justifyContent="flex-start">
-            <Button
+            <CustomButton
               onClick={() => router.push("#contact")}
               variant="outlined"
-              className={classes.button}
             >
               Contact Me
-            </Button>
+            </CustomButton>
 
-            <Button
+            <CustomButton
               variant="outlined"
               onClick={() => router.push("#mywork")}
-              className={classes.button}
             >
               My Work
-            </Button>
+            </CustomButton>
           </Box>
         </Container>
       </Box>
