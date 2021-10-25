@@ -21,71 +21,71 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <title>Abhisheikh Gill | My Portfolio</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <meta
-          name="description"
-          content={`Hello, my name is Abhisheikh Gill. 
+    <StylesProvider generateClassName={generateClassName}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <title>Abhisheikh Gill | My Portfolio</title>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+          <meta
+            name="description"
+            content={`Hello, my name is Abhisheikh Gill. 
         I'm a full stack web developer and an IT solutions expert. 
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
-        />
-        <meta content="index, follow" name={`robots`} />
+          />
+          <meta content="index, follow" name={`robots`} />
 
-        <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
-        <meta
-          itemProp="description"
-          content="Hello, my name is Abhisheikh Gill. 
+          <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
+          <meta
+            itemProp="description"
+            content="Hello, my name is Abhisheikh Gill. 
         I'm a full stack web developer and an IT solutions expert. 
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
-        />
-        <meta
-          itemProp="image"
-          content="https://abhisheikhgill.com/meta-image.png"
-        />
+          />
+          <meta
+            itemProp="image"
+            content="https://abhisheikhgill.com/meta-image.png"
+          />
 
-        <meta property="og:url" content="https://abhisheikhgill.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Abhisheikh Gill | My Portfolio" />
-        <meta
-          property="og:description"
-          content="Hello, my name is Abhisheikh Gill. 
+          <meta property="og:url" content="https://abhisheikhgill.com" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Abhisheikh Gill | My Portfolio" />
+          <meta
+            property="og:description"
+            content="Hello, my name is Abhisheikh Gill. 
         I'm a full stack web developer and an IT solutions expert. 
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
-        />
-        <meta
-          property="og:image"
-          content="https://abhisheikhgill.com/meta-image.png"
-        />
+          />
+          <meta
+            property="og:image"
+            content="https://abhisheikhgill.com/meta-image.png"
+          />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Abhisheikh Gill | My Portfolio" />
-        <meta
-          name="twitter:description"
-          content="Hello, my name is Abhisheikh Gill. 
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Abhisheikh Gill | My Portfolio" />
+          <meta
+            name="twitter:description"
+            content="Hello, my name is Abhisheikh Gill. 
         I'm a full stack web developer and an IT solutions expert. 
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
-        />
-        <meta
-          name="twitter:image"
-          content="https://abhisheikhgill.com/meta-image.png"
-        />
+          />
+          <meta
+            name="twitter:image"
+            content="https://abhisheikhgill.com/meta-image.png"
+          />
 
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      </Head>
-      <StylesProvider generateClassName={generateClassName}>
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        </Head>
         <ThemeProvider theme={theme}>
           <Header />
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
-      </StylesProvider>
-    </CacheProvider>
+      </CacheProvider>
+    </StylesProvider>
   );
 }
