@@ -57,7 +57,13 @@ function SkillBlock(props: SkillBlock) {
         },
       }}
     >
-      <SkillImage src={`/${imgSrc}`} height={48} width={48} alt={`${alt}`} />
+      <SkillImage
+        priority={true}
+        src={`/${imgSrc}`}
+        height={48}
+        width={48}
+        alt={`${alt}`}
+      />
       <Typography variant="body2" component={"p"}>
         {text}
       </Typography>
