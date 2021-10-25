@@ -128,7 +128,7 @@ export default function Projects(props: Projects) {
           variant="h3"
           width="4.25em"
           gutterBottom
-          sx={{ marginBottom: "1em" }}
+          sx={{ marginBottom: "1em", textTransform: "uppercase" }}
         >
           <Box component="span" sx={{ color: "secondary.main" }}>
             My
