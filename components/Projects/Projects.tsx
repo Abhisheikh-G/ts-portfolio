@@ -126,7 +126,7 @@ export default function Projects(props: Projects) {
       <Container maxWidth="md">
         <Typography
           variant="h3"
-          width="4.25em"
+          width="4.8em"
           gutterBottom
           sx={{ marginBottom: "1em", textTransform: "uppercase" }}
         >
