@@ -24,7 +24,7 @@ export default function Contact() {
         sx={{
           paddingTop: 8,
           paddingBottom: 8,
-          backgroundColor: `primary.dark`,
+          backgroundColor: `primary.main`,
         }}
       >
         <Container maxWidth="md">
