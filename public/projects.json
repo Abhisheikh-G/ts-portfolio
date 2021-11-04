@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "DevFinder",
+      "description": "A full-stack (React + Node) application built with TypeScript and Redux Toolkit.",
+      "work": "The frontend is built with HTML, CSS, TypeScript. It comes complete with a profiles page and comments section. The backend is built with Node.js, MongoDB, and TypeScript. There are over 15 API endpoints and the API includes full authentication.",
+      "image": "devfinder.webp",
+      "projectLink": "https://pacific-ravine-06476.herokuapp.com/"
+    },
+    {
       "title": "The Coffee Brake",
       "description": "Some of the features and technologues used in this e-Commerce application are Gatsby.js, a headless node.js CMS called Strapi where all of the data is stored in a PostgreSQL database, and payment processing is handled using Stripe's APIs.",
       "work": "This website was designed using Material design principles in mind. To ensure speed and performance, I used Gatsby.js to create a lightning fast front-end. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
