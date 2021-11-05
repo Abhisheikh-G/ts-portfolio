@@ -17,7 +17,7 @@ export default function Hero() {
           textTransform: "uppercase",
           color: "primary.contrastText",
           pb: 4,
-          pt: 10,
+          pt: 4,
           height: "auto",
           alignItems: "center",
           justifyContent: "center",

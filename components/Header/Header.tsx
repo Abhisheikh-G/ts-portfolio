@@ -17,8 +17,17 @@ const styles = {
   link: {
     color: "secondary.main",
     p: 0.5,
-    mx: 1,
+    mx: 0.5,
     textDecoration: "none",
+    transition: "all .2s ease-in-out",
+    "&:hover": {
+      color: "custom.yellow",
+    },
+  },
+  icon: {
+    color: "secondary.main",
+    mx: 0.5,
+    fontSize: "1.2em",
     transition: "all .2s ease-in-out",
     "&:hover": {
       color: "custom.yellow",
@@ -41,7 +50,9 @@ export default function Header() {
             maxWidth="md"
             sx={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
+              alignItems: "center",
+              my: 0.5,
             }}
           >
             <Box
@@ -56,53 +67,63 @@ export default function Header() {
                   priority
                   src="/logo.svg"
                   alt="logo"
-                  height={75}
-                  width={75}
+                  height={85}
+                  width={85}
                 />
               </Link>
-              <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
-                <Link
-                  href="#contact"
-                  sx={{
-                    ...styles.link,
-                  }}
-                >
-                  CONTACT
-                </Link>
-                <Link
-                  href="#mywork"
-                  sx={{
-                    ...styles.link,
-                  }}
-                >
-                  MY WORK
-                </Link>
-              </Box>
-              <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
-                <Link
-                  href="https://github.com/Abhisheikh-G"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <IconButton sx={{ color: "white" }}>
-                    <GitHubIcon fontSize="large" aria-label="Github Icon" />
-                  </IconButton>
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/abhisheikh-gill/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <IconButton sx={{ color: "white" }}>
-                    <LinkedInIcon
-                      fontSize="large"
-                      aria-label="Linked In Icon"
-                    />
-                  </IconButton>
-                </Link>
-              </Box>
             </Box>
 
+            <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
+              <Link
+                href="#contact"
+                sx={{
+                  ...styles.link,
+                }}
+              >
+                CONTACT
+              </Link>
+              <Link
+                href="#mywork"
+                sx={{
+                  ...styles.link,
+                }}
+              >
+                MY WORK
+              </Link>
+            </Box>
+
+            <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
+              <Link
+                href="https://github.com/Abhisheikh-G"
+                target="_blank"
+                rel="noopener"
+              >
+                <IconButton sx={{ color: "white" }}>
+                  <GitHubIcon
+                    fontSize="large"
+                    aria-label="Github Icon"
+                    sx={{
+                      ...styles.icon,
+                    }}
+                  />
+                </IconButton>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/abhisheikh-gill/"
+                target="_blank"
+                rel="noopener"
+              >
+                <IconButton sx={{ color: "white" }}>
+                  <LinkedInIcon
+                    fontSize="large"
+                    aria-label="Linked In Icon"
+                    sx={{
+                      ...styles.icon,
+                    }}
+                  />
+                </IconButton>
+              </Link>
+            </Box>
             {/* <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton
                 color="inherit"
