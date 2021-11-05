@@ -8,7 +8,7 @@ import Image from "next/image";
 import Drawer from "../Drawer/Drawer";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "../../src/Link";
-import { Container, useTheme } from "@mui/material";
+import { Container } from "@mui/material";
 import Underline from "../Underline/Underline";
 
 export default function Header() {

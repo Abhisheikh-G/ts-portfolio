@@ -1,5 +1,5 @@
 import { createTheme, responsiveFontSizes, darken } from "@mui/material/styles";
-import { red, blueGrey, cyan, yellow, grey } from "@mui/material/colors";
+import { red, cyan, yellow, grey } from "@mui/material/colors";
 import { Theme } from "@mui/material";
 
 declare module "@mui/material/styles/createPalette" {
