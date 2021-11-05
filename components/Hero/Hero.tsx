@@ -1,16 +1,12 @@
-import { Container, Typography, Box, useTheme } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 
 import React from "react";
 import { useRouter } from "next/router";
 import Underline from "../Underline/Underline";
-// import Image from "next/image";
 import CustomButton from "../CustomButton/CustomButton";
 
 export default function Hero() {
   const router = useRouter();
-  const theme = useTheme();
-  // const [title, setTitle] = useState(false);
-  // const [body, setBody] = useState(false);
 
   return (
     <React.Fragment>
@@ -21,8 +17,7 @@ export default function Hero() {
           textTransform: "uppercase",
           backgroundColor: `primary.main`,
           color: "primary.contrastText",
-          paddingTop: 2,
-          paddingBottom: 8,
+          py: 6,
           height: "auto",
           alignItems: "center",
           justifyContent: "center",
@@ -34,10 +29,14 @@ export default function Hero() {
           </Typography>
 
           <Typography
-            variant="h3"
+            variant="h2"
             gutterBottom
             align="left"
-            sx={{ marginBottom: theme.spacing(2), maxWidth: "8em" }}
+            sx={{
+              marginBottom: (theme) => theme.spacing(2),
+              maxWidth: "7.8em",
+              fontWeight: (theme) => theme.typography.fontWeightLight,
+            }}
           >
             <Box component="span" sx={{ color: "secondary.main" }}>
               Abhisheikh
@@ -54,7 +53,12 @@ export default function Hero() {
             gutterBottom={true}
             align="left"
             maxWidth="30em"
-            sx={{ marginBottom: "1em" }}
+            sx={{
+              marginBottom: "1em",
+              lineHeight: (theme) => theme.spacing(3.5),
+              letterSpacing: (theme) => theme.spacing(0.2),
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+            }}
           >
             Nice to meet you, I'm a{" "}
             <Box component="span" sx={{ color: "secondary.main" }}>

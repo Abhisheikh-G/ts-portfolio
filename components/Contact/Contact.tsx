@@ -1,29 +1,26 @@
-import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
-import Button from "@mui/material/Button";
-import React from "react";
 import Underline from "../Underline/Underline";
-import { useTheme } from "@mui/system";
+import CustomButton from "../CustomButton/CustomButton";
+import React, { FormEvent, useState } from "react";
 
-export default function Contact() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data, register);
+const Contact: React.FC = () => {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
   };
-  const theme = useTheme();
-
   return (
     <React.Fragment>
       <Box
         id="contact"
         component="section"
         sx={{
-          paddingTop: 8,
-          paddingBottom: 8,
+          py: 8,
           backgroundColor: `primary.main`,
         }}
       >
@@ -55,15 +52,15 @@ export default function Contact() {
               alignItems: "center",
               backgroundColor: "common.white",
               zIndex: 10,
-              padding: 2,
+              p: {
+                lg: 8,
+                xs: 4,
+              },
               margin: "auto",
               width: "100%",
-              [theme.breakpoints.up("lg")]: {
-                width: "80%",
-              },
             }}
             boxShadow={8}
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit}
           >
             <FormLabel
               htmlFor="name"
@@ -84,7 +81,10 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              value={name}
+              onChange={({ target: { value } }) => setName(value)}
               placeholder="Enter your name here.."
+              required
             />
 
             <FormLabel
@@ -105,14 +105,17 @@ export default function Contact() {
               }}
               type="text"
               id="email"
+              value={email}
+              onChange={({ target: { value } }) => setEmail(value)}
               placeholder="Enter your email here.."
               name="email"
+              required
             />
             <FormLabel
               htmlFor="message"
               sx={{
                 width: "100%",
-                margin: 1,
+                my: 2,
               }}
               focused
               required
@@ -121,21 +124,25 @@ export default function Contact() {
             </FormLabel>
             <TextField
               multiline
+              rows={5}
               sx={{
                 width: "100%",
-                margin: 1,
+                mb: 2,
               }}
               id="message"
               name="message"
+              value={message}
+              onChange={({ target: { value } }) => setMessage(value)}
               placeholder="Enter your message here.."
+              required
             />
 
-            <Button type="submit" variant="outlined">
-              Submit
-            </Button>
+            <CustomButton type="submit">Submit</CustomButton>
           </Box>
         </Container>
       </Box>
     </React.Fragment>
   );
-}
+};
+
+export default Contact;

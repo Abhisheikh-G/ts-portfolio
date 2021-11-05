@@ -1,30 +1,31 @@
 import Button from "@mui/material/Button";
-import { useTheme } from "@mui/material";
 
 const CustomButton = ({
   children,
   onClick,
+  type,
 }: {
   children: string;
-  onClick: () => Promise<boolean>;
+  onClick?: () => Promise<boolean>;
+  type?: "button" | "submit";
 }) => {
-  const theme = useTheme();
   return (
     <Button
-      variant="outlined"
+      variant="contained"
       onClick={onClick}
+      type={type}
       sx={{
-        height: theme.spacing(6),
-        fontSize: "1.1em",
-        margin: ".25em",
-        borderColor: theme.palette.secondary.main,
-        borderRadius: theme.spacing(20),
-        color: theme.palette.secondary.main,
+        backgroundColor: "secondary.light",
+        height: 40,
+        mx: (theme) => theme.spacing(2),
+        borderColor: "secondary.main",
+        borderRadius: (theme) => theme.spacing(10),
+        color: "secondary.contrastText",
         transition: "all 0.2s ease-in",
         textDecoration: "none",
         "&:hover": {
-          borderColor: theme.palette.custom.yellow,
-          color: theme.palette.custom.yellow,
+          borderColor: "custom.yellow",
+          color: "custom.yellow",
         },
       }}
     >

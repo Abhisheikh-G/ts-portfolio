@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "The Coffee Brake",
-      "description": "A JAM stack (Gatsby.js + Node.js/Strapi Headless CMS/PostgreSQL) e-Commerce application using Stripe.",
+      "description": "A JAM stack (Gatsby.js + Node.js/Strapi Headless CMS/PostgreSQL) e-Commerce application that uses Stripe to handle payments.",
       "work": "This website is designed using Material-UI and Gatsby.js to create a lightning fast JAM stack application. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
       "image": "coffeebrake.webp",
       "projectLink": "https://thecoffeebrake.cafe"
