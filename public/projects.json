@@ -1,30 +1,30 @@
 {
   "projects": [
     {
-      "title": "DevFinder",
-      "description": "A full-stack (React + Node) application built with TypeScript and Redux Toolkit.",
-      "work": "The frontend is built with HTML, CSS, TypeScript. It comes complete with a profiles page and comments section. The backend is built with Node.js, MongoDB, and TypeScript. There are over 15 API endpoints and the API includes full authentication.",
-      "image": "devfinder.webp",
-      "projectLink": "https://pacific-ravine-06476.herokuapp.com/"
-    },
-    {
       "title": "The Coffee Brake",
-      "description": "Some of the features and technologues used in this e-Commerce application are Gatsby.js, a headless node.js CMS called Strapi where all of the data is stored in a PostgreSQL database, and payment processing is handled using Stripe's APIs.",
-      "work": "This website was designed using Material design principles in mind. To ensure speed and performance, I used Gatsby.js to create a lightning fast front-end. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
+      "description": "A JAM stack (Gatsby.js + Node.js/Strapi Headless CMS/PostgreSQL) e-Commerce application using Stripe.",
+      "work": "This website is designed using Material-UI and Gatsby.js to create a lightning fast JAM stack application. To process payments, I used Stripe's Payment Intent API which allows for safe and speedy transactions.",
       "image": "coffeebrake.webp",
       "projectLink": "https://thecoffeebrake.cafe"
     },
     {
+      "title": "DevFinder",
+      "description": "A full-stack (React + Node/MongoDB) application built with TypeScript and Redux Toolkit.",
+      "work": "The frontend is built with React.js and TypeScript. It comes complete with a profiles page and comments section. The backend is built with Node.js, MongoDB, and TypeScript. There are over 15 API endpoints and the API includes full authentication.",
+      "image": "devfinder.webp",
+      "projectLink": "https://devfinder-ag.herokuapp.com/"
+    },
+    {
       "title": "ProShop",
-      "description": "ProShop is an e-Commerce application created using React.js, Redux, Express.js, Node.js, and MongoDB. Payments are handled using PayPal.",
-      "work": "This website was created using create-react-app and node/express.js for the backend. I used react-bootstrap for all of the componenets. It features a full dashboard for an administrator and handles payments securely with PayPal.",
+      "description": "A full-stack (React + Node/MongoDB) application built with Redux and PayPal.",
+      "work": "The frontend is built with React.js and the react-boostrap component library. It features a full dashboard for an administrator and handles payments securely with PayPal.",
       "image": "proshop.webp",
       "projectLink": "https://proshop0.herokuapp.com/"
     },
     {
       "title": "Crown Clothing",
-      "description": "Some of the features and technologues used in this e-Commerce application are React.js, Firebase for data storage and user authentication, and payment processing using Stripe's API.",
-      "work": "This website was created using Create-React-App and then further enhanced with a custom Node.js server to handle payments. All the elements are designed using Styled Components. To process payments, I used Stripe's Checkout API, which optimizes conversion rates and safely handles payments on Stripe's servers. ",
+      "description": "A full-stack (React + Firebase) application built with Redux and Stripe.",
+      "work": "The frontend is built with React.js and Styled Components. The backend is using firebase/firestore for data storage and authentication. Payments are handled with Stripe's Payment Intent API.",
       "image": "crwn-clothes.webp",
       "projectLink": "https://crwn-clothes-ag.herokuapp.com/"
     }
