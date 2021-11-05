@@ -18,6 +18,10 @@ const styles = {
     color: "secondary.main",
     p: 0.5,
     mx: 0.5,
+    fontSize: {
+      xs: 14,
+      sm: 16,
+    },
     textDecoration: "none",
     transition: "all .2s ease-in-out",
     "&:hover": {
@@ -32,6 +36,11 @@ const styles = {
     "&:hover": {
       color: "custom.yellow",
     },
+  },
+  iconContainer: {
+    display: "flex",
+    flexDirection: "row",
+    maxWidth: 75,
   },
 };
 
@@ -56,8 +65,7 @@ export default function Header() {
             }}
           >
             <Box
-              mb={1}
-              mt={1}
+              my={1}
               display="flex"
               flexDirection="column"
               alignItems="center"
@@ -67,13 +75,13 @@ export default function Header() {
                   priority
                   src="/logo.svg"
                   alt="logo"
-                  height={85}
-                  width={85}
+                  height={75}
+                  width={75}
                 />
               </Link>
             </Box>
 
-            <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
+            <Box display="flex" justifyContent="space-evenly">
               <Link
                 href="#contact"
                 sx={{
@@ -92,7 +100,15 @@ export default function Header() {
               </Link>
             </Box>
 
-            <Box display="flex" justifyContent="space-evenly" maxWidth={300}>
+            <Box
+              sx={{
+                ...styles.iconContainer,
+                flexDirection: {
+                  xs: "column",
+                  sm: "row",
+                },
+              }}
+            >
               <Link
                 href="https://github.com/Abhisheikh-G"
                 target="_blank"
