@@ -1,5 +1,5 @@
-import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import { red, blueGrey, cyan, yellow } from "@mui/material/colors";
+import { createTheme, responsiveFontSizes, darken } from "@mui/material/styles";
+import { red, blueGrey, cyan, yellow, grey } from "@mui/material/colors";
 import { Theme } from "@mui/material";
 
 declare module "@mui/material/styles/createPalette" {
@@ -23,7 +23,7 @@ declare module "@mui/styles/defaultTheme" {
 let theme = createTheme({
   palette: {
     primary: {
-      main: blueGrey[800],
+      main: darken(grey[900], 1),
     },
     secondary: {
       main: cyan[500],
@@ -34,6 +34,9 @@ let theme = createTheme({
     },
     error: {
       main: red.A400,
+    },
+    background: {
+      default: darken(grey[900], 0.3),
     },
   },
   typography: {

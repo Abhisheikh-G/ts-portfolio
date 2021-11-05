@@ -9,16 +9,17 @@ import Drawer from "../Drawer/Drawer";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "../../src/Link";
 import { Container, useTheme } from "@mui/material";
+import Underline from "../Underline/Underline";
 
 export default function Header() {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ borderBottom: "1px solid white" }}>
+      <AppBar position="fixed">
+        <Underline />
         <Toolbar
           sx={{
-            backgroundColor: theme.palette.primary.dark,
+            backgroundColor: "background.default",
           }}
         >
           <Container

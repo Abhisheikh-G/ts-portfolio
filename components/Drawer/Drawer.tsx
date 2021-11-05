@@ -33,8 +33,7 @@ const Drawer = (props: DrawerProps) => {
       <List
         sx={{
           width: 240,
-
-          backgroundColor: "primary.dark",
+          backgroundColor: "background.default",
         }}
       >
         <ListItem
@@ -135,7 +134,7 @@ const Drawer = (props: DrawerProps) => {
       open={open}
       sx={{
         ".MuiDrawer-paper": {
-          backgroundColor: "primary.dark",
+          backgroundColor: "background.default",
         },
       }}
       disableBackdropTransition={!iOS}

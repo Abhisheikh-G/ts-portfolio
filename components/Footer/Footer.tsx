@@ -37,8 +37,7 @@ export default function StickyFooter() {
         sx={{
           padding: 3,
           marginTop: "auto",
-          backgroundColor: "primary.dark",
-          color: "primary.contrastText]",
+          color: "primary.contrastText",
         }}
       >
         <Container maxWidth="sm">

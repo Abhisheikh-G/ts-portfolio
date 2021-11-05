@@ -120,7 +120,6 @@ export default function Projects(props: Projects) {
       sx={{
         paddingTop: 8,
         paddingBottom: 8,
-        backgroundColor: "primary.dark",
       }}
     >
       <Container maxWidth="md">

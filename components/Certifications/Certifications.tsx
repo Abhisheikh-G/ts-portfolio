@@ -40,7 +40,6 @@ export default function Certifications(props: any) {
         sx={{
           paddingTop: 2,
           paddingBottom: 8,
-          backgroundColor: "primary.main",
         }}
         component="section"
       >

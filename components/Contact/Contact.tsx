@@ -21,7 +21,6 @@ const Contact: React.FC = () => {
         component="section"
         sx={{
           py: 8,
-          backgroundColor: `primary.main`,
         }}
       >
         <Container maxWidth="md">

@@ -66,7 +66,6 @@ export default function Skills(props: SkillsProps) {
         sx={{
           paddingTop: 2,
           paddingBottom: 8,
-          backgroundColor: "primary.dark",
         }}
         component="section"
       >
