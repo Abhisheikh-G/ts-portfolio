@@ -15,7 +15,7 @@ const CustomButton = ({
       onClick={onClick}
       type={type}
       sx={{
-        backgroundColor: "secondary.light",
+        backgroundColor: "secondary.main",
         height: 40,
         mx: (theme) => theme.spacing(2),
         borderColor: "secondary.main",
