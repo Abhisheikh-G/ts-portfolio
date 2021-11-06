@@ -31,7 +31,10 @@ const styles = {
   icon: {
     color: "secondary.main",
     mx: 0.5,
-    fontSize: "1.2em",
+    fontSize: {
+      xs: "1em",
+      sm: "1.2em",
+    },
     transition: "all .2s ease-in-out",
     "&:hover": {
       color: "custom.yellow",
@@ -64,12 +67,7 @@ export default function Header() {
               my: 0.5,
             }}
           >
-            <Box
-              my={1}
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
+            <Box my={1}>
               <Link href="/" onClick={() => window.scrollTo(0, 0)}>
                 <Image
                   priority
@@ -80,65 +78,66 @@ export default function Header() {
                 />
               </Link>
             </Box>
+            <Box display="flex" alignItems="center">
+              <Box>
+                <Link
+                  href="#contact"
+                  sx={{
+                    ...styles.link,
+                  }}
+                >
+                  CONTACT
+                </Link>
+                <Link
+                  href="#mywork"
+                  sx={{
+                    ...styles.link,
+                  }}
+                >
+                  MY WORK
+                </Link>
+              </Box>
 
-            <Box display="flex" justifyContent="space-evenly">
-              <Link
-                href="#contact"
+              <Box
                 sx={{
-                  ...styles.link,
+                  ...styles.iconContainer,
+                  flexDirection: {
+                    xs: "column",
+                    sm: "row",
+                  },
                 }}
               >
-                CONTACT
-              </Link>
-              <Link
-                href="#mywork"
-                sx={{
-                  ...styles.link,
-                }}
-              >
-                MY WORK
-              </Link>
-            </Box>
-
-            <Box
-              sx={{
-                ...styles.iconContainer,
-                flexDirection: {
-                  xs: "column",
-                  sm: "row",
-                },
-              }}
-            >
-              <Link
-                href="https://github.com/Abhisheikh-G"
-                target="_blank"
-                rel="noopener"
-              >
-                <IconButton sx={{ color: "white" }}>
-                  <GitHubIcon
-                    fontSize="large"
-                    aria-label="Github Icon"
-                    sx={{
-                      ...styles.icon,
-                    }}
-                  />
-                </IconButton>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/abhisheikh-gill/"
-                target="_blank"
-                rel="noopener"
-              >
-                <IconButton sx={{ color: "white" }}>
-                  <LinkedInIcon
-                    fontSize="large"
-                    aria-label="Linked In Icon"
-                    sx={{
-                      ...styles.icon,
-                    }}
-                  />
-                </IconButton>
-              </Link>
+                <Link
+                  href="https://github.com/Abhisheikh-G"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <IconButton>
+                    <GitHubIcon
+                      fontSize="large"
+                      aria-label="Github Icon"
+                      sx={{
+                        ...styles.icon,
+                      }}
+                    />
+                  </IconButton>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/abhisheikh-gill/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <IconButton>
+                    <LinkedInIcon
+                      fontSize="large"
+                      aria-label="Linked In Icon"
+                      sx={{
+                        ...styles.icon,
+                      }}
+                    />
+                  </IconButton>
+                </Link>
+              </Box>
             </Box>
             {/* <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton
