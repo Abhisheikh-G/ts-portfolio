@@ -49,7 +49,7 @@ export default function StickyFooter() {
                 rel="noopener"
                 aria-label="Link to Abhisheikh's Git Hub"
               >
-                <IconButton sx={{ color: "white" }}>
+                <IconButton sx={{ color: "secondary.main" }}>
                   <GitHubIcon fontSize="large" aria-label="Github Icon" />
                 </IconButton>
               </Link>
@@ -61,7 +61,7 @@ export default function StickyFooter() {
                 rel="noopener"
                 aria-label="Link to Abhisheikh's Linked In"
               >
-                <IconButton sx={{ color: "white" }}>
+                <IconButton sx={{ color: "secondary.main" }}>
                   <LinkedInIcon fontSize="large" aria-label="Linked In Icon" />
                 </IconButton>
               </Link>
