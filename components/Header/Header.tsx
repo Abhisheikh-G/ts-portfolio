@@ -160,7 +160,7 @@ export default function Header() {
           </Container>
         </Toolbar>
         {value !== 0 && (
-          <Box width={`${value}vw`}>
+          <Box width={`${value + 1}vw`}>
             <Underline />
           </Box>
         )}
