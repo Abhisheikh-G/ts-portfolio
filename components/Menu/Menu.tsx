@@ -84,95 +84,106 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               "> div": { marginTop: "1em", marginLeft: "6em" },
             }}
           >
-            <Link
-              href="/"
-              onClick={() => {
-                setOpen(!open);
-                window.scrollTo(0, 0);
-                // router.push("#contact");
-              }}
-            >
-              <Image
-                src="/logo.svg"
-                alt="logo"
-                priority
-                height={125}
-                width={125}
-              />
-            </Link>
+            <Fade in={true} timeout={1000}>
+              <Link
+                href="/"
+                onClick={() => {
+                  setOpen(!open);
+                  window.scrollTo(0, 0);
+                  // router.push("#contact");
+                }}
+              >
+                <Image
+                  src="/logo.svg"
+                  alt="logo"
+                  priority
+                  height={125}
+                  width={125}
+                />
+              </Link>
+            </Fade>
           </Box>
         </ListItem>
+
         <Underline />
-        <ListItem
-          sx={{
-            ...styles.link,
-          }}
-          button
-          onClick={() => {
-            setOpen(!open);
-            router.push("#contact");
-          }}
-        >
-          <ListItemIcon>
-            <Mail
-              sx={{
-                color: "secondary.main",
-              }}
-            />
-          </ListItemIcon>
-          <Typography variant="body1" fontSize="2em">
-            CONTACT ME
-          </Typography>
-        </ListItem>
 
+        <Fade in={true} timeout={1500}>
+          <ListItem
+            sx={{
+              ...styles.link,
+            }}
+            button
+            onClick={() => {
+              setOpen(!open);
+              router.push("#contact");
+            }}
+          >
+            <ListItemIcon>
+              <Mail
+                sx={{
+                  color: "secondary.main",
+                }}
+              />
+            </ListItemIcon>
+            <Typography variant="body1" fontSize="2em">
+              CONTACT ME
+            </Typography>
+          </ListItem>
+        </Fade>
         <Divider />
 
-        <ListItem
-          sx={{
-            ...styles.link,
-          }}
-          button
-          onClick={() => {
-            setOpen(!open);
-            router.push("#mywork");
-          }}
-        >
-          <ListItemIcon>
-            <Work
-              sx={{
-                color: "secondary.main",
-              }}
-            />
-          </ListItemIcon>
-          <Typography variant="body1" fontSize="2em">
-            MY WORK
-          </Typography>
-        </ListItem>
-        <Divider />
+        <Fade in={true} timeout={2000}>
+          <ListItem
+            sx={{
+              ...styles.link,
+            }}
+            button
+            onClick={() => {
+              setOpen(!open);
+              router.push("#mywork");
+            }}
+          >
+            <ListItemIcon>
+              <Work
+                sx={{
+                  color: "secondary.main",
+                }}
+              />
+            </ListItemIcon>
+            <Typography variant="body1" fontSize="2em">
+              MY WORK
+            </Typography>
+          </ListItem>
+        </Fade>
+        <Underline />
       </List>
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box m={2}>
-          <Link
-            href="https://github.com/Abhisheikh-G"
-            target="_blank"
-            rel="noopener"
-          >
-            <IconButton sx={{ ...styles.icon }}>
-              <GitHubIcon fontSize="inherit" aria-label="Github Icon" />
-            </IconButton>
-          </Link>
+          <Fade in={true} timeout={2500}>
+            <Link
+              href="https://github.com/Abhisheikh-G"
+              target="_blank"
+              rel="noopener"
+            >
+              <IconButton sx={{ ...styles.icon }}>
+                <GitHubIcon fontSize="inherit" aria-label="Github Icon" />
+              </IconButton>
+            </Link>
+          </Fade>
         </Box>
         <Box m={2}>
-          <Link
-            href="https://www.linkedin.com/in/abhisheikh-gill/"
-            target="_blank"
-            rel="noopener"
-          >
-            <IconButton sx={{ ...styles.icon }}>
-              <LinkedInIcon fontSize="inherit" aria-label="Linked In Icon" />
-            </IconButton>
-          </Link>
+          <Fade in={true} timeout={3000}>
+            <Link
+              href="https://www.linkedin.com/in/abhisheikh-gill/"
+              target="_blank"
+              rel="noopener"
+            >
+              <IconButton sx={{ ...styles.icon }}>
+                <LinkedInIcon fontSize="inherit" aria-label="Linked In Icon" />
+              </IconButton>
+            </Link>
+          </Fade>
         </Box>
       </Box>
     </Box>
