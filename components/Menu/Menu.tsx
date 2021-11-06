@@ -192,7 +192,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             }}
           >
             <Underline />
-            <Container maxWidth="lg" sx={{ pr: 4.75, pt: 3.75 }}>
+            <Container maxWidth="lg" sx={{ pr: 4.75, pt: 3.25 }}>
               <Box
                 onClick={() => setOpen(!open)}
                 sx={{ display: "flex", justifyContent: "flex-end" }}
