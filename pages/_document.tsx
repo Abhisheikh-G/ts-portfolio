@@ -25,17 +25,30 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/manifest.json" />
           <link
-            href="/icons/favicon-192x192.png"
+            href="/icons/favicon-512x512.ico"
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+          />
+          <link
+            href="/icons/favicon-192x192.ico"
             rel="icon"
             type="image/png"
             sizes="192x192"
           />
           <link
-            href="/icons/favicon-256x256.png"
+            href="/icons/favicon-32x32.ico"
             rel="icon"
             type="image/png"
-            sizes="256x256"
+            sizes="32x32"
           />
+          <link
+            href="/icons/favicon-16x16.ico"
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+          />
+
           <link rel="apple-touch-icon" href="/icons/apple-icon.png" />
           <meta name="theme-color" content="#317EFB" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
