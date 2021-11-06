@@ -128,7 +128,7 @@ export default function Projects(props: Projects) {
           width="5.3em"
           gutterBottom
           fontFamily="Zen Tokyo Zoo"
-          sx={{ marginBottom: "1em", textTransform: "uppercase" }}
+          sx={{ my: "1.5em", textTransform: "uppercase" }}
         >
           <Box component="span" sx={{ color: "secondary.main" }}>
             My

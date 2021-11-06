@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
             fontFamily="Zen Tokyo Zoo"
             sx={{
               width: "7em",
-              marginBottom: "1em",
+              mb: "1.5em",
               textTransform: "uppercase",
             }}
           >

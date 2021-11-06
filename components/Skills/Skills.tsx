@@ -65,7 +65,7 @@ export default function Skills(props: SkillsProps) {
       <Box
         sx={{
           paddingTop: 2,
-          paddingBottom: 8,
+          paddingBottom: 4,
         }}
         component="section"
       >
@@ -77,7 +77,7 @@ export default function Skills(props: SkillsProps) {
             align="left"
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              marginTop: "1em",
+              my: "1em",
               color: "common.white",
               textAlign: "left",
               textTransform: "uppercase",

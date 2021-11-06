@@ -36,7 +36,7 @@ export default function Hero() {
               align="left"
               fontFamily="Zen Tokyo Zoo"
               sx={{
-                mt: 1,
+                mt: 2,
                 marginBottom: (theme) => theme.spacing(2),
                 maxWidth: "9.15em",
                 fontSize: 30,
@@ -59,9 +59,9 @@ export default function Hero() {
               align="left"
               maxWidth="30em"
               sx={{
-                marginBottom: "1em",
+                my: "1.5em",
                 lineHeight: (theme) => theme.spacing(3.5),
-                letterSpacing: (theme) => theme.spacing(0.2),
+                letterSpacing: (theme) => theme.spacing(0.18),
                 fontWeight: (theme) => theme.typography.fontWeightMedium,
               }}
             >

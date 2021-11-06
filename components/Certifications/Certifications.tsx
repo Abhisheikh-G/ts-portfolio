@@ -39,7 +39,6 @@ export default function Certifications(props: any) {
       <Box
         sx={{
           paddingTop: 2,
-          paddingBottom: 8,
         }}
         component="section"
       >
@@ -51,8 +50,7 @@ export default function Certifications(props: any) {
             gutterBottom
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              marginBottom: "1em",
-              marginTop: "1em",
+              mb: "2em",
               textTransform: "uppercase",
             }}
           >
