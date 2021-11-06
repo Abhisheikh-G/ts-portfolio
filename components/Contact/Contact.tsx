@@ -52,12 +52,16 @@ const Contact: React.FC = () => {
               alignItems: "center",
               backgroundColor: "common.white",
               zIndex: 10,
-              p: {
-                lg: 8,
+              px: {
+                lg: 6,
                 xs: 4,
               },
+              py: {
+                lg: 4,
+                xs: 3,
+              },
               margin: "auto",
-              maxWidth: 600,
+              maxWidth: 500,
             }}
             boxShadow={8}
             onSubmit={handleSubmit}
