@@ -40,7 +40,7 @@ let theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Encode Sans"].join(","),
+    fontFamily: ["Encode Sans", "Zen Tokyo Zoo"].join(","),
   },
 });
 

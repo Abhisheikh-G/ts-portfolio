@@ -34,9 +34,11 @@ export default function Hero() {
               variant="h2"
               gutterBottom
               align="left"
+              fontFamily="Zen Tokyo Zoo"
               sx={{
+                mt: 1,
                 marginBottom: (theme) => theme.spacing(2),
-                maxWidth: "7.8em",
+                maxWidth: "9.15em",
                 fontWeight: (theme) => theme.typography.fontWeightLight,
               }}
             >

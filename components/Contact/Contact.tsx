@@ -28,8 +28,9 @@ const Contact: React.FC = () => {
             variant="h3"
             align="left"
             gutterBottom
+            fontFamily="Zen Tokyo Zoo"
             sx={{
-              width: "6.1em",
+              width: "7em",
               marginBottom: "1em",
               textTransform: "uppercase",
             }}

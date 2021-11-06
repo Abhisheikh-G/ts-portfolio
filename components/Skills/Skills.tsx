@@ -73,8 +73,9 @@ export default function Skills(props: SkillsProps) {
           <Typography
             variant="h3"
             gutterBottom
-            width="4.75em"
+            width="5.5em"
             align="left"
+            fontFamily="Zen Tokyo Zoo"
             sx={{
               marginTop: "1em",
               color: "common.white",

@@ -47,8 +47,9 @@ export default function Certifications(props: any) {
           <Typography
             variant="h3"
             align="left"
-            width="9.15em"
+            width="10.75em"
             gutterBottom
+            fontFamily="Zen Tokyo Zoo"
             sx={{
               marginBottom: "1em",
               marginTop: "1em",

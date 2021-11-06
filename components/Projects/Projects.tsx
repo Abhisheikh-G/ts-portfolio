@@ -125,8 +125,9 @@ export default function Projects(props: Projects) {
       <Container maxWidth="md">
         <Typography
           variant="h3"
-          width="4.8em"
+          width="5.3em"
           gutterBottom
+          fontFamily="Zen Tokyo Zoo"
           sx={{ marginBottom: "1em", textTransform: "uppercase" }}
         >
           <Box component="span" sx={{ color: "secondary.main" }}>
