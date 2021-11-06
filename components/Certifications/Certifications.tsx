@@ -47,7 +47,7 @@ export default function Certifications(props: any) {
           <Typography
             variant="h3"
             align="left"
-            width="10.75em"
+            width="5.5em"
             gutterBottom
             fontFamily="Zen Tokyo Zoo"
             sx={{
@@ -60,7 +60,7 @@ export default function Certifications(props: any) {
               My
             </Box>{" "}
             <Box component="span" sx={{ color: "custom.yellow" }}>
-              Certifications
+              Certs
             </Box>
             <Underline />
           </Typography>

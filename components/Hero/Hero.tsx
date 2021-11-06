@@ -31,7 +31,7 @@ export default function Hero() {
           </Fade>
           <Fade in={true} timeout={1500}>
             <Typography
-              variant="h2"
+              variant="h3"
               gutterBottom
               align="left"
               fontFamily="Zen Tokyo Zoo"
@@ -39,7 +39,7 @@ export default function Hero() {
                 mt: 1,
                 marginBottom: (theme) => theme.spacing(2),
                 maxWidth: "9.15em",
-                fontWeight: (theme) => theme.typography.fontWeightLight,
+                fontSize: 30,
               }}
             >
               <Box component="span" sx={{ color: "secondary.main" }}>
