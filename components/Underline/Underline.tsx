@@ -9,7 +9,7 @@ const Underline = () => {
       <Box
         sx={{
           width: "inherit",
-          height: 2,
+          height: 1.1,
 
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
@@ -17,7 +17,7 @@ const Underline = () => {
       <Box
         sx={{
           width: "inherit",
-          height: 2,
+          height: 1.1,
           my: "1px",
 
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
@@ -26,7 +26,7 @@ const Underline = () => {
       <Box
         sx={{
           width: "inherit",
-          height: 2,
+          height: 1.1,
 
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
