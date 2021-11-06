@@ -13,6 +13,7 @@ import Underline from "../Underline/Underline";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useScrollIndicator } from "react-use-scroll-indicator";
+import Menu from "../Menu/Menu";
 
 const styles = {
   link: {
@@ -69,7 +70,6 @@ export default function Header() {
   const [open, setOpen] = React.useState(false);
   const [state] = useScrollIndicator();
   const { value } = state;
-  console.log(value === 0 ? 8 : value * 8);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -175,7 +175,7 @@ export default function Header() {
                 <MenuIcon fontSize="large" />
               </IconButton>
             </Box>
-            <Drawer open={open} setOpen={setOpen} />
+            {/* <Drawer open={open} setOpen={setOpen} /> */}
           </Container>
         </Toolbar>
         {value !== 0 && (
@@ -184,16 +184,7 @@ export default function Header() {
           </Box>
         )}
       </AppBar>
+      <Menu open={open} setOpen={setOpen} />
     </Box>
   );
-}
-
-{
-  /* <Box>
-<Link href="https://github.com/Abhisheikh-G" target="_blank">
-  <IconButton sx={{ color: "white" }}>
-    <GitHubIcon fontSize="large" />
-  </IconButton>
-</Link>
-</Box> */
 }
