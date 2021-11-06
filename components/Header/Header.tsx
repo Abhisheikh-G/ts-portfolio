@@ -25,7 +25,12 @@ const styles = {
     textDecoration: "none",
     transition: "all .2s ease-in-out",
     "&:hover": {
-      color: "custom.yellow",
+      // color: "custom.yellow",
+      background: (theme: any) =>
+        `linear-gradient(to right, ${theme.palette.custom.yellow}, ${theme.palette.secondary.main})`,
+
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
     },
   },
   icon: {
