@@ -39,8 +39,8 @@ export function Project(props: Project) {
           margin: "auto",
           borderRadius: 0,
           boxShadow: 0,
-          maxWidth: 600,
-          height: "auto",
+          maxWidth: 400,
+          minHeight: "15em",
         }}
         raised={false}
       >
@@ -60,13 +60,23 @@ export function Project(props: Project) {
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography variant="body1" color="textSecondary" component="p">
+          <Typography
+            variant="body1"
+            color="textSecondary"
+            component="p"
+            maxHeight="3em"
+          >
             {description}
           </Typography>
         </CardContent>
 
         <CardActions
-          style={{ display: "flex", justifyContent: "space-between" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "100%",
+            alignItems: "flex-end",
+          }}
           disableSpacing
         >
           <div>
