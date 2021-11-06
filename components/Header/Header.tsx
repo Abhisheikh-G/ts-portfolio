@@ -12,6 +12,7 @@ import { Container, IconButton } from "@mui/material";
 import Underline from "../Underline/Underline";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useScrollIndicator } from "react-use-scroll-indicator";
 
 const styles = {
   link: {
@@ -25,10 +26,8 @@ const styles = {
     textDecoration: "none",
     transition: "all .2s ease-in-out",
     "&:hover": {
-      // color: "custom.yellow",
       background: (theme: any) =>
         `linear-gradient(to right, ${theme.palette.custom.yellow}, ${theme.palette.secondary.main})`,
-
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
     },
@@ -54,6 +53,9 @@ const styles = {
 
 export default function Header() {
   // const [open, setOpen] = React.useState(false);
+  const [state] = useScrollIndicator();
+  const { value } = state;
+  console.log(value === 0 ? 8 : value * 8);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -157,6 +159,11 @@ export default function Header() {
             <Drawer open={open} setOpen={setOpen} /> */}
           </Container>
         </Toolbar>
+        {value !== 0 && (
+          <Box width={`${value}vw`}>
+            <Underline />
+          </Box>
+        )}
       </AppBar>
     </Box>
   );

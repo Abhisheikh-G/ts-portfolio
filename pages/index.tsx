@@ -5,7 +5,6 @@ import Contact from "../components/Contact/Contact";
 import Certifications from "../components/Certifications/Certifications";
 import Skills from "../components/Skills/Skills";
 import Footer from "../components/Footer/Footer";
-
 import { GetStaticProps } from "next";
 
 export default function Index(props: any) {
