@@ -60,19 +60,43 @@ export default function Hero() {
             }}
           >
             Nice to meet you, I'm a{" "}
-            <Box component="span" sx={{ color: "secondary.main" }}>
+            <Box
+              component="span"
+              sx={{
+                color: "secondary.contrastText",
+                backgroundColor: "secondary.main",
+              }}
+            >
               full stack web developer
             </Box>{" "}
             and{" "}
-            <Box component="span" sx={{ color: "custom.yellow" }}>
+            <Box
+              component="span"
+              sx={{
+                color: "secondary.contrastText",
+                backgroundColor: "custom.yellow",
+              }}
+            >
               certified I.T solutions expert
             </Box>{" "}
             from New Jersey, USA. I make applications using{" "}
-            <Box component="span" sx={{ color: "secondary.main" }}>
+            <Box
+              component="span"
+              sx={{
+                color: "secondary.contrastText",
+                backgroundColor: "secondary.main",
+              }}
+            >
               React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB
             </Box>{" "}
             as well as provide expertise in{" "}
-            <Box component="span" sx={{ color: "custom.yellow" }}>
+            <Box
+              component="span"
+              sx={{
+                color: "secondary.contrastText",
+                backgroundColor: "custom.yellow",
+              }}
+            >
               Linux System Administration, Networking, and CyberSecurity.
             </Box>
           </Typography>
