@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import CloseIcon from "@mui/icons-material/Close";
 import Mail from "@mui/icons-material/Mail";
 import Work from "@mui/icons-material/Work";
-
+import Underline from "../Underline/Underline";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -42,8 +42,7 @@ const styles = {
     color: "secondary.main",
     mx: 0.5,
     fontSize: {
-      xs: "1em",
-      sm: "1.2em",
+      xs: "3em",
     },
     transition: "all .2s ease-in-out",
     "&:hover": {
@@ -103,7 +102,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             </Link>
           </Box>
         </ListItem>
-        <Divider />
+        <Underline />
         <ListItem
           sx={{
             ...styles.link,
@@ -160,7 +159,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             rel="noopener"
           >
             <IconButton sx={{ ...styles.icon }}>
-              <GitHubIcon fontSize="large" aria-label="Github Icon" />
+              <GitHubIcon fontSize="inherit" aria-label="Github Icon" />
             </IconButton>
           </Link>
         </Box>
@@ -171,7 +170,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             rel="noopener"
           >
             <IconButton sx={{ ...styles.icon }}>
-              <LinkedInIcon fontSize="large" aria-label="Linked In Icon" />
+              <LinkedInIcon fontSize="inherit" aria-label="Linked In Icon" />
             </IconButton>
           </Link>
         </Box>
@@ -189,6 +188,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               height: "100vh",
               width: "100vw",
               backgroundColor: "background.default",
+              borderRadius: 0,
             }}
           >
             <Container maxWidth="lg" sx={{ pr: 4.75, pt: 3.75 }}>
