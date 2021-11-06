@@ -2,13 +2,13 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-// import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-// import Drawer from "../Drawer/Drawer";
+import Drawer from "../Drawer/Drawer";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "../../src/Link";
-import { Container, IconButton } from "@mui/material";
+import { Container } from "@mui/material";
 import Underline from "../Underline/Underline";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -32,6 +32,13 @@ const styles = {
       WebkitTextFillColor: "transparent",
     },
   },
+  linkContainer: {
+    display: {
+      xs: "none",
+      sm: "flex",
+    },
+    alignItems: "center",
+  },
   icon: {
     color: "secondary.main",
     mx: 0.5,
@@ -45,14 +52,21 @@ const styles = {
     },
   },
   iconContainer: {
-    display: "flex",
+    display: {
+      xs: "none",
+      sm: "flex",
+    },
     flexDirection: "row",
     maxWidth: 75,
+  },
+  drawerIcon: {
+    display: { xs: "block", sm: "none" },
+    alignItems: "center",
   },
 };
 
 export default function Header() {
-  // const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const [state] = useScrollIndicator();
   const { value } = state;
   console.log(value === 0 ? 8 : value * 8);
@@ -85,7 +99,7 @@ export default function Header() {
                 />
               </Link>
             </Box>
-            <Box display="flex" alignItems="center">
+            <Box sx={{ ...styles.linkContainer }}>
               <Box>
                 <Link
                   href="#contact"
@@ -146,7 +160,12 @@ export default function Header() {
                 </Link>
               </Box>
             </Box>
-            {/* <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                ...styles.drawerIcon,
+                ...styles.icon,
+              }}
+            >
               <IconButton
                 color="inherit"
                 size="large"
@@ -156,7 +175,7 @@ export default function Header() {
                 <MenuIcon fontSize="large" />
               </IconButton>
             </Box>
-            <Drawer open={open} setOpen={setOpen} /> */}
+            <Drawer open={open} setOpen={setOpen} />
           </Container>
         </Toolbar>
         {value !== 0 && (
