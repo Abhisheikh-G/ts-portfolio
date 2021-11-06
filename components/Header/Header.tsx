@@ -5,8 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import Drawer from "../Drawer/Drawer";
-// import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "../../src/Link";
 import { Container } from "@mui/material";
 import Underline from "../Underline/Underline";
