@@ -24,10 +24,9 @@ export default function Hero() {
         }}
       >
         <Container maxWidth="md" sx={{ mt: "2em" }}>
-          <Typography variant="h5" gutterBottom={true} align="left">
+          <Typography variant="h5" align="left">
             Hello, my name is
           </Typography>
-
           <Typography
             variant="h2"
             gutterBottom

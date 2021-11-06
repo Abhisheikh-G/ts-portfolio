@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
                 xs: 4,
               },
               margin: "auto",
-              width: "100%",
+              maxWidth: 600,
             }}
             boxShadow={8}
             onSubmit={handleSubmit}
