@@ -191,6 +191,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               borderRadius: 0,
             }}
           >
+            <Underline />
             <Container maxWidth="lg" sx={{ pr: 4.75, pt: 3.75 }}>
               <Box
                 onClick={() => setOpen(!open)}
