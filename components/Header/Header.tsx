@@ -70,7 +70,7 @@ export default function Header() {
               flexDirection="column"
               alignItems="center"
             >
-              <Link href="/">
+              <Link href="/" onClick={() => window.scrollTo(0, 0)}>
                 <Image
                   priority
                   src="/logo.svg"
