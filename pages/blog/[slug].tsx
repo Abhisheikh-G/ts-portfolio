@@ -5,7 +5,9 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import React from "react";
 import Container from "@mui/material/Container";
 import ReactMarkdown from "react-markdown";
+import { useTheme } from "@mui/material";
 import remarkCb from "remark-code-blocks";
+import remarkGfm from "remark-gfm";
 
 type Props = React.PropsWithChildren<{
   frontmatter: {
@@ -27,10 +29,27 @@ const styles = {
 
 const Posts: React.FC<Props> = ({ frontmatter, content }) => {
   console.log(frontmatter);
+  const theme = useTheme();
   return (
     <Container maxWidth="lg" sx={{ mt: 16 }}>
       <div style={{ ...styles.markdown }}>
-        <ReactMarkdown children={content} remarkPlugins={[remarkCb]} />
+        <ReactMarkdown
+          children={content}
+          components={{
+            pre: (props) => (
+              <pre
+                style={{
+                  backgroundColor: theme.palette.primary.light,
+                  padding: "1em",
+                  overflowX: "auto",
+                }}
+                {...props}
+              />
+            ),
+            code: (props) => <code {...props} />,
+          }}
+          remarkPlugins={[remarkCb, remarkGfm]}
+        />
       </div>
     </Container>
   );

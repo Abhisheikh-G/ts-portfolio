@@ -21,6 +21,7 @@
     "react-syntax-highlighter": "^15.4.4",
     "react-use-scroll-indicator": "^1.1.1",
     "remark-code-blocks": "^2.0.1",
+    "remark-gfm": "^3.0.1",
     "sharp": "^0.29.1"
   },
   "scripts": {

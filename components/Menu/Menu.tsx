@@ -58,6 +58,7 @@ type Props = React.PropsWithChildren<{
 
 const Menu: React.FC<Props> = ({ open, setOpen }) => {
   const router = useRouter();
+  console.log(router.asPath);
   const list = () => (
     <Box
       sx={{
@@ -115,7 +116,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             button
             onClick={() => {
               setOpen(!open);
-              router.push("#contact");
+              router.push("/#contact");
             }}
           >
             <ListItemIcon>
@@ -140,7 +141,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             button
             onClick={() => {
               setOpen(!open);
-              router.push("#mywork");
+              router.push("/#mywork");
             }}
           >
             <ListItemIcon>
