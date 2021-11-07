@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
             gutterBottom
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              width: "7em",
+              width: "7.1em",
               mb: "1.5em",
               textTransform: "uppercase",
             }}
