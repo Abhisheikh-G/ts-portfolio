@@ -19,8 +19,8 @@ const styles = {
     my: 2,
     mx: 1,
     p: 2,
-    width: { xs: "100%", sm: 200 },
-    height: { xs: 150, sm: 200 },
+    width: { xs: "100%", sm: 225 },
+    height: { xs: 165, sm: 225 },
   },
   link: {
     textDecoration: "none",
@@ -46,6 +46,10 @@ const Post: React.FC<PostProps> = ({ post }) => {
             },
           },
           WebkitTapHighlightColor: "transparent",
+          justifyContent: {
+            xs: "center",
+            sm: "inherit",
+          },
         }}
       >
         <Box
@@ -73,8 +77,8 @@ const Post: React.FC<PostProps> = ({ post }) => {
           >
             {post.frontmatter.category}
           </Typography>
-          <Typography variant="body1">
-            {post.frontmatter.excerpt.slice(0, 65)}...
+          <Typography variant="body1" textOverflow="ellipsis">
+            {post.frontmatter.excerpt}
           </Typography>
         </Box>
       </Grid>
