@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <Box sx={{ minHeight: "100vh", mt: "10em" }}>{children}</Box>
+      <Box sx={{ minHeight: "100vh", mt: "9em" }}>{children}</Box>
       <Footer />
     </>
   );

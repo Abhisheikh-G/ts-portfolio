@@ -28,7 +28,7 @@ export default function Hero() {
               Hello, my name is
             </Typography>
           </Fade>
-          <Fade in={true} timeout={1500}>
+          <Fade in={true} timeout={1000}>
             <Typography
               variant="h3"
               gutterBottom
@@ -50,7 +50,7 @@ export default function Hero() {
               <Underline />
             </Typography>
           </Fade>
-          <Fade in={true} timeout={2000}>
+          <Fade in={true} timeout={1500}>
             <Typography
               variant="body1"
               component={"p"}
@@ -83,7 +83,7 @@ export default function Hero() {
             </Typography>
           </Fade>
 
-          <Fade in={true} timeout={3000}>
+          <Fade in={true} timeout={2000}>
             <Box display="flex" justifyContent="flex-start">
               <CustomButton onClick={() => router.push("#contact")}>
                 Contact Me

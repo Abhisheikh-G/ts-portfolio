@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { IPost } from "../../@types";
 import Grid from "@mui/material/Grid";
+import { Fade } from "@mui/material";
 
 type PostProps = React.PropsWithChildren<{
   post: IPost;
@@ -32,52 +33,54 @@ const styles = {
 const Post: React.FC<PostProps> = ({ post }) => {
   console.log(post);
   return (
-    <Grid
-      item
-      sx={{
-        ...styles.post,
-        backgroundColor: "black",
-        filter: "brightness(50%)",
-        transition: "all .3s ease-in-out",
-        ":hover": {
-          filter: "brightness(100%)",
-          "> a": {
-            opacity: 1,
-          },
-        },
-      }}
-    >
-      <Box
-        component={Link}
-        href={`/blog/${post.slug}`}
+    <Fade in={true} timeout={750}>
+      <Grid
+        item
         sx={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          opacity: 0.3,
+          ...styles.post,
+          backgroundColor: "black",
+          filter: "brightness(50%)",
           transition: "all .3s ease-in-out",
-          ...styles.link,
+          ":hover": {
+            filter: "brightness(100%)",
+            "> a": {
+              opacity: 1,
+            },
+          },
         }}
       >
-        <Link href={`/blog/${post.slug}`} sx={{ ...styles.link }}>
-          <Typography variant="body2" fontWeight="bold">
-            {post.frontmatter.title}
-          </Typography>
-        </Link>
-        <Typography variant="body2">{post.frontmatter.date}</Typography>
-        <Typography
-          variant="body2"
-          gutterBottom
-          sx={{ color: "secondary.main" }}
+        <Box
+          component={Link}
+          href={`/blog/${post.slug}`}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            opacity: 0.3,
+            transition: "all .3s ease-in-out",
+            ...styles.link,
+          }}
         >
-          {post.frontmatter.category}
-        </Typography>
-        <Typography variant="body1">
-          {post.frontmatter.excerpt.slice(0, 65)}...
-        </Typography>
-      </Box>
-    </Grid>
+          <Link href={`/blog/${post.slug}`} sx={{ ...styles.link }}>
+            <Typography variant="body2" fontWeight="bold">
+              {post.frontmatter.title}
+            </Typography>
+          </Link>
+          <Typography variant="body2">{post.frontmatter.date}</Typography>
+          <Typography
+            variant="body2"
+            gutterBottom
+            sx={{ color: "secondary.main" }}
+          >
+            {post.frontmatter.category}
+          </Typography>
+          <Typography variant="body1">
+            {post.frontmatter.excerpt.slice(0, 65)}...
+          </Typography>
+        </Box>
+      </Grid>
+    </Fade>
   );
 };
 
