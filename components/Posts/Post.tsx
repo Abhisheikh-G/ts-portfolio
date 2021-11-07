@@ -49,6 +49,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
               opacity: 1,
             },
           },
+          WebkitTapHighlightColor: "transparent",
         }}
         onClick={() => router.push(`/blog/${post.slug}`)}
       >
