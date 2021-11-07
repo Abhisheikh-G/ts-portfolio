@@ -60,7 +60,6 @@ type Props = React.PropsWithChildren<{
 
 const Menu: React.FC<Props> = ({ open, setOpen }) => {
   const router = useRouter();
-  console.log(router.asPath);
   const list = () => (
     <Box
       sx={{

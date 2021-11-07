@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import { IPost } from "../../@types";
 import Grid from "@mui/material/Grid";
 import { Fade } from "@mui/material";
+import { useRouter } from "next/router";
 
 type PostProps = React.PropsWithChildren<{
   post: IPost;
@@ -31,7 +32,7 @@ const styles = {
 };
 
 const Post: React.FC<PostProps> = ({ post }) => {
-  console.log(post);
+  const router = useRouter();
   return (
     <Fade in={true} timeout={750}>
       <Grid
@@ -41,17 +42,17 @@ const Post: React.FC<PostProps> = ({ post }) => {
           backgroundColor: "black",
           filter: "brightness(50%)",
           transition: "all .3s ease-in-out",
+          cursor: "pointer",
           ":hover": {
             filter: "brightness(100%)",
-            "> a": {
+            "> div": {
               opacity: 1,
             },
           },
         }}
+        onClick={() => router.push(`/blog/${post.slug}`)}
       >
         <Box
-          component={Link}
-          href={`/blog/${post.slug}`}
           sx={{
             height: "100%",
             display: "flex",
@@ -59,7 +60,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
             alignItems: "flex-start",
             opacity: 0.3,
             transition: "all .3s ease-in-out",
-            ...styles.link,
+            color: "common.white",
           }}
         >
           <Link href={`/blog/${post.slug}`} sx={{ ...styles.link }}>

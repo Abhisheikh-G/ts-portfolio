@@ -100,7 +100,7 @@ export default function Header() {
             <Box sx={{ ...styles.linkContainer }}>
               <Box>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   sx={{
                     ...styles.link,
                   }}
@@ -108,7 +108,7 @@ export default function Header() {
                   CONTACT
                 </Link>
                 <Link
-                  href="#mywork"
+                  href="/#mywork"
                   sx={{
                     ...styles.link,
                   }}
