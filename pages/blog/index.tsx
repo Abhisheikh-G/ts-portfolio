@@ -7,6 +7,10 @@ import Container from "@mui/material/Container";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Head from "next/head";
 import Link from "../../src/Link";
+import Underline from "../../components/Underline/Underline";
+import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
+import Typography from "@mui/material/Typography";
 
 type BlogIndexProps = React.PropsWithChildren<{
   posts: IPost[];
@@ -62,6 +66,28 @@ const Index: React.FC<BlogIndexProps> = ({ posts }) => {
             BLOG
           </Link>
         </Breadcrumbs>
+        <Fade in={true} timeout={1000}>
+          <Typography
+            variant="h3"
+            gutterBottom
+            align="left"
+            fontFamily="Zen Tokyo Zoo"
+            sx={{
+              mt: 2,
+              marginBottom: (theme) => theme.spacing(2),
+              maxWidth: "6em",
+              fontSize: 30,
+            }}
+          >
+            <Box component="span" sx={{ color: "secondary.main" }}>
+              ALL
+            </Box>{" "}
+            <Box component="span" sx={{ color: "custom.yellow" }}>
+              POSTS
+            </Box>
+            <Underline />
+          </Typography>
+        </Fade>
         <Posts posts={posts} />
       </Container>
     </>
