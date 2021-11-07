@@ -46,6 +46,7 @@ const styles = {
     fontSize: {
       xs: "3em",
     },
+
     transition: "all .2s ease-in-out",
     "&:hover": {
       color: "custom.yellow",
@@ -127,12 +128,16 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography variant="body1" fontSize="2em">
+            <Typography
+              variant="body1"
+              fontSize="2em"
+              fontFamily="Zen Tokyo Zoo"
+            >
               CONTACT ME
             </Typography>
           </ListItem>
         </Fade>
-        <Divider />
+        <Divider sx={{ backgroundColor: "secondary.main" }} />
 
         <Fade in={true} timeout={1000}>
           <ListItem
@@ -152,13 +157,17 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography variant="body1" fontSize="2em">
+            <Typography
+              variant="body1"
+              fontSize="2em"
+              fontFamily="Zen Tokyo Zoo"
+            >
               MY WORK
             </Typography>
           </ListItem>
         </Fade>
 
-        <Divider />
+        <Divider sx={{ backgroundColor: "secondary.main" }} />
 
         <Fade in={true} timeout={1000}>
           <ListItem
@@ -178,7 +187,11 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography variant="body1" fontSize="2em">
+            <Typography
+              variant="body1"
+              fontSize="2em"
+              fontFamily="Zen Tokyo Zoo"
+            >
               BLOG
             </Typography>
           </ListItem>
