@@ -4,20 +4,17 @@ import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Certifications from "../components/Certifications/Certifications";
 import Skills from "../components/Skills/Skills";
-import Footer from "../components/Footer/Footer";
 import { GetStaticProps } from "next";
 
 export default function Index(props: any) {
   const { projects, skills, certificates } = props;
   return (
     <Box>
-      <Box sx={{ mt: "6em" }} />
       <Hero />
       <Skills skills={skills} />
       <Certifications certificates={certificates} />
       <Projects projects={projects} />
       <Contact />
-      <Footer />
     </Box>
   );
 }

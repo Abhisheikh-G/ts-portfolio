@@ -15,16 +15,11 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "../../src/Link";
 import Underline from "../Underline/Underline";
+import { IProject } from "../../@types";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  work: string;
-  projectLink: string;
-}
+type ProjectProps = React.PropsWithChildren<IProject>;
 
-export function Project(props: Project) {
+export const Project: React.FC<ProjectProps> = (props) => {
   const { title, description, work, image, projectLink } = props;
   const [expanded, setExpanded] = useState(false);
 
@@ -114,10 +109,10 @@ export function Project(props: Project) {
       </Card>
     </Box>
   );
-}
+};
 
 interface Projects {
-  projects: Array<Project>;
+  projects: IProject[];
 }
 
 export default function Projects(props: Projects) {

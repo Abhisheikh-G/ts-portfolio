@@ -6,18 +6,14 @@ import React from "react";
 import Container from "@mui/material/Container";
 import ReactMarkdown from "react-markdown";
 import { useTheme } from "@mui/material";
-import remarkCb from "remark-code-blocks";
 import remarkGfm from "remark-gfm";
+import { IFrontmatter } from "../../@types";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "../../src/Link";
+import { useRouter } from "next/router";
 
 type Props = React.PropsWithChildren<{
-  frontmatter: {
-    title: string;
-    category: string;
-    date: string;
-    cover_image: string;
-    author: string;
-    author_image: string;
-  };
+  frontmatter: IFrontmatter;
   content: string;
 }>;
 
@@ -29,9 +25,27 @@ const styles = {
 
 const Posts: React.FC<Props> = ({ frontmatter, content }) => {
   console.log(frontmatter);
+  const router = useRouter();
+
   const theme = useTheme();
   return (
-    <Container maxWidth="lg" sx={{ mt: 16 }}>
+    <Container maxWidth="md">
+      <Breadcrumbs sx={{ color: "secondary.main", mb: 2 }}>
+        <Link underline="hover" color="inherit" href="/">
+          HOME
+        </Link>
+        <Link underline="hover" color="inherit" href="/blog">
+          BLOG
+        </Link>
+        <Link
+          underline="hover"
+          color="inherit"
+          href={router.asPath}
+          sx={{ textTransform: "uppercase" }}
+        >
+          {frontmatter.title}
+        </Link>
+      </Breadcrumbs>
       <div style={{ ...styles.markdown }}>
         <ReactMarkdown
           children={content}
@@ -48,7 +62,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
             ),
             code: (props) => <code {...props} />,
           }}
-          remarkPlugins={[remarkCb, remarkGfm]}
+          remarkPlugins={[remarkGfm]}
         />
       </div>
     </Container>
@@ -66,10 +80,7 @@ export const getStaticProps: GetStaticProps = async (
     path.join("posts", slug + ".md"),
     "utf-8"
   );
-
   const { data: frontmatter, content } = matter(markdownWithMeta);
-
-  console.log(frontmatter);
   return {
     props: {
       frontmatter,
@@ -81,15 +92,11 @@ export const getStaticProps: GetStaticProps = async (
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));
-
   const paths = files.map((filename) => ({
     params: {
       slug: filename.replace(".md", ""),
     },
   }));
-
-  console.log(paths);
-
   return {
     paths,
     fallback: false,

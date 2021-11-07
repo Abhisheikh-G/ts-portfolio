@@ -14,6 +14,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Link from "../../src/Link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import CreateIcon from "@mui/icons-material/Create";
+
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
@@ -108,7 +110,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
 
         <Underline />
 
-        <Fade in={true} timeout={1500}>
+        <Fade in={true} timeout={1000}>
           <ListItem
             sx={{
               ...styles.link,
@@ -133,7 +135,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
         </Fade>
         <Divider />
 
-        <Fade in={true} timeout={2000}>
+        <Fade in={true} timeout={1000}>
           <ListItem
             sx={{
               ...styles.link,
@@ -156,12 +158,39 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             </Typography>
           </ListItem>
         </Fade>
+
+        <Divider />
+
+        <Fade in={true} timeout={1000}>
+          <ListItem
+            sx={{
+              ...styles.link,
+            }}
+            button
+            onClick={() => {
+              setOpen(!open);
+              router.push("/blog");
+            }}
+          >
+            <ListItemIcon>
+              <CreateIcon
+                sx={{
+                  color: "secondary.main",
+                }}
+              />
+            </ListItemIcon>
+            <Typography variant="body1" fontSize="2em">
+              BLOG
+            </Typography>
+          </ListItem>
+        </Fade>
+
         <Underline />
       </List>
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box m={2}>
-          <Fade in={true} timeout={2500}>
+          <Fade in={true} timeout={1000}>
             <Link
               href="https://github.com/Abhisheikh-G"
               target="_blank"
@@ -174,7 +203,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
           </Fade>
         </Box>
         <Box m={2}>
-          <Fade in={true} timeout={3000}>
+          <Fade in={true} timeout={1000}>
             <Link
               href="https://www.linkedin.com/in/abhisheikh-gill/"
               target="_blank"

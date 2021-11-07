@@ -17,13 +17,12 @@ export default function Hero() {
           textTransform: "uppercase",
           color: "primary.contrastText",
           pb: 4,
-          pt: 2,
           height: "auto",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Container maxWidth="md" sx={{ mt: "2em" }}>
+        <Container maxWidth="md">
           <Fade in={true} timeout={500}>
             <Typography variant="h5" align="left">
               Hello, my name is

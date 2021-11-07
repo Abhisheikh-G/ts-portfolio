@@ -7,7 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
-import Header from "../components/Header/Header";
+import Layout from "../components/Layout/Layout";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -82,10 +82,11 @@ export default function MyApp(props: MyAppProps) {
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         </Head>
         <ThemeProvider theme={theme}>
-          <Header />
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Component {...pageProps} />
+          <Layout>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Component {...pageProps} />
+          </Layout>
         </ThemeProvider>
       </CacheProvider>
     </StylesProvider>

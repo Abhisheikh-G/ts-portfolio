@@ -115,6 +115,14 @@ export default function Header() {
                 >
                   MY WORK
                 </Link>
+                <Link
+                  href="/blog"
+                  sx={{
+                    ...styles.link,
+                  }}
+                >
+                  BLOG
+                </Link>
               </Box>
 
               <Box
