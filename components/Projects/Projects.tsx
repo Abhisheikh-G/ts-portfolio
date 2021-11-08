@@ -35,7 +35,6 @@ export const Project: React.FC<ProjectProps> = (props) => {
           borderRadius: 0,
           boxShadow: 0,
           maxWidth: 400,
-          minHeight: "15em",
         }}
         raised={false}
       >
@@ -59,7 +58,12 @@ export const Project: React.FC<ProjectProps> = (props) => {
             variant="body1"
             color="textSecondary"
             component="p"
-            maxHeight="3em"
+            sx={{
+              height: {
+                xs: "4.5em",
+                sm: "3em",
+              },
+            }}
           >
             {description}
           </Typography>
