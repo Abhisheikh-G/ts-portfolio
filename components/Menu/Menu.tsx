@@ -77,7 +77,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
       >
         <ListItem
           sx={{
-            height: 150,
+            height: 175,
             justifyContent: "center",
             display: "flex",
           }}
@@ -100,8 +100,8 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                   src="/logo.svg"
                   alt="logo"
                   priority
-                  height={150}
-                  width={150}
+                  height={135}
+                  width={135}
                 />
               </Link>
             </Fade>
