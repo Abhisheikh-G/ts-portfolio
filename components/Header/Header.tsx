@@ -92,8 +92,8 @@ export default function Header() {
                   priority
                   src="/logo.svg"
                   alt="logo"
-                  height={100}
-                  width={100}
+                  height={85}
+                  width={85}
                 />
               </Link>
             </Box>
