@@ -100,8 +100,8 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                   src="/logo.svg"
                   alt="logo"
                   priority
-                  height={125}
-                  width={125}
+                  height={150}
+                  width={150}
                 />
               </Link>
             </Fade>
