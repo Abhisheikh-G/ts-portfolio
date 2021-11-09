@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
-import CustomButton from "../CustomButton/CustomButton";
+// import CustomButton from "../CustomButton/CustomButton";
 import React, { FormEvent, useState, useCallback, useEffect } from "react";
 import {
   useGoogleReCaptcha,
@@ -17,20 +17,20 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    let res = await fetch("/api/mail", {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        subject,
-        email,
-        message,
-      }),
-    });
+  // const handleSubmit = async (e: FormEvent) => {
+  //   e.preventDefault();
+  //   let res = await fetch("/api/mail", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       name,
+  //       subject,
+  //       email,
+  //       message,
+  //     }),
+  //   });
 
-    console.log(res);
-  };
+  //   console.log(res);
+  // };
   return (
     <React.Fragment>
       <Box
