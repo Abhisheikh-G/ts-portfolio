@@ -9,10 +9,22 @@ import React, { FormEvent, useState } from "react";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    let res = await fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        subject,
+        email,
+        message,
+      }),
+    });
+
+    console.log(res);
   };
   return (
     <React.Fragment>
@@ -92,6 +104,31 @@ const Contact: React.FC = () => {
             />
 
             <FormLabel
+              htmlFor="subject"
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
+              focused
+              required
+            >
+              Subject
+            </FormLabel>
+            <TextField
+              sx={{
+                width: "100%",
+                margin: 1,
+              }}
+              type="text"
+              id="subject"
+              value={subject}
+              onChange={({ target: { value } }) => setSubject(value)}
+              placeholder="Enter your subject here.."
+              name="subject"
+              required
+            />
+
+            <FormLabel
               htmlFor="email"
               sx={{
                 width: "100%",
@@ -115,6 +152,7 @@ const Contact: React.FC = () => {
               name="email"
               required
             />
+
             <FormLabel
               htmlFor="message"
               sx={{
