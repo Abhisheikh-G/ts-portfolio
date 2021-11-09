@@ -18,7 +18,6 @@
     "nodemailer": "^6.7.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-google-recaptcha-v3": "^1.9.7",
     "react-markdown": "^7.1.0",
     "react-syntax-highlighter": "^15.4.4",
     "react-use-scroll-indicator": "^1.1.1",

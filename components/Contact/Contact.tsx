@@ -4,33 +4,28 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
-// import CustomButton from "../CustomButton/CustomButton";
-import React, { useState, useCallback, useEffect } from "react";
-import {
-  useGoogleReCaptcha,
-  GoogleReCaptchaProvider,
-} from "react-google-recaptcha-v3";
+import CustomButton from "../CustomButton/CustomButton";
+import React, { FormEvent, useState } from "react";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    let res = await fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        subject,
+        email,
+        message,
+      }),
+    });
 
-  // const handleSubmit = async (e: FormEvent) => {
-  //   e.preventDefault();
-  //   let res = await fetch("/api/mail", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       name,
-  //       subject,
-  //       email,
-  //       message,
-  //     }),
-  //   });
-
-  //   console.log(res);
-  // };
+    console.log(res);
+  };
   return (
     <React.Fragment>
       <Box
@@ -81,8 +76,7 @@ const Contact: React.FC = () => {
               maxWidth: 500,
             }}
             boxShadow={8}
-            // onSubmit={handleSubmit}
-            onSubmit={(e: any) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <FormLabel
               htmlFor="name"
@@ -185,8 +179,7 @@ const Contact: React.FC = () => {
               required
             />
 
-            {/* <CustomButton type="submit">Submit</CustomButton> */}
-            <YourReCaptchaComponent />
+            <CustomButton type="submit">Submit</CustomButton>
           </Box>
         </Container>
       </Box>
@@ -194,42 +187,4 @@ const Contact: React.FC = () => {
   );
 };
 
-const YourReCaptchaComponent = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  console.log("Execute recaptcha:", executeRecaptcha);
-  // Create an event handler so you can call the verification on button click event or form submit
-  const handleReCaptchaVerify = useCallback(async () => {
-    if (!executeRecaptcha) {
-      console.log("Execute recaptcha not yet available");
-      return;
-    }
-
-    const token = await executeRecaptcha("yourAction");
-    // Do whatever you want with the token
-    console.log(token);
-  }, []);
-
-  // You can use useEffect to trigger the verification as soon as the component being loaded
-  useEffect(() => {
-    handleReCaptchaVerify();
-  }, [handleReCaptchaVerify]);
-
-  return <button onClick={handleReCaptchaVerify}>Verify recaptcha</button>;
-};
-
-export default function SignupPage(): React.ReactElement {
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
-      language="english"
-      scriptProps={{
-        async: true, // optional, default to false,
-        defer: false, // optional, default to false
-        appendTo: "head", // optional, default to "head", can be "head" or "body",
-        nonce: undefined, // optional, default undefined
-      }}
-    >
-      <Contact />
-    </GoogleReCaptchaProvider>
-  );
-}
+export default Contact;
