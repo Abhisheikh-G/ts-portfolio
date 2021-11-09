@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
+
 import Layout from "../components/Layout/Layout";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -22,6 +23,7 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
+  console.log(process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT);
   return (
     <StylesProvider generateClassName={generateClassName}>
       <CacheProvider value={emotionCache}>

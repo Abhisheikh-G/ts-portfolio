@@ -6,7 +6,7 @@ const CustomButton = ({
   type,
 }: {
   children: string;
-  onClick?: () => Promise<boolean>;
+  onClick?: () => any;
   type?: "button" | "submit";
 }) => {
   return (
