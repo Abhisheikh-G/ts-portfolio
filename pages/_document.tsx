@@ -3,7 +3,6 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 export default class MyDocument extends Document {
   render() {
@@ -66,19 +65,8 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         </Head>
         <body>
-          <GoogleReCaptchaProvider
-            reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
-            language="english"
-            scriptProps={{
-              async: true, // optional, default to false,
-              defer: false, // optional, default to false
-              appendTo: "head", // optional, default to "head", can be "head" or "body",
-              nonce: undefined, // optional, default undefined
-            }}
-          >
-            <Main />
-            <NextScript />
-          </GoogleReCaptchaProvider>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
