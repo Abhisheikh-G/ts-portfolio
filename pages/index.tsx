@@ -2,10 +2,11 @@ import Box from "@mui/material/Box";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
 import Certifications from "../components/Certifications/Certifications";
-import Skills from "../components/Skills/Skills";
 import dynamic from "next/dynamic";
 import { GetStaticProps } from "next";
-const ContactDynamic = dynamic(() => import("../components/Contact/Contact"));
+const Contact = dynamic(() => import("../components/Contact/Contact"));
+const Skills = dynamic(() => import("../components/Skills/Skills"));
+
 export default function Index(props: any) {
   const { projects, skills, certificates } = props;
   return (
@@ -14,7 +15,7 @@ export default function Index(props: any) {
       <Skills skills={skills} />
       <Certifications certificates={certificates} />
       <Projects projects={projects} />
-      <ContactDynamic />
+      <Contact />
     </Box>
   );
 }

@@ -138,6 +138,7 @@ export default function Header() {
                   href="https://github.com/Abhisheikh-G"
                   target="_blank"
                   rel="noopener"
+                  aria-label="Link to Abhisheikh's Git Hub"
                 >
                   <IconButton>
                     <GitHubIcon
@@ -153,6 +154,7 @@ export default function Header() {
                   href="https://www.linkedin.com/in/abhisheikh-gill/"
                   target="_blank"
                   rel="noopener"
+                  aria-label="Link to Abhisheikh's Linked In"
                 >
                   <IconButton>
                     <LinkedInIcon
