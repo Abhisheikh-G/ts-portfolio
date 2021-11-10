@@ -123,11 +123,10 @@ const Contact: React.FC = () => {
               backgroundColor: "common.white",
               zIndex: 10,
               px: {
-                lg: 6,
-                xs: 4,
+                lg: 5,
+                xs: 3,
               },
               py: {
-                lg: 4,
                 xs: 3,
               },
               margin: "auto",
@@ -137,14 +136,22 @@ const Contact: React.FC = () => {
             onSubmit={handleSubmit}
           >
             {error && (
-              <Alert severity="error" onClose={() => setError(false)}>
+              <Alert
+                severity="error"
+                onClose={() => setError(false)}
+                sx={{ mb: 1 }}
+              >
                 <AlertTitle>Error</AlertTitle>
                 {responseMessage}
               </Alert>
             )}
 
             {success && (
-              <Alert severity="success" onClose={() => setSuccess(false)}>
+              <Alert
+                severity="success"
+                onClose={() => setSuccess(false)}
+                sx={{ mb: 1 }}
+              >
                 <AlertTitle>Success</AlertTitle>
                 {responseMessage}
               </Alert>
@@ -154,7 +161,6 @@ const Contact: React.FC = () => {
               htmlFor="name"
               sx={{
                 width: "100%",
-                margin: 1,
               }}
               required
               focused
@@ -179,7 +185,6 @@ const Contact: React.FC = () => {
               htmlFor="subject"
               sx={{
                 width: "100%",
-                margin: 1,
               }}
               focused
               required
@@ -195,7 +200,7 @@ const Contact: React.FC = () => {
               id="subject"
               value={subject}
               onChange={({ target: { value } }) => setSubject(value)}
-              placeholder="Enter your subject here.."
+              placeholder="Enter a subject for your message.."
               name="subject"
               required
             />
@@ -204,7 +209,6 @@ const Contact: React.FC = () => {
               htmlFor="email"
               sx={{
                 width: "100%",
-                margin: 1,
               }}
               focused
               required
@@ -229,7 +233,6 @@ const Contact: React.FC = () => {
               htmlFor="message"
               sx={{
                 width: "100%",
-                my: 2,
               }}
               focused
               required
@@ -241,7 +244,7 @@ const Contact: React.FC = () => {
               rows={5}
               sx={{
                 width: "100%",
-                mb: 2,
+                m: 1,
               }}
               id="message"
               name="message"
