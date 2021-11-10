@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
-import Contact from "../components/Contact/Contact";
 import Certifications from "../components/Certifications/Certifications";
 import Skills from "../components/Skills/Skills";
 import dynamic from "next/dynamic";
