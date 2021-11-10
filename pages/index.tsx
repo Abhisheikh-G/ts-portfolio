@@ -4,8 +4,9 @@ import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Certifications from "../components/Certifications/Certifications";
 import Skills from "../components/Skills/Skills";
+import dynamic from "next/dynamic";
 import { GetStaticProps } from "next";
-
+const ContactDynamic = dynamic(() => import("../components/Contact/Contact"));
 export default function Index(props: any) {
   const { projects, skills, certificates } = props;
   return (
@@ -14,7 +15,7 @@ export default function Index(props: any) {
       <Skills skills={skills} />
       <Certifications certificates={certificates} />
       <Projects projects={projects} />
-      <Contact />
+      <ContactDynamic />
     </Box>
   );
 }
