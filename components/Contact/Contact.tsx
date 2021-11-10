@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
 import CustomButton from "../CustomButton/CustomButton";
+import CircularProgress from "@mui/material/CircularProgress";
+
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import React, { FormEvent, useState, useRef } from "react";
 import { Alert, AlertTitle } from "@mui/material";
@@ -17,7 +19,14 @@ const Contact: React.FC = () => {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
+  const [captchaResponse, setCaptchaResponse] = useState({
+    challenge_ts: "",
+    credit: false,
+    hostname: "",
+    success: false,
+  });
   let captchaRef = useRef(null);
 
   const handleVerificationSuccess = async (token: any) => {
@@ -25,6 +34,8 @@ const Contact: React.FC = () => {
       method: "POST",
       body: JSON.stringify({ token }),
     });
+    const captchaRes = await res.json();
+    setCaptchaResponse(captchaRes);
     if (res.status === 200) {
       setVerified(true);
     } else {
@@ -45,11 +56,14 @@ const Contact: React.FC = () => {
       setError(true);
     } else {
       if (
-        name.length > 0 &&
-        subject.length > 0 &&
-        email.length > 0 &&
-        message.length > 0
+        name.length > 1 ||
+        subject.length > 1 ||
+        email.length > 1 ||
+        message.length > 1 ||
+        !captchaResponse.success
       ) {
+        setLoading(true);
+
         let mailRes = await fetch("/api/mail", {
           method: "POST",
           body: JSON.stringify({
@@ -57,10 +71,12 @@ const Contact: React.FC = () => {
             subject,
             email,
             message,
+            token: captchaResponse,
           }),
         });
 
         if (mailRes.status === 200) {
+          setLoading(false);
           setVerified(false);
           setSuccess(true);
           setResponseMessage(
@@ -70,12 +86,19 @@ const Contact: React.FC = () => {
           setEmail("");
           setMessage("");
           setSubject("");
+          setCaptchaResponse({
+            challenge_ts: "",
+            credit: false,
+            hostname: "",
+            success: false,
+          });
 
           if (captchaRef !== null) {
             // @ts-ignore
             captchaRef?.current?.resetCaptcha();
           }
         } else {
+          setLoading(false);
           setError(true);
           setResponseMessage(
             "There was a problem sending this message. Please try again or reach out to me on LinkedIn."
@@ -157,6 +180,12 @@ const Contact: React.FC = () => {
               </Alert>
             )}
 
+            {loading && (
+              <Box sx={{ display: "flex" }}>
+                <CircularProgress />
+              </Box>
+            )}
+
             <FormLabel
               htmlFor="name"
               sx={{
@@ -220,7 +249,7 @@ const Contact: React.FC = () => {
                 width: "100%",
                 margin: 1,
               }}
-              type="text"
+              type="email"
               id="email"
               value={email}
               onChange={({ target: { value } }) => setEmail(value)}
@@ -241,7 +270,7 @@ const Contact: React.FC = () => {
             </FormLabel>
             <TextField
               multiline
-              rows={5}
+              rows={4}
               sx={{
                 width: "100%",
                 m: 1,
@@ -250,17 +279,27 @@ const Contact: React.FC = () => {
               name="message"
               value={message}
               onChange={({ target: { value } }) => setMessage(value)}
-              placeholder="Enter your message here.."
+              placeholder="Enter a brief message here.."
               required
             />
             <CustomButton type="submit">SUBMIT</CustomButton>
-            <Box height={25} />
-
+            <Box height={16} />
             <HCaptcha
               ref={captchaRef}
               theme="dark"
               sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_CLIENT!}
               onVerify={(token: string) => handleVerificationSuccess(token)}
+              onExpire={() => {
+                setVerified(false);
+                setCaptchaResponse({
+                  challenge_ts: "",
+                  credit: false,
+                  hostname: "",
+                  success: false,
+                });
+                //@ts-ignore
+                captchaRef?.current?.resetCaptcha();
+              }}
             />
           </Box>
         </Container>

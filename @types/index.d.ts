@@ -23,3 +23,16 @@ export interface IProject {
   work: string;
   projectLink: string;
 }
+
+export interface IEmail {
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
+  token: {
+    challenge_ts: string;
+    credit: boolean;
+    hostname: string;
+    success: true;
+  };
+}

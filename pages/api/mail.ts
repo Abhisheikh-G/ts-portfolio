@@ -1,19 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer, { Transporter } from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
-
-interface IEmail {
-  name: string;
-  subject: string;
-  email: string;
-  message: string;
-}
+import { IEmail } from "../../@types";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     try {
-      console.log(req.body);
-      const { name, subject, email, message } = JSON.parse(req.body) as IEmail;
+      const { name, subject, email, message, token } = JSON.parse(
+        req.body
+      ) as IEmail;
+      if (!token || !token.success) {
+        res.status(404).json({
+          err: true,
+          msg: "Please fill out the captcha again to prove you are human - thanks!",
+        });
+      }
+      if (!name || !subject || !email || !message) {
+        res.status(404).json({
+          msg: "Unable to send your message, please ensure all fields are filled out.",
+          err: true,
+        });
+      }
+
       let transporter: Transporter = nodemailer.createTransport({
         host: "smtp.zoho.com",
         port: 465,
@@ -32,12 +40,16 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       let result: SMTPTransport.SentMessageInfo = await transporter.sendMail(
         options
       );
-
       console.log(result);
-
-      res.status(200).end();
+      res.status(200).json({
+        msg: "Message sent successfully, I will reach out to you soon",
+        succcess: true,
+      });
     } catch (error) {
-      res.status(400).end();
+      res.status(400).json({
+        msg: "Something went wrong.. Please try again or contact me on LinkedIn - thanks!",
+        err: true,
+      });
     }
   }
 }

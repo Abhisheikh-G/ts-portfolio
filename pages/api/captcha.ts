@@ -12,8 +12,9 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         body: `secret=${process.env.HCAPTCHA_SECRET}&response=${token}`,
       });
       const verifyData = await verifyResponse.json();
+
       if (verifyData.success) {
-        res.status(200).end();
+        res.status(200).json({ ...verifyData });
       } else {
         res.status(400).end();
       }
