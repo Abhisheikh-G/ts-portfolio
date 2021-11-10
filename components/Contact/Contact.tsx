@@ -6,10 +6,10 @@ import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
 import CustomButton from "../CustomButton/CustomButton";
 import CircularProgress from "@mui/material/CircularProgress";
-
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import dynamic from "next/dynamic";
 import React, { FormEvent, useState, useRef } from "react";
 import { Alert, AlertTitle } from "@mui/material";
+const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"));
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
@@ -285,6 +285,7 @@ const Contact: React.FC = () => {
             <CustomButton type="submit">SUBMIT</CustomButton>
             <Box height={16} />
             <HCaptcha
+              //@ts-ignore
               ref={captchaRef}
               theme="dark"
               sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_CLIENT!}
