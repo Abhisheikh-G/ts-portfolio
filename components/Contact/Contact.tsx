@@ -5,26 +5,84 @@ import Typography from "@mui/material/Typography";
 import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
 import CustomButton from "../CustomButton/CustomButton";
-import React, { FormEvent, useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import React, { FormEvent, useState, useRef } from "react";
+import { Alert, AlertTitle } from "@mui/material";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
+  const [verified, setVerified] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+  let captchaRef = useRef(null);
+
+  const handleVerificationSuccess = async (token: any) => {
+    const res = await fetch("/api/captcha", {
+      method: "POST",
+      body: JSON.stringify({ token }),
+    });
+    if (res.status === 200) {
+      setVerified(true);
+    } else {
+      setError(true);
+      setResponseMessage(
+        "There was a problem verifying your captcha. Please try again or reach out to me on LinkedIn."
+      );
+    }
+  };
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    let res = await fetch("/api/mail", {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        subject,
-        email,
-        message,
-      }),
-    });
+    setError(false);
+    setSuccess(false);
+    if (!verified) {
+      setResponseMessage(
+        "You must complete the captcha before your message can be sent."
+      );
+      setError(true);
+    } else {
+      if (
+        name.length > 0 &&
+        subject.length > 0 &&
+        email.length > 0 &&
+        message.length > 0
+      ) {
+        let mailRes = await fetch("/api/mail", {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            subject,
+            email,
+            message,
+          }),
+        });
 
-    console.log(res);
+        if (mailRes.status === 200) {
+          setVerified(false);
+          setSuccess(true);
+          setResponseMessage(
+            "Message sent successfully, I will get back to you as soon as possible"
+          );
+          setName("");
+          setEmail("");
+          setMessage("");
+          setSubject("");
+
+          if (captchaRef !== null) {
+            // @ts-ignore
+            captchaRef?.current?.resetCaptcha();
+          }
+        } else {
+          setError(true);
+          setResponseMessage(
+            "There was a problem sending this message. Please try again or reach out to me on LinkedIn."
+          );
+        }
+      }
+    }
   };
   return (
     <React.Fragment>
@@ -78,6 +136,20 @@ const Contact: React.FC = () => {
             boxShadow={8}
             onSubmit={handleSubmit}
           >
+            {error && (
+              <Alert severity="error" onClose={() => setError(false)}>
+                <AlertTitle>Error</AlertTitle>
+                {responseMessage}
+              </Alert>
+            )}
+
+            {success && (
+              <Alert severity="success" onClose={() => setSuccess(false)}>
+                <AlertTitle>Success</AlertTitle>
+                {responseMessage}
+              </Alert>
+            )}
+
             <FormLabel
               htmlFor="name"
               sx={{
@@ -178,8 +250,15 @@ const Contact: React.FC = () => {
               placeholder="Enter your message here.."
               required
             />
+            <CustomButton type="submit">SUBMIT</CustomButton>
+            <Box height={25} />
 
-            <CustomButton type="submit">Submit</CustomButton>
+            <HCaptcha
+              ref={captchaRef}
+              theme="dark"
+              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_CLIENT!}
+              onVerify={(token: string) => handleVerificationSuccess(token)}
+            />
           </Box>
         </Container>
       </Box>
