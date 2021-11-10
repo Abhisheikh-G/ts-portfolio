@@ -3,12 +3,21 @@ import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
 import Certifications from "../components/Certifications/Certifications";
 import dynamic from "next/dynamic";
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
+import projectsJSON from "../public/projects.json";
+import skillsJSON from "../public/skills.json";
+import certificatesJSON from "../public/certificates.json";
+
 const Contact = dynamic(() => import("../components/Contact/Contact"));
 const Skills = dynamic(() => import("../components/Skills/Skills"));
 
-export default function Index(props: any) {
-  const { projects, skills, certificates } = props;
+const { projects } = projectsJSON;
+const { skills } = skillsJSON;
+const { certificates } = certificatesJSON;
+
+export default function Index() {
+  // const { projects, skills, certificates } = props;
+  // console.log(p);
   return (
     <Box>
       <Hero />
@@ -20,18 +29,18 @@ export default function Index(props: any) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (_context) => {
-  let { projects } = await import("../public/projects.json");
+// export const getStaticProps: GetStaticProps = async (_context) => {
+//   let { projects } = await import("../public/projects.json");
 
-  let { skills } = await import("../public/skills.json");
+//   let { skills } = await import("../public/skills.json");
 
-  let { certificates } = await import("../public/certificates.json");
+//   let { certificates } = await import("../public/certificates.json");
 
-  return {
-    props: {
-      projects,
-      skills,
-      certificates,
-    },
-  };
-};
+//   return {
+//     props: {
+//       projects,
+//       skills,
+//       certificates,
+//     },
+//   };
+// };
