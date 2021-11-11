@@ -88,11 +88,8 @@ const Contact: React.FC = () => {
             hostname: "",
             success: false,
           });
-
-          if (captchaRef !== null) {
-            // @ts-ignore
-            captchaRef?.current?.resetCaptcha();
-          }
+          // @ts-ignore
+          captchaRef?.current?.resetCaptcha();
         } else {
           setLoading(false);
           setError(true);
