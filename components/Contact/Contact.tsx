@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
         id="contact"
         component="section"
         sx={{
-          py: 8,
+          pb: 4,
         }}
       >
         <Container maxWidth="md">
