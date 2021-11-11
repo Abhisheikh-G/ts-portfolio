@@ -6,10 +6,9 @@ import FormLabel from "@mui/material/FormLabel";
 import Underline from "../Underline/Underline";
 import CustomButton from "../CustomButton/CustomButton";
 import CircularProgress from "@mui/material/CircularProgress";
-import dynamic from "next/dynamic";
 import React, { FormEvent, useState, useRef } from "react";
 import { Alert, AlertTitle } from "@mui/material";
-const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"));
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
