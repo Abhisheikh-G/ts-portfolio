@@ -9,12 +9,19 @@ function SkillBlock(props: ISkill) {
   const { imgSrc, text, alt, color, textColor } = props;
   const theme = useTheme();
   return (
-    <>
+    <Box
+      sx={{
+        m: {
+          xs: 1.5,
+          sm: 2,
+        },
+      }}
+    >
       <Box
         sx={{
-          m: {
-            xs: 1.5,
-            sm: 2,
+          mb: {
+            xs: 0.5,
+            sm: 1,
           },
           height: {
             xs: "5em",
@@ -61,7 +68,7 @@ function SkillBlock(props: ISkill) {
       >
         {text}
       </Typography>
-    </>
+    </Box>
   );
 }
 
