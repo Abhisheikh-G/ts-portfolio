@@ -9,41 +9,59 @@ function SkillBlock(props: ISkill) {
   const { imgSrc, text, alt, color, textColor } = props;
   const theme = useTheme();
   return (
-    <Box
-      sx={{
-        margin: theme.spacing(2),
-        height: "7em",
-        width: "7em",
-        borderRadius: theme.spacing(2),
+    <>
+      <Box
+        sx={{
+          m: {
+            xs: 1.5,
+            sm: 2,
+          },
+          height: {
+            xs: "5em",
+            sm: "6em",
+          },
+          width: {
+            xs: "5em",
+            sm: "6em",
+          },
+          borderRadius: theme.spacing(2),
 
-        filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
-        transition: theme.transitions.create(["all"], {
-          duration: theme.transitions.duration.complex,
-        }),
-        "&:hover": {
-          borderRadius: theme.spacing(20),
-          filter: "none",
+          filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
+          transition: theme.transitions.create(["all"], {
+            duration: theme.transitions.duration.complex,
+          }),
+          "&:hover": {
+            borderRadius: theme.spacing(20),
+            filter: "none",
+            backgroundColor: `${color}`,
+          },
+          color: `${textColor}`,
           backgroundColor: `${color}`,
-        },
-        color: `${textColor}`,
-        backgroundColor: `${color}`,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Image
-        priority={true}
-        src={`/${imgSrc}`}
-        height={48}
-        width={48}
-        alt={`${alt}`}
-      />
-      <Typography variant="body2" component={"p"}>
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          priority={true}
+          src={`/${imgSrc}`}
+          height={48}
+          width={48}
+          alt={`${alt}`}
+        />
+      </Box>
+      <Typography
+        variant="body2"
+        component={"p"}
+        align="center"
+        sx={{
+          color: "secondary.main",
+        }}
+      >
         {text}
       </Typography>
-    </Box>
+    </>
   );
 }
 

@@ -13,7 +13,7 @@
       "hover": "#ffee58",
       "text": "JavaScript",
       "textColor": "#000",
-      "imgSrc": "javascript.png",
+      "imgSrc": "javascript.svg",
       "alt": "JavaScript logo"
     },
     {
@@ -51,10 +51,10 @@
     {
       "color": "#fff",
       "hover": "#bdbdbd",
-      "text": "Git",
+      "text": "Github",
       "textColor": "#000",
-      "imgSrc": "git.png",
-      "alt": "Git logo"
+      "imgSrc": "github.svg",
+      "alt": "Github logo"
     },
     {
       "color": "#66bb6a",
