@@ -26,7 +26,6 @@ export interface IProject {
 
 export interface IEmail {
   name: string;
-  subject: string;
   email: string;
   message: string;
   token: {
@@ -35,4 +34,12 @@ export interface IEmail {
     hostname: string;
     success: true;
   };
+}
+
+export interface ISkill {
+  imgSrc: string;
+  text: string;
+  alt: string;
+  color: string;
+  textColor: string;
 }

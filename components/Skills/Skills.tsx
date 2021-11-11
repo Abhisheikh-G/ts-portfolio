@@ -3,16 +3,9 @@ import { useTheme } from "@mui/styles";
 import Underline from "../Underline/Underline";
 import Image from "next/image";
 import React from "react";
+import { ISkill } from "../../@types";
 
-interface SkillBlock {
-  imgSrc: string;
-  text: string;
-  alt: string;
-  color: string;
-  textColor: string;
-}
-
-function SkillBlock(props: SkillBlock) {
+function SkillBlock(props: ISkill) {
   const { imgSrc, text, alt, color, textColor } = props;
   const theme = useTheme();
   return (
@@ -55,7 +48,7 @@ function SkillBlock(props: SkillBlock) {
 }
 
 interface SkillsProps {
-  skills: Array<SkillBlock>;
+  skills: Array<ISkill>;
 }
 
 export default function Skills(props: SkillsProps) {

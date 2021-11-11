@@ -3,14 +3,12 @@ import { useTheme } from "@mui/styles";
 
 const Underline = () => {
   const theme = useTheme();
-  // const classes = useStyles();
   return (
     <>
       <Box
         sx={{
           width: "inherit",
           height: 1.1,
-
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
       />
@@ -19,7 +17,6 @@ const Underline = () => {
           width: "inherit",
           height: 1.1,
           my: "1px",
-
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
       />
@@ -27,7 +24,6 @@ const Underline = () => {
         sx={{
           width: "inherit",
           height: 1.1,
-
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
       />

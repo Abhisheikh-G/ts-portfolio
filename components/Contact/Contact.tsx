@@ -13,7 +13,6 @@ const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"));
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
-  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [verified, setVerified] = useState(false);
@@ -57,7 +56,6 @@ const Contact: React.FC = () => {
     } else {
       if (
         name.length > 1 ||
-        subject.length > 1 ||
         email.length > 1 ||
         message.length > 1 ||
         !captchaResponse.success
@@ -68,7 +66,6 @@ const Contact: React.FC = () => {
           method: "POST",
           body: JSON.stringify({
             name,
-            subject,
             email,
             message,
             token: captchaResponse,
@@ -85,7 +82,6 @@ const Contact: React.FC = () => {
           setName("");
           setEmail("");
           setMessage("");
-          setSubject("");
           setCaptchaResponse({
             challenge_ts: "",
             credit: false,
@@ -207,30 +203,6 @@ const Contact: React.FC = () => {
               value={name}
               onChange={({ target: { value } }) => setName(value)}
               placeholder="Enter your name here.."
-              required
-            />
-
-            <FormLabel
-              htmlFor="subject"
-              sx={{
-                width: "100%",
-              }}
-              focused
-              required
-            >
-              Subject
-            </FormLabel>
-            <TextField
-              sx={{
-                width: "100%",
-                margin: 1,
-              }}
-              type="text"
-              id="subject"
-              value={subject}
-              onChange={({ target: { value } }) => setSubject(value)}
-              placeholder="Enter a subject for your message.."
-              name="subject"
               required
             />
 
