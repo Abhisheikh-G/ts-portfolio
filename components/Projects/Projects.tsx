@@ -127,8 +127,8 @@ export default function Projects(props: Projects) {
       id="mywork"
       component="section"
       sx={{
-        paddingTop: 8,
-        paddingBottom: 8,
+        pt: 1,
+        pb: 8,
       }}
     >
       <Container maxWidth="md">
