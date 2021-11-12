@@ -22,7 +22,7 @@ The question almost seems silly, doesn't it? The obvious and easy answers to thi
 - Make (more) money
 
 The not-so-obvious answers to this question expand on the obvious answers and takes them a layer deeper.
-What do I mean by going a layer deeper? An example of this is gravity - we can observe from gravity that "what goes up, must come down" but when we ask a question a deeper like "why does gravity make things go up and go down?" we suddenly realize the complexity behind the system. This hidden complexity is everywhere and especially within us, human beings, the most complex organism to ever exist (that we know of).
+What do I mean by going a layer deeper? An example of this is gravity - we can observe from gravity that "what goes up, must come down" but when we ask a deeper question like "why does gravity make things go up and go down?" we suddenly realize the complexity behind the system. This hidden complexity is everywhere and especially within us, human beings, the most complex organism to ever exist (that we know of).
 
 Let's take our obvious answers and expand on them to see how much more complex our motives really are:
 
