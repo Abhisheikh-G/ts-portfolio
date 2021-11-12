@@ -20,7 +20,7 @@ const styles = {
     mx: 1,
     p: 2,
     width: { xs: "100%", sm: 200 },
-    height: { xs: 150, sm: 200 },
+    height: { xs: "100%", sm: 200 },
   },
   link: {
     textDecoration: "none",
