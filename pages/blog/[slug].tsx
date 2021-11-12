@@ -4,6 +4,7 @@ import fs from "fs";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import React from "react";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import ReactMarkdown from "react-markdown";
 import { useTheme } from "@mui/material";
 import remarkGfm from "remark-gfm";
@@ -89,8 +90,11 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
             {frontmatter.title}
           </Link>
         </Breadcrumbs>
+        <Typography variant="h4" color="common.white" gutterBottom>
+          {frontmatter.title}
+        </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-          <Image src={frontmatter.cover_image} height={475} width={750} />
+          <Image src={frontmatter.cover_image} height={350} width={625} />
         </Box>
         <div style={{ ...styles.markdown }}>
           <ReactMarkdown
@@ -107,6 +111,16 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                 />
               ),
               code: (props) => <code {...props} />,
+              blockquote: (props) => (
+                <blockquote
+                  style={{
+                    borderLeft: `5px solid ${theme.palette.secondary.main}`,
+                    backgroundColor: theme.palette.primary.light,
+                    padding: "1em",
+                  }}
+                  {...props}
+                />
+              ),
             }}
             remarkPlugins={[remarkGfm]}
           />
