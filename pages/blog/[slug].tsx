@@ -25,6 +25,21 @@ const styles = {
   markdown: {
     color: "white",
   },
+  link: {
+    color: "secondary.main",
+    fontSize: {
+      xs: 14,
+      sm: 16,
+    },
+    textDecoration: "none",
+    transition: "all .2s ease-in-out",
+    "&:hover": {
+      background: (theme: any) =>
+        `linear-gradient(to right, ${theme.palette.custom.yellow}, ${theme.palette.secondary.main})`,
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    },
+  },
 };
 
 const Posts: React.FC<Props> = ({ frontmatter, content }) => {
@@ -75,17 +90,16 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
       </Head>
       <Container maxWidth="md">
         <Breadcrumbs sx={{ color: "secondary.main", mb: 2 }}>
-          <Link underline="hover" color="inherit" href="/">
+          <Link underline="hover" sx={{...styles.link}} href="/">
             HOME
           </Link>
-          <Link underline="hover" color="inherit" href="/blog">
+          <Link underline="hover" sx={{...styles.link}} href="/blog">
             BLOG
           </Link>
           <Link
             underline="hover"
-            color="inherit"
             href={router.asPath}
-            sx={{ textTransform: "uppercase" }}
+            sx={{ textTransform: "uppercase",...styles.link }}
           >
             {frontmatter.title}
           </Link>
