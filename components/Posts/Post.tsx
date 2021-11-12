@@ -19,8 +19,8 @@ const styles = {
     my: 2,
     mx: 1,
     p: 2,
-    width: { xs: "100%", sm: 225 },
-    height: { xs: 165, sm: 225 },
+    width: { xs: "100%", sm: 200 },
+    height: { xs: 150, sm: 200 },
   },
   link: {
     textDecoration: "none",
@@ -77,9 +77,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
           >
             {post.frontmatter.category}
           </Typography>
-          <Typography variant="body1" textOverflow="ellipsis">
-            {post.frontmatter.excerpt}
-          </Typography>
+          <Typography variant="body2">{post.frontmatter.excerpt}</Typography>
         </Box>
       </Grid>
     </Fade>
