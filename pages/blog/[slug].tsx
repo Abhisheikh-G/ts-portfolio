@@ -117,6 +117,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                     borderLeft: `5px solid ${theme.palette.secondary.main}`,
                     backgroundColor: theme.palette.primary.light,
                     padding: "1em",
+                    margin: 0,
                   }}
                   {...props}
                 />
