@@ -21,9 +21,9 @@ The question seems silly, doesn't it? The obvious answers to this question are:
 - Have more time
 - Make (more) money
 
-The not-so-obvious answers take the obvious a layer deeper. What do I mean by going a layer deeper? An example of this is gravity - one could simply explain it as "what goes up, must come down" but when we examine this simple statement further with "why does gravity make things go up and go down?" we see just how complex things can become. This hidden complexity is everywhere and especially within us, human beings, the most complex organism to ever exist (that we know of).
+The not-so-obvious answers take the obvious ones a layer deeper. What do I mean by going a layer deeper? An example of this is gravity - one could simply explain it as "what goes up, must come down" but when we examine this simple statement further with "why does gravity make things go up and go down?" we see just how complex things can become. This hidden complexity is everywhere and especially within us, human beings, the most complex organism to ever exist (that we know of).
 
-By examining our motivators for being productive Let's take our obvious answers and expand on them to see how much more complex our motives really are:
+By examining our motivators for being productive we gain clarity and direction. Let's take our obvious answers and expand on them to see how much more complex our motives really are:
 
 - Why do you want to get more done?
 - Why do you want to have more time?
@@ -44,7 +44,6 @@ There is a fine balance that needs to be struck when hopping on the productivity
 Going from 0 to 100mph and never pulling your foot off the gas is a recipe for disaster. It's one thing to be passionate but when we go overboard we only end up setting our selves back. Our work needs to be sustainable over our lifetimes we can truly enjoy the fruits of all our efforts.
 
 At the same time, the truth is we're not always excited or passionate about our work. Daydreaming about finishing it and being somewhere else while your work is in front of you won't do much good. Deadlines are around the corner and products need to be shipped. Slacking off and not putting your best concentrated effort forward only makes the work harder in the long run.
-
 
 Borrowing greatly from Eastern traditions, I would describe the right balance as ***attached non-attachment***. Be attached to your motivators for getting things done but at the same time remain non-attached when it's time to hustle. Work won't always be easy and it won't always be hard, the universe has a way of balancing itself out in the end.
 
