@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Post from '@/components/Posts/Post';
+import Post from '@/components/Posts/PostCard';
 import { IPost } from '@/types/index';
 import Grid from '@mui/material/Grid';
 
