@@ -5,16 +5,13 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Container from "@mui/material/Container";
 import CloseIcon from "@mui/icons-material/Close";
-import Mail from "@mui/icons-material/Mail";
-import Work from "@mui/icons-material/Work";
+
 import Underline from "../Underline/Underline";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import Link from "../../src/Link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import CreateIcon from "@mui/icons-material/Create";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Divider from "@mui/material/Divider";
