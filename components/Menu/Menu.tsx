@@ -43,7 +43,7 @@ const styles = {
     color: "secondary.main",
     mx: 0.5,
     fontSize: {
-      xs: "3em",
+      xs: "2em",
     },
 
     transition: "all .2s ease-in-out",
@@ -98,8 +98,8 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                   src="/logo.svg"
                   alt="logo"
                   priority
-                  height={125}
-                  width={125}
+                  height={100}
+                  width={100}
                 />
               </Link>
             </Fade>
@@ -110,13 +110,6 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
 
         <Fade in={true} timeout={1000}>
           <ListItem>
-            <ListItemIcon>
-              <Mail
-                sx={{
-                  color: "secondary.main",
-                }}
-              />
-            </ListItemIcon>
             <Link
               href="/#contact"
               sx={{
@@ -126,11 +119,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 setOpen(!open);
               }}
             >
-              <Typography
-                variant="body1"
-                fontSize="2em"
-                fontFamily="Zen Tokyo Zoo"
-              >
+              <Typography variant="h4" fontFamily="Zen Tokyo Zoo">
                 CONTACT ME
               </Typography>
             </Link>
@@ -140,13 +129,6 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
 
         <Fade in={true} timeout={1000}>
           <ListItem>
-            <ListItemIcon>
-              <Work
-                sx={{
-                  color: "secondary.main",
-                }}
-              />
-            </ListItemIcon>
             <Link
               href="/#mywork"
               aria-label="my work"
@@ -157,11 +139,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 setOpen(!open);
               }}
             >
-              <Typography
-                variant="body1"
-                fontSize="2em"
-                fontFamily="Zen Tokyo Zoo"
-              >
+              <Typography variant="h4" fontFamily="Zen Tokyo Zoo">
                 MY WORK
               </Typography>
             </Link>
@@ -172,13 +150,6 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
 
         <Fade in={true} timeout={1000}>
           <ListItem>
-            <ListItemIcon>
-              <CreateIcon
-                sx={{
-                  color: "secondary.main",
-                }}
-              />
-            </ListItemIcon>
             <Link
               href="/blog"
               aria-label="to blog"
@@ -189,11 +160,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 setOpen(!open);
               }}
             >
-              <Typography
-                variant="body1"
-                fontSize="2em"
-                fontFamily="Zen Tokyo Zoo"
-              >
+              <Typography variant="h4" fontFamily="Zen Tokyo Zoo">
                 BLOG
               </Typography>
             </Link>
