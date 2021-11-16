@@ -1,20 +1,21 @@
-import path from "path";
-import matter from "gray-matter";
-import fs from "fs";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import React from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import ReactMarkdown from "react-markdown";
-import { useTheme } from "@mui/material";
-import remarkGfm from "remark-gfm";
-import { IFrontmatter } from "../../@types";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Box from "@mui/material/Box";
-import Link from "../../src/Link";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import Image from "next/image";
+import fs from 'fs';
+import matter from 'gray-matter';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import path from 'path';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+import Link from '@/src/Link';
+import { IFrontmatter } from '@/types/index';
+import { useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 type Props = React.PropsWithChildren<{
   frontmatter: IFrontmatter;
@@ -23,21 +24,21 @@ type Props = React.PropsWithChildren<{
 
 const styles = {
   markdown: {
-    color: "white",
+    color: 'white',
   },
   link: {
-    color: "secondary.main",
+    color: 'secondary.main',
     fontSize: {
       xs: 14,
       sm: 16,
     },
-    textDecoration: "none",
-    transition: "all .2s ease-in-out",
-    "&:hover": {
+    textDecoration: 'none',
+    transition: 'all .2s ease-in-out',
+    '&:hover': {
       background: (theme: any) =>
         `linear-gradient(to right, ${theme.palette.custom.yellow}, ${theme.palette.secondary.main})`,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
     },
   },
 };
@@ -89,17 +90,17 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
         />
       </Head>
       <Container maxWidth="md">
-        <Breadcrumbs sx={{ color: "secondary.main", mb: 2 }}>
-          <Link underline="hover" sx={{...styles.link}} href="/">
+        <Breadcrumbs sx={{ color: 'secondary.main', mb: 2 }}>
+          <Link underline="hover" sx={{ ...styles.link }} href="/">
             HOME
           </Link>
-          <Link underline="hover" sx={{...styles.link}} href="/blog">
+          <Link underline="hover" sx={{ ...styles.link }} href="/blog">
             BLOG
           </Link>
           <Link
             underline="hover"
             href={router.asPath}
-            sx={{ textTransform: "uppercase",...styles.link }}
+            sx={{ textTransform: 'uppercase', ...styles.link }}
           >
             {frontmatter.title}
           </Link>
@@ -107,7 +108,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
         <Typography variant="h4" color="common.white" gutterBottom>
           {frontmatter.title}
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
           <Image src={frontmatter.cover_image} height={350} width={625} />
         </Box>
         <div style={{ ...styles.markdown }}>
@@ -118,8 +119,8 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                 <pre
                   style={{
                     backgroundColor: theme.palette.primary.light,
-                    padding: "1em",
-                    overflowX: "auto",
+                    padding: '1em',
+                    overflowX: 'auto',
                   }}
                   {...props}
                 />
@@ -130,7 +131,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                   style={{
                     borderLeft: `5px solid ${theme.palette.secondary.main}`,
                     backgroundColor: theme.palette.primary.light,
-                    padding: "1em",
+                    padding: '1em',
                     margin: 0,
                   }}
                   {...props}
@@ -153,8 +154,8 @@ export const getStaticProps: GetStaticProps = async (
   const { params } = context;
   const { slug } = params as { slug: string };
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".md"),
-    "utf-8"
+    path.join('posts', slug + '.md'),
+    'utf-8'
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
   return {
@@ -167,10 +168,10 @@ export const getStaticProps: GetStaticProps = async (
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join('posts'));
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
     },
   }));
   return {

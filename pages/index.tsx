@@ -1,14 +1,15 @@
-import Box from "@mui/material/Box";
-import Hero from "../components/Hero/Hero";
-import Projects from "../components/Projects/Projects";
-import Certifications from "../components/Certifications/Certifications";
-import dynamic from "next/dynamic";
-import projectsJSON from "../public/projects.json";
-import skillsJSON from "../public/skills.json";
-import certificatesJSON from "../public/certificates.json";
+import dynamic from 'next/dynamic';
+import certificatesJSON from 'public/certificates.json';
+import projectsJSON from 'public/projects.json';
+import skillsJSON from 'public/skills.json';
 
-const Contact = dynamic(() => import("../components/Contact/Contact"));
-const Skills = dynamic(() => import("../components/Skills/Skills"));
+import Certifications from '@/components/Certifications/Certifications';
+import Hero from '@/components/Hero/Hero';
+import Projects from '@/components/Projects/Projects';
+import Box from '@mui/material/Box';
+
+const Contact = dynamic(() => import('@/components/Contact/Contact'));
+const Skills = dynamic(() => import('@/components/Skills/Skills'));
 
 const { projects } = projectsJSON;
 const { skills } = skillsJSON;

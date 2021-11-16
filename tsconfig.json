@@ -19,7 +19,15 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/types/*": ["@types/*"],
+      "@/src/*": ["src/*"],
+      "@/lib/*": ["lib/*"],
+      "@/public/*": ["public/*"]
+    }
   },
   "exclude": ["node_modules", "posts"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

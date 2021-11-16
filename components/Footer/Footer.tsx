@@ -1,20 +1,22 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import IconButton from "@mui/material/IconButton";
+import React from 'react';
 
-import Link from "../../src/Link";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+
+import Link from '../../src/Link';
+
 function Copyright() {
   return (
     <Typography
       variant="body1"
       align="center"
-      sx={{ color: "secondary.light" }}
+      sx={{ color: 'secondary.light' }}
     >
-      {"Copyright © "}
+      {'Copyright © '}
       <Link
         color="inherit"
         href="https://abhisheikhgill.com/"
@@ -22,26 +24,26 @@ function Copyright() {
         aria-label="Return Home"
       >
         Abhisheikh Gill
-      </Link>{" "}
+      </Link>{' '}
       {new Date().getFullYear()}
-      {"."}
+      {'.'}
     </Typography>
   );
 }
 
 export default function StickyFooter() {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Box
         component="footer"
         sx={{
           padding: 3,
-          marginTop: "auto",
-          color: "primary.contrastText",
+          marginTop: 'auto',
+          color: 'primary.contrastText',
         }}
       >
         <Container maxWidth="sm">
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Box m={2}>
               <Link
                 href="https://github.com/Abhisheikh-G"
@@ -50,7 +52,7 @@ export default function StickyFooter() {
                 aria-label="Link to Abhisheikh's Git Hub"
               >
                 <IconButton
-                  sx={{ color: "secondary.main" }}
+                  sx={{ color: 'secondary.main' }}
                   aria-label="Github Icon"
                 >
                   <GitHubIcon fontSize="large" aria-label="Github Icon" />
@@ -65,7 +67,7 @@ export default function StickyFooter() {
                 aria-label="Link to Abhisheikh's Linked In"
               >
                 <IconButton
-                  sx={{ color: "secondary.main" }}
+                  sx={{ color: 'secondary.main' }}
                   aria-label="Linked In Icon"
                 >
                   <LinkedInIcon fontSize="large" aria-label="Linked In Icon" />

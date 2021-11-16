@@ -1,35 +1,36 @@
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import FormLabel from "@mui/material/FormLabel";
-import Underline from "../Underline/Underline";
-import CustomButton from "../CustomButton/CustomButton";
-import CircularProgress from "@mui/material/CircularProgress";
-import React, { FormEvent, useState, useRef } from "react";
-import { Alert, AlertTitle } from "@mui/material";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import React, { FormEvent, useRef, useState } from 'react';
+
+import CustomButton from '@/components/CustomButton/CustomButton';
+import Underline from '@/components/Underline/Underline';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { Alert, AlertTitle } from '@mui/material';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
+import Container from '@mui/material/Container';
+import FormLabel from '@mui/material/FormLabel';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 
 const Contact: React.FC = () => {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("");
+  const [responseMessage, setResponseMessage] = useState('');
   const [captchaResponse, setCaptchaResponse] = useState({
-    challenge_ts: "",
+    challenge_ts: '',
     credit: false,
-    hostname: "",
+    hostname: '',
     success: false,
   });
   let captchaRef = useRef(null);
 
   const handleVerificationSuccess = async (token: any) => {
-    const res = await fetch("/api/captcha", {
-      method: "POST",
+    const res = await fetch('/api/captcha', {
+      method: 'POST',
       body: JSON.stringify({ token }),
     });
     const captchaRes = await res.json();
@@ -39,7 +40,7 @@ const Contact: React.FC = () => {
     } else {
       setError(true);
       setResponseMessage(
-        "There was a problem verifying your captcha. Please try again or reach out to me on LinkedIn."
+        'There was a problem verifying your captcha. Please try again or reach out to me on LinkedIn.'
       );
     }
   };
@@ -49,7 +50,7 @@ const Contact: React.FC = () => {
     setSuccess(false);
     if (!verified) {
       setResponseMessage(
-        "You must complete the captcha before your message can be sent."
+        'You must complete the captcha before your message can be sent.'
       );
       setError(true);
     } else {
@@ -61,8 +62,8 @@ const Contact: React.FC = () => {
       ) {
         setLoading(true);
 
-        let mailRes = await fetch("/api/mail", {
-          method: "POST",
+        let mailRes = await fetch('/api/mail', {
+          method: 'POST',
           body: JSON.stringify({
             name,
             email,
@@ -76,15 +77,15 @@ const Contact: React.FC = () => {
           setVerified(false);
           setSuccess(true);
           setResponseMessage(
-            "Message sent successfully, I will get back to you as soon as possible"
+            'Message sent successfully, I will get back to you as soon as possible'
           );
-          setName("");
-          setEmail("");
-          setMessage("");
+          setName('');
+          setEmail('');
+          setMessage('');
           setCaptchaResponse({
-            challenge_ts: "",
+            challenge_ts: '',
             credit: false,
-            hostname: "",
+            hostname: '',
             success: false,
           });
           // @ts-ignore
@@ -93,7 +94,7 @@ const Contact: React.FC = () => {
           setLoading(false);
           setError(true);
           setResponseMessage(
-            "There was a problem sending this message. Please try again or reach out to me on LinkedIn."
+            'There was a problem sending this message. Please try again or reach out to me on LinkedIn.'
           );
         }
       }
@@ -115,15 +116,15 @@ const Contact: React.FC = () => {
             gutterBottom
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              width: "7.1em",
-              mb: "1.5em",
-              textTransform: "uppercase",
+              width: '7.1em',
+              mb: '1.5em',
+              textTransform: 'uppercase',
             }}
           >
-            <Box component="span" sx={{ color: "secondary.main" }}>
+            <Box component="span" sx={{ color: 'secondary.main' }}>
               Contact
-            </Box>{" "}
-            <Box component="span" sx={{ color: "custom.yellow" }}>
+            </Box>{' '}
+            <Box component="span" sx={{ color: 'custom.yellow' }}>
               Me
             </Box>
             <Underline />
@@ -132,10 +133,10 @@ const Contact: React.FC = () => {
           <Box
             component="form"
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              backgroundColor: "common.white",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              backgroundColor: 'common.white',
               zIndex: 10,
               px: {
                 lg: 5,
@@ -144,7 +145,7 @@ const Contact: React.FC = () => {
               py: {
                 xs: 3,
               },
-              margin: "auto",
+              margin: 'auto',
               maxWidth: 500,
             }}
             boxShadow={8}
@@ -153,7 +154,7 @@ const Contact: React.FC = () => {
             <FormLabel
               htmlFor="name"
               sx={{
-                width: "100%",
+                width: '100%',
               }}
               required
               focused
@@ -162,7 +163,7 @@ const Contact: React.FC = () => {
             </FormLabel>
             <TextField
               sx={{
-                width: "100%",
+                width: '100%',
                 margin: 1,
               }}
               type="text"
@@ -177,7 +178,7 @@ const Contact: React.FC = () => {
             <FormLabel
               htmlFor="email"
               sx={{
-                width: "100%",
+                width: '100%',
               }}
               focused
               required
@@ -186,7 +187,7 @@ const Contact: React.FC = () => {
             </FormLabel>
             <TextField
               sx={{
-                width: "100%",
+                width: '100%',
                 margin: 1,
               }}
               type="email"
@@ -201,7 +202,7 @@ const Contact: React.FC = () => {
             <FormLabel
               htmlFor="message"
               sx={{
-                width: "100%",
+                width: '100%',
               }}
               focused
               required
@@ -212,7 +213,7 @@ const Contact: React.FC = () => {
               multiline
               rows={4}
               sx={{
-                width: "100%",
+                width: '100%',
                 m: 1,
               }}
               id="message"
@@ -233,9 +234,9 @@ const Contact: React.FC = () => {
               onExpire={() => {
                 setVerified(false);
                 setCaptchaResponse({
-                  challenge_ts: "",
+                  challenge_ts: '',
                   credit: false,
-                  hostname: "",
+                  hostname: '',
                   success: false,
                 });
                 //@ts-ignore
@@ -265,7 +266,7 @@ const Contact: React.FC = () => {
             )}
 
             {loading && (
-              <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: 'flex' }}>
                 <CircularProgress />
               </Box>
             )}

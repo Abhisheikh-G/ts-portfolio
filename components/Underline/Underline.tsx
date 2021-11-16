@@ -1,28 +1,28 @@
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/styles";
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/styles';
 
-const Underline = () => {
+const Underline = function () {
   const theme = useTheme();
   return (
     <>
       <Box
         sx={{
-          width: "inherit",
+          width: 'inherit',
           height: 1.1,
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
       />
       <Box
         sx={{
-          width: "inherit",
+          width: 'inherit',
           height: 1.1,
-          my: "1px",
+          my: '1px',
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}
       />
       <Box
         sx={{
-          width: "inherit",
+          width: 'inherit',
           height: 1.1,
           background: `linear-gradient(to right, ${theme.palette.custom.yellow},${theme.palette.secondary.main})`,
         }}

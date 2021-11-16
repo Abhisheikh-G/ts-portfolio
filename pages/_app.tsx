@@ -1,19 +1,19 @@
-import Head from "next/head";
-import React from "react";
-import { StylesProvider, createGenerateClassName } from "@mui/styles";
-import { AppProps } from "next/app";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import theme from "../src/theme";
-import createEmotionCache from "../src/createEmotionCache";
+import Head from 'next/head';
+import React from 'react';
+import { StylesProvider, createGenerateClassName } from '@mui/styles';
+import { AppProps } from 'next/app';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import theme from '@/src/theme';
+import createEmotionCache from '@/src/createEmotionCache';
 
-import Layout from "../components/Layout/Layout";
+import Layout from '@/components/Layout/Layout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 const generateClassName = createGenerateClassName({
-  productionPrefix: "c",
+  productionPrefix: 'c',
 });
 
 interface MyAppProps extends AppProps {
@@ -36,14 +36,14 @@ export default function MyApp(props: MyAppProps) {
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
           />
-          <meta content="index, follow" name={`robots`} />
+          <meta content="index, follow" name="robots" />
 
           <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
           <meta
             itemProp="description"
-            content="Hello, my name is Abhisheikh Gill. 
-        I'm a full stack web developer and an IT solutions expert. 
-        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+            content="Hello, my name is Abhisheikh Gill.
+        I'm a full stack web developer and an IT solutions expert.
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git.
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta
@@ -56,9 +56,9 @@ export default function MyApp(props: MyAppProps) {
           <meta property="og:title" content="Abhisheikh Gill | My Portfolio" />
           <meta
             property="og:description"
-            content="Hello, my name is Abhisheikh Gill. 
-        I'm a full stack web developer and an IT solutions expert. 
-        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+            content="Hello, my name is Abhisheikh Gill.
+        I'm a full stack web developer and an IT solutions expert.
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git.
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta
@@ -70,9 +70,9 @@ export default function MyApp(props: MyAppProps) {
           <meta name="twitter:title" content="Abhisheikh Gill | My Portfolio" />
           <meta
             name="twitter:description"
-            content="Hello, my name is Abhisheikh Gill. 
-        I'm a full stack web developer and an IT solutions expert. 
-        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
+            content="Hello, my name is Abhisheikh Gill.
+        I'm a full stack web developer and an IT solutions expert.
+        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git.
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta

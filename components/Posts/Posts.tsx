@@ -1,13 +1,14 @@
-import React from "react";
-import { IPost } from "../../@types";
-import Post from "./Post";
-import Grid from "@mui/material/Grid";
+import React from 'react';
+
+import Post from '@/components/Posts/Post';
+import { IPost } from '@/types/index';
+import Grid from '@mui/material/Grid';
 
 type PostsProps = React.PropsWithChildren<{
   posts: IPost[];
 }>;
 
-const Posts: React.FC<PostsProps> = ({ posts }) => {
+const Posts: React.FC<PostsProps> = function ({ posts }) {
   return (
     <Grid container justifyContent="center">
       {posts.map((post) => (

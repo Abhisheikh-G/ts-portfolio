@@ -1,9 +1,10 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
-import { useTheme } from "@mui/styles";
-import Underline from "../Underline/Underline";
-import Image from "next/image";
-import React from "react";
-import { ISkill } from "../../@types";
+import Image from 'next/image';
+import React from 'react';
+
+import Underline from '@/components/Underline/Underline';
+import { ISkill } from '@/types/index';
+import { Box, Container, Grid, Typography } from '@mui/material';
+import { useTheme } from '@mui/styles';
 
 function SkillBlock(props: ISkill) {
   const { imgSrc, text, alt, color, textColor } = props;
@@ -24,30 +25,30 @@ function SkillBlock(props: ISkill) {
             sm: 1,
           },
           height: {
-            xs: "5em",
-            sm: "6em",
+            xs: '5em',
+            sm: '6em',
           },
           width: {
-            xs: "5em",
-            sm: "6em",
+            xs: '5em',
+            sm: '6em',
           },
           borderRadius: theme.spacing(2),
 
           filter: `invert(0%)  saturate(80%) hue-rotate(10deg) brightness(80%) contrast(50%)`,
-          transition: theme.transitions.create(["all"], {
+          transition: theme.transitions.create(['all'], {
             duration: theme.transitions.duration.complex,
           }),
-          "&:hover": {
+          '&:hover': {
             borderRadius: theme.spacing(20),
-            filter: "none",
+            filter: 'none',
             backgroundColor: `${color}`,
           },
           color: `${textColor}`,
           backgroundColor: `${color}`,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <Image
@@ -60,10 +61,10 @@ function SkillBlock(props: ISkill) {
       </Box>
       <Typography
         variant="body2"
-        component={"p"}
+        component={'p'}
         align="center"
         sx={{
-          color: "secondary.main",
+          color: 'secondary.main',
         }}
       >
         {text}
@@ -95,19 +96,19 @@ export default function Skills(props: SkillsProps) {
             align="left"
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              my: "1em",
-              color: "common.white",
-              textAlign: "left",
-              textTransform: "uppercase",
+              my: '1em',
+              color: 'common.white',
+              textAlign: 'left',
+              textTransform: 'uppercase',
             }}
           >
-            <Box component="span" sx={{ color: "secondary.main" }}>
+            <Box component="span" sx={{ color: 'secondary.main' }}>
               My
-            </Box>{" "}
+            </Box>{' '}
             <Box
-              component={"span"}
+              component={'span'}
               sx={{
-                color: "custom.yellow",
+                color: 'custom.yellow',
               }}
             >
               Skills

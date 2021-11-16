@@ -1,14 +1,15 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
-import Image from "next/image";
-import React from "react";
-import Underline from "../Underline/Underline";
+import Image from 'next/image';
+import React from 'react';
+
+import Underline from '@/components/Underline/Underline';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 function CertificationBlock(props: any) {
   const { imgSrc, alt } = props;
   return (
     <Box
       sx={{
-        ">div": {
+        '>div': {
           margin: 4,
         },
       }}
@@ -42,14 +43,14 @@ export default function Certifications(props: any) {
             gutterBottom
             fontFamily="Zen Tokyo Zoo"
             sx={{
-              mb: "2em",
-              textTransform: "uppercase",
+              mb: '2em',
+              textTransform: 'uppercase',
             }}
           >
-            <Box component="span" sx={{ color: "secondary.main" }}>
+            <Box component="span" sx={{ color: 'secondary.main' }}>
               My
-            </Box>{" "}
-            <Box component="span" sx={{ color: "custom.yellow" }}>
+            </Box>{' '}
+            <Box component="span" sx={{ color: 'custom.yellow' }}>
               Certs
             </Box>
             <Underline />

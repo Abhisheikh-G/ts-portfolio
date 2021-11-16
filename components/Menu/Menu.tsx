@@ -1,51 +1,50 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Container from "@mui/material/Container";
-import CloseIcon from "@mui/icons-material/Close";
+import Image from 'next/image';
+import React from 'react';
 
-import Underline from "../Underline/Underline";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import Link from "../../src/Link";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Underline from '@/components/Underline/Underline';
+import Link from '@/src/Link';
+import CloseIcon from '@mui/icons-material/Close';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Fade from '@mui/material/Fade';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Modal from '@mui/material/Modal';
+import Paper from '@mui/material/Paper';
+import TrapFocus from '@mui/material/Unstable_TrapFocus';
 
-import GitHubIcon from "@mui/icons-material/GitHub";
-import Divider from "@mui/material/Divider";
-import Image from "next/image";
-
-import TrapFocus from "@mui/material/Unstable_TrapFocus";
-import { Typography } from "@mui/material";
 const styles = {
   menu: {
-    background: "background.default",
+    background: 'background.default',
   },
   link: {
-    color: "secondary.main",
+    color: 'secondary.main',
     p: 0.5,
     mx: 0.5,
-    textDecoration: "none",
-    transition: "all .2s ease-in-out",
-    "&:hover": {
+    textDecoration: 'none',
+    transition: 'all .2s ease-in-out',
+    '&:hover': {
       background: (theme: any) =>
         `linear-gradient(to right, ${theme.palette.custom.yellow}, ${theme.palette.secondary.main})`,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
     },
   },
   icon: {
-    color: "secondary.main",
+    color: 'secondary.main',
     mx: 0.5,
     fontSize: {
-      xs: "2em",
+      xs: '2em',
     },
 
-    transition: "all .2s ease-in-out",
-    "&:hover": {
-      color: "custom.yellow",
+    transition: 'all .2s ease-in-out',
+    '&:hover': {
+      color: 'custom.yellow',
     },
   },
 };
@@ -59,27 +58,27 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
   const list = () => (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <List
         sx={{
-          backgroundColor: "background.default",
+          backgroundColor: 'background.default',
         }}
       >
         <ListItem
           sx={{
             height: 175,
-            justifyContent: "center",
-            display: "flex",
+            justifyContent: 'center',
+            display: 'flex',
           }}
         >
           <Box
             sx={{
-              "> div": { marginTop: "1em", marginLeft: "6em" },
+              '> div': { marginTop: '1em', marginLeft: '6em' },
             }}
           >
             <Fade in={true} timeout={1000}>
@@ -122,7 +121,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             </Link>
           </ListItem>
         </Fade>
-        <Divider sx={{ backgroundColor: "secondary.main" }} />
+        <Divider sx={{ backgroundColor: 'secondary.main' }} />
 
         <Fade in={true} timeout={1000}>
           <ListItem>
@@ -143,7 +142,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
           </ListItem>
         </Fade>
 
-        <Divider sx={{ backgroundColor: "secondary.main" }} />
+        <Divider sx={{ backgroundColor: 'secondary.main' }} />
 
         <Fade in={true} timeout={1000}>
           <ListItem>
@@ -167,7 +166,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
         <Underline />
       </List>
 
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Box m={2}>
           <Fade in={true} timeout={1000}>
             <Link
@@ -205,9 +204,9 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
           <Box
             component={Paper}
             sx={{
-              height: "100vh",
-              width: "100vw",
-              backgroundColor: "background.default",
+              height: '100vh',
+              width: '100vw',
+              backgroundColor: 'background.default',
               borderRadius: 0,
             }}
           >
@@ -215,9 +214,9 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
             <Container maxWidth="lg" sx={{ pr: 4.75, pt: 3.25 }}>
               <Box
                 onClick={() => setOpen(!open)}
-                sx={{ display: "flex", justifyContent: "flex-end" }}
+                sx={{ display: 'flex', justifyContent: 'flex-end' }}
               >
-                <IconButton sx={{ color: "secondary.main" }} size="large">
+                <IconButton sx={{ color: 'secondary.main' }} size="large">
                   <CloseIcon fontSize="large" />
                 </IconButton>
               </Box>

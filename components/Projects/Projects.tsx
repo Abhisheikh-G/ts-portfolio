@@ -1,21 +1,22 @@
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import CardMedia from "@mui/material/CardMedia";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import IconButton from "@mui/material/IconButton";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import Collapse from "@mui/material/Collapse";
-import Image from "next/image";
-import React, { useState } from "react";
-import Link from "../../src/Link";
-import Underline from "../Underline/Underline";
-import { IProject } from "../../@types";
+import Image from 'next/image';
+import React, { useState } from 'react';
+
+import Underline from '@/components/Underline/Underline';
+import Link from '@/src/Link';
+import { IProject } from '@/types/index';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Collapse from '@mui/material/Collapse';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 
 type ProjectProps = React.PropsWithChildren<IProject>;
 
@@ -31,7 +32,7 @@ export const Project: React.FC<ProjectProps> = (props) => {
     <Box display="flex" flexDirection="column" margin="auto" boxShadow={4}>
       <Card
         sx={{
-          margin: "auto",
+          margin: 'auto',
           borderRadius: 0,
           boxShadow: 0,
           maxWidth: 400,
@@ -60,8 +61,8 @@ export const Project: React.FC<ProjectProps> = (props) => {
             component="p"
             sx={{
               height: {
-                xs: "4.5em",
-                sm: "3em",
+                xs: '4.5em',
+                sm: '3em',
               },
             }}
           >
@@ -71,10 +72,10 @@ export const Project: React.FC<ProjectProps> = (props) => {
 
         <CardActions
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            height: "100%",
-            alignItems: "flex-end",
+            display: 'flex',
+            justifyContent: 'space-between',
+            height: '100%',
+            alignItems: 'flex-end',
           }}
           disableSpacing
         >
@@ -86,7 +87,7 @@ export const Project: React.FC<ProjectProps> = (props) => {
               target="_blank"
               rel="noopener"
               href={projectLink}
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: 'none' }}
             >
               Visit The Site
             </Button>
@@ -137,12 +138,12 @@ export default function Projects(props: Projects) {
           width="5.3em"
           gutterBottom
           fontFamily="Zen Tokyo Zoo"
-          sx={{ my: "1.5em", textTransform: "uppercase" }}
+          sx={{ my: '1.5em', textTransform: 'uppercase' }}
         >
-          <Box component="span" sx={{ color: "secondary.main" }}>
+          <Box component="span" sx={{ color: 'secondary.main' }}>
             My
-          </Box>{" "}
-          <Box component="span" sx={{ color: "custom.yellow" }}>
+          </Box>{' '}
+          <Box component="span" sx={{ color: 'custom.yellow' }}>
             Work
           </Box>
           <Underline />
