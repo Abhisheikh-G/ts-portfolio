@@ -15,6 +15,7 @@ import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Container from '@mui/material/Container';
+import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 
 type Props = React.PropsWithChildren<{
@@ -89,59 +90,61 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
           content={`https://abhisheikhgill.com${frontmatter.cover_image}`}
         />
       </Head>
-      <Container maxWidth="md">
-        <Breadcrumbs sx={{ color: 'secondary.main', mb: 2 }}>
-          <Link underline="hover" sx={{ ...styles.link }} href="/">
-            HOME
-          </Link>
-          <Link underline="hover" sx={{ ...styles.link }} href="/blog">
-            BLOG
-          </Link>
-          <Link
-            underline="hover"
-            href={router.asPath}
-            sx={{ textTransform: 'uppercase', ...styles.link }}
-          >
+      <Fade in={true} timeout={1000}>
+        <Container maxWidth="md">
+          <Breadcrumbs sx={{ color: 'secondary.main', mb: 2 }}>
+            <Link underline="hover" sx={{ ...styles.link }} href="/">
+              HOME
+            </Link>
+            <Link underline="hover" sx={{ ...styles.link }} href="/blog">
+              BLOG
+            </Link>
+            <Link
+              underline="hover"
+              href={router.asPath}
+              sx={{ textTransform: 'uppercase', ...styles.link }}
+            >
+              {frontmatter.title}
+            </Link>
+          </Breadcrumbs>
+          <Typography variant="h4" color="common.white" gutterBottom>
             {frontmatter.title}
-          </Link>
-        </Breadcrumbs>
-        <Typography variant="h4" color="common.white" gutterBottom>
-          {frontmatter.title}
-        </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
-          <Image src={frontmatter.cover_image} height={350} width={625} />
-        </Box>
-        <div style={{ ...styles.markdown }}>
-          <ReactMarkdown
-            children={content}
-            components={{
-              pre: (props) => (
-                <pre
-                  style={{
-                    backgroundColor: theme.palette.primary.light,
-                    padding: '1em',
-                    overflowX: 'auto',
-                  }}
-                  {...props}
-                />
-              ),
-              code: (props) => <code {...props} />,
-              blockquote: (props) => (
-                <blockquote
-                  style={{
-                    borderLeft: `5px solid ${theme.palette.secondary.main}`,
-                    backgroundColor: theme.palette.primary.light,
-                    padding: '1em',
-                    margin: 0,
-                  }}
-                  {...props}
-                />
-              ),
-            }}
-            remarkPlugins={[remarkGfm]}
-          />
-        </div>
-      </Container>
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+            <Image src={frontmatter.cover_image} height={350} width={625} />
+          </Box>
+          <div style={{ ...styles.markdown }}>
+            <ReactMarkdown
+              children={content}
+              components={{
+                pre: (props) => (
+                  <pre
+                    style={{
+                      backgroundColor: theme.palette.primary.light,
+                      padding: '1em',
+                      overflowX: 'auto',
+                    }}
+                    {...props}
+                  />
+                ),
+                code: (props) => <code {...props} />,
+                blockquote: (props) => (
+                  <blockquote
+                    style={{
+                      borderLeft: `5px solid ${theme.palette.secondary.main}`,
+                      backgroundColor: theme.palette.primary.light,
+                      padding: '1em',
+                      margin: 0,
+                    }}
+                    {...props}
+                  />
+                ),
+              }}
+              remarkPlugins={[remarkGfm]}
+            />
+          </div>
+        </Container>
+      </Fade>
     </>
   );
 };
