@@ -150,34 +150,6 @@ const Contact: React.FC = () => {
             boxShadow={8}
             onSubmit={handleSubmit}
           >
-            {error && (
-              <Alert
-                severity="error"
-                onClose={() => setError(false)}
-                sx={{ mb: 1 }}
-              >
-                <AlertTitle>Error</AlertTitle>
-                {responseMessage}
-              </Alert>
-            )}
-
-            {success && (
-              <Alert
-                severity="success"
-                onClose={() => setSuccess(false)}
-                sx={{ mb: 1 }}
-              >
-                <AlertTitle>Success</AlertTitle>
-                {responseMessage}
-              </Alert>
-            )}
-
-            {loading && (
-              <Box sx={{ display: "flex" }}>
-                <CircularProgress />
-              </Box>
-            )}
-
             <FormLabel
               htmlFor="name"
               sx={{
@@ -270,6 +242,33 @@ const Contact: React.FC = () => {
                 captchaRef?.current?.resetCaptcha();
               }}
             />
+            {error && (
+              <Alert
+                severity="error"
+                onClose={() => setError(false)}
+                sx={{ my: 1 }}
+              >
+                <AlertTitle>Error</AlertTitle>
+                {responseMessage}
+              </Alert>
+            )}
+
+            {success && (
+              <Alert
+                severity="success"
+                onClose={() => setSuccess(false)}
+                sx={{ my: 1 }}
+              >
+                <AlertTitle>Success</AlertTitle>
+                {responseMessage}
+              </Alert>
+            )}
+
+            {loading && (
+              <Box sx={{ display: "flex" }}>
+                <CircularProgress />
+              </Box>
+            )}
           </Box>
         </Container>
       </Box>
