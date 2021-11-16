@@ -122,6 +122,9 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               sx={{
                 ...styles.link,
               }}
+              onClick={() => {
+                setOpen(!open);
+              }}
             >
               <Typography
                 variant="body1"
@@ -149,6 +152,9 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               aria-label="my work"
               sx={{
                 ...styles.link,
+              }}
+              onClick={() => {
+                setOpen(!open);
               }}
             >
               <Typography
@@ -178,6 +184,9 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
               aria-label="to blog"
               sx={{
                 ...styles.link,
+              }}
+              onClick={() => {
+                setOpen(!open);
               }}
             >
               <Typography
