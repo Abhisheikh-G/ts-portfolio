@@ -1,6 +1,4 @@
-import { IFrontmatter } from '../@types/index';
-
-export const sortByDate = (a: IFrontmatter, b: IFrontmatter) => {
+export const sortByDate = (a: any, b: any) => {
   // @ts-ignore
   return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
 };
