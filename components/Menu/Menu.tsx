@@ -22,7 +22,6 @@ import Image from "next/image";
 
 import TrapFocus from "@mui/material/Unstable_TrapFocus";
 import { Typography } from "@mui/material";
-import { useRouter } from "next/router";
 const styles = {
   menu: {
     background: "background.default",
@@ -60,7 +59,6 @@ type Props = React.PropsWithChildren<{
 }>;
 
 const Menu: React.FC<Props> = ({ open, setOpen }) => {
-  const router = useRouter();
   const list = () => (
     <Box
       sx={{
@@ -111,16 +109,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
         <Underline />
 
         <Fade in={true} timeout={1000}>
-          <ListItem
-            sx={{
-              ...styles.link,
-            }}
-            button
-            onClick={() => {
-              setOpen(!open);
-              router.push("/#contact");
-            }}
-          >
+          <ListItem>
             <ListItemIcon>
               <Mail
                 sx={{
@@ -128,28 +117,26 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography
-              variant="body1"
-              fontSize="2em"
-              fontFamily="Zen Tokyo Zoo"
+            <Link
+              href="/#contact"
+              sx={{
+                ...styles.link,
+              }}
             >
-              CONTACT ME
-            </Typography>
+              <Typography
+                variant="body1"
+                fontSize="2em"
+                fontFamily="Zen Tokyo Zoo"
+              >
+                CONTACT ME
+              </Typography>
+            </Link>
           </ListItem>
         </Fade>
         <Divider sx={{ backgroundColor: "secondary.main" }} />
 
         <Fade in={true} timeout={1000}>
-          <ListItem
-            sx={{
-              ...styles.link,
-            }}
-            button
-            onClick={() => {
-              setOpen(!open);
-              router.push("/#mywork");
-            }}
-          >
+          <ListItem>
             <ListItemIcon>
               <Work
                 sx={{
@@ -157,29 +144,28 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography
-              variant="body1"
-              fontSize="2em"
-              fontFamily="Zen Tokyo Zoo"
+            <Link
+              href="/#mywork"
+              aria-label="my work"
+              sx={{
+                ...styles.link,
+              }}
             >
-              MY WORK
-            </Typography>
+              <Typography
+                variant="body1"
+                fontSize="2em"
+                fontFamily="Zen Tokyo Zoo"
+              >
+                MY WORK
+              </Typography>
+            </Link>
           </ListItem>
         </Fade>
 
         <Divider sx={{ backgroundColor: "secondary.main" }} />
 
         <Fade in={true} timeout={1000}>
-          <ListItem
-            sx={{
-              ...styles.link,
-            }}
-            button
-            onClick={() => {
-              setOpen(!open);
-              router.push("/blog");
-            }}
-          >
+          <ListItem>
             <ListItemIcon>
               <CreateIcon
                 sx={{
@@ -187,13 +173,21 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
                 }}
               />
             </ListItemIcon>
-            <Typography
-              variant="body1"
-              fontSize="2em"
-              fontFamily="Zen Tokyo Zoo"
+            <Link
+              href="/blog"
+              aria-label="to blog"
+              sx={{
+                ...styles.link,
+              }}
             >
-              BLOG
-            </Typography>
+              <Typography
+                variant="body1"
+                fontSize="2em"
+                fontFamily="Zen Tokyo Zoo"
+              >
+                BLOG
+              </Typography>
+            </Link>
           </ListItem>
         </Fade>
 
