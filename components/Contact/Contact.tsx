@@ -1,5 +1,5 @@
 import React, { FormEvent, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import CustomButton from '@/components/CustomButton/CustomButton';
 import Underline from '@/components/Underline/Underline';
 import { Alert, AlertTitle } from '@mui/material';
@@ -9,9 +9,9 @@ import Container from '@mui/material/Container';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Script from 'next/script';
+// import Script from 'next/script';
 
-const HCaptcha = dynamic(import('@hcaptcha/react-hcaptcha'));
+// const HCaptcha = dynamic(import('@hcaptcha/react-hcaptcha'));
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showCaptcha, setShowCaptcha] = useState(false);
+  // const [showCaptcha, setShowCaptcha] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
   const [captchaResponse, setCaptchaResponse] = useState({
     challenge_ts: '',
@@ -30,22 +30,22 @@ const Contact: React.FC = () => {
   });
   let captchaRef = useRef(null);
 
-  const handleVerificationSuccess = async (token: any) => {
-    const res = await fetch('/api/captcha', {
-      method: 'POST',
-      body: JSON.stringify({ token }),
-    });
-    const captchaRes = await res.json();
-    setCaptchaResponse(captchaRes);
-    if (res.status === 200) {
-      setVerified(true);
-    } else {
-      setError(true);
-      setResponseMessage(
-        'There was a problem verifying your captcha. Please try again or reach out to me on LinkedIn.'
-      );
-    }
-  };
+  // const handleVerificationSuccess = async (token: any) => {
+  //   const res = await fetch('/api/captcha', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ token }),
+  //   });
+  //   const captchaRes = await res.json();
+  //   setCaptchaResponse(captchaRes);
+  //   if (res.status === 200) {
+  //     setVerified(true);
+  //   } else {
+  //     setError(true);
+  //     setResponseMessage(
+  //       'There was a problem verifying your captcha. Please try again or reach out to me on LinkedIn.'
+  //     );
+  //   }
+  // };
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(false);
@@ -227,7 +227,7 @@ const Contact: React.FC = () => {
             />
             <CustomButton type="submit">SUBMIT</CustomButton>
             <Box height={16} />
-            <Script
+            {/* <Script
               src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad"
               strategy="lazyOnload"
               onLoad={() => setShowCaptcha(true)}
@@ -253,7 +253,7 @@ const Contact: React.FC = () => {
                   captchaRef?.current?.resetCaptcha();
                 }}
               />
-            )}
+            )} */}
 
             {error && (
               <Alert
