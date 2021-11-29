@@ -37,7 +37,7 @@
       "alt": "Next.js logo"
     },
     {
-      "color": "#ad2f6a",
+      "color": "#420035",
       "text": "Jest",
       "imgSrc": "jest.svg",
       "alt": "Jest logo"
@@ -79,7 +79,7 @@
       "alt": "RedHat logo"
     },
     {
-      "color": "#4196b1",
+      "color": "#00002b",
       "text": "Golang",
       "imgSrc": "golang.svg",
       "alt": "Golang logo"
