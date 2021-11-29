@@ -19,6 +19,7 @@ const Contact: React.FC = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showCaptcha, setShowCaptcha] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
   const [captchaResponse, setCaptchaResponse] = useState({
     challenge_ts: '',
@@ -102,10 +103,6 @@ const Contact: React.FC = () => {
   };
   return (
     <React.Fragment>
-      <Script
-        src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad"
-        strategy="lazyOnload"
-      />
       <Box
         id="contact"
         component="section"
@@ -229,24 +226,33 @@ const Contact: React.FC = () => {
             />
             <CustomButton type="submit">SUBMIT</CustomButton>
             <Box height={16} />
-            <HCaptcha
-              //@ts-ignore
-              ref={captchaRef}
-              theme="dark"
-              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_CLIENT!}
-              onVerify={(token: string) => handleVerificationSuccess(token)}
-              onExpire={() => {
-                setVerified(false);
-                setCaptchaResponse({
-                  challenge_ts: '',
-                  credit: false,
-                  hostname: '',
-                  success: false,
-                });
-                //@ts-ignore
-                captchaRef?.current?.resetCaptcha();
-              }}
+            <Script
+              src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad"
+              strategy="lazyOnload"
+              onLoad={() => setShowCaptcha(true)}
             />
+            {showCaptcha && (
+              <HCaptcha
+                id="hcaptcha"
+                //@ts-ignore
+                ref={captchaRef}
+                theme="dark"
+                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_CLIENT!}
+                onVerify={(token: string) => handleVerificationSuccess(token)}
+                onExpire={() => {
+                  setVerified(false);
+                  setCaptchaResponse({
+                    challenge_ts: '',
+                    credit: false,
+                    hostname: '',
+                    success: false,
+                  });
+                  //@ts-ignore
+                  captchaRef?.current?.resetCaptcha();
+                }}
+              />
+            )}
+
             {error && (
               <Alert
                 severity="error"
