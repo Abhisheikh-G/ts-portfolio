@@ -121,7 +121,6 @@ export default function Skills(props: SkillsProps) {
                 <SkillBlock
                   color={skill.color}
                   text={skill.text}
-                  textColor={skill.textColor}
                   imgSrc={skill.imgSrc}
                   alt={skill.alt}
                 />
