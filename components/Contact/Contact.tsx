@@ -1,4 +1,5 @@
-import React, { FormEvent, useRef, useState, lazy } from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import CustomButton from '@/components/CustomButton/CustomButton';
 import Underline from '@/components/Underline/Underline';
 import { Alert, AlertTitle } from '@mui/material';
@@ -10,7 +11,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 // import Script from 'next/script';
 
-const HCaptcha = lazy(() => import('@hcaptcha/react-hcaptcha'));
+const HCaptcha = dynamic(() => import('@hcaptcha/react-hcaptcha'));
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
