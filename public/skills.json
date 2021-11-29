@@ -2,99 +2,87 @@
   "skills": [
     {
       "color": "#3178C6 ",
-      "hover": "#ffee58",
       "text": "TypeScript",
-      "textColor": "#fff",
       "imgSrc": "typescript.svg",
       "alt": "TypeScript logo"
     },
     {
       "color": "#fdd835",
-      "hover": "#ffee58",
       "text": "JavaScript",
-      "textColor": "#000",
       "imgSrc": "javascript.svg",
       "alt": "JavaScript logo"
     },
     {
       "color": "#0d47a1",
-      "hover": "#1565c0",
       "text": "React.js",
-      "textColor": "#fff",
       "imgSrc": "react.svg",
       "alt": "React.js logo"
     },
     {
       "color": "#1b5e20",
-      "hover": "#2e7d32",
       "text": "Node.js",
-      "textColor": "#fff",
       "imgSrc": "node.svg",
       "alt": "Node.js logo"
     },
     {
       "color": "#9c27b0",
-      "hover": "#ab47bc",
       "text": "Gatsby.js",
-      "textColor": "#fff",
       "imgSrc": "gatsby.svg",
       "alt": "Gatsby.js logo"
     },
     {
       "color": "#bdbdbd",
-      "hover": "#eeeeee",
       "text": "Next.js",
-      "textColor": "#000",
       "imgSrc": "next.svg",
       "alt": "Next.js logo"
     },
     {
+      "color": "#ad2f6a",
+      "text": "Jest",
+      "imgSrc": "jest.svg",
+      "alt": "Jest logo"
+    },
+    {
       "color": "#fff",
-      "hover": "#bdbdbd",
       "text": "Github",
-      "textColor": "#000",
       "imgSrc": "github.svg",
       "alt": "Github logo"
     },
     {
       "color": "#1b5e20",
-      "hover": "#81c784",
       "text": "MongoDB",
-      "textColor": "#000",
       "imgSrc": "mongo.svg",
       "alt": "MongoDB logo"
     },
     {
       "color": "#01579b",
-      "hover": "#0277bd",
       "text": "PostgreSQL",
-      "textColor": "#fff",
       "imgSrc": "postgresql.svg",
       "alt": "PostgreSQL logo"
     },
     {
       "color": "#fff",
-      "hover": "#bdbdbd",
       "text": "Linux",
-      "textColor": "#000",
       "imgSrc": "tux.svg",
       "alt": "Linux logo"
     },
     {
       "color": "#fff",
-      "hover": "#bdbdbd",
       "text": "Shell Scripts",
-      "textColor": "#000",
       "imgSrc": "bash.svg",
       "alt": "BASH logo"
     },
     {
       "color": "#A30000",
-      "hover": "#bdbdbd",
       "text": "Red Hat",
-      "textColor": "#fff",
       "imgSrc": "redhat.svg",
       "alt": "RedHat logo"
+    },
+    {
+      "color": "#4196b1",
+      "text": "Golang",
+      "imgSrc": "golang.svg",
+      "alt": "Golang logo"
     }
   ]
 }

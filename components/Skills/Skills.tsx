@@ -7,7 +7,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/styles';
 
 function SkillBlock(props: ISkill) {
-  const { imgSrc, text, alt, color, textColor } = props;
+  const { imgSrc, text, alt, color } = props;
   const theme = useTheme();
   return (
     <Box
@@ -43,7 +43,6 @@ function SkillBlock(props: ISkill) {
             filter: 'none',
             backgroundColor: `${color}`,
           },
-          color: `${textColor}`,
           backgroundColor: `${color}`,
           display: 'flex',
           flexDirection: 'column',
