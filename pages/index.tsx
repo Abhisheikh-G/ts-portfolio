@@ -1,19 +1,12 @@
-import dynamic from 'next/dynamic';
-import certificatesJSON from 'public/certificates.json';
-import projectsJSON from 'public/projects.json';
-import skillsJSON from 'public/skills.json';
-
+import { certificates } from 'public/certificates.json';
+import { projects } from 'public/projects.json';
+import { skills } from 'public/skills.json';
 import Certifications from '@/components/Certifications/Certifications';
 import Hero from '@/components/Hero/Hero';
 import Projects from '@/components/Projects/Projects';
 import Box from '@mui/material/Box';
-
-const Contact = dynamic(() => import('@/components/Contact/Contact'));
-const Skills = dynamic(() => import('@/components/Skills/Skills'));
-
-const { projects } = projectsJSON;
-const { skills } = skillsJSON;
-const { certificates } = certificatesJSON;
+import Contact from '@/components/Contact/Contact';
+import Skills from '@/components/Skills/Skills';
 
 export default function Index() {
   return (
