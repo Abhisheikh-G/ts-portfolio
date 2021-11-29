@@ -13,6 +13,24 @@
       "alt": "JavaScript logo"
     },
     {
+      "color": "#ffa333",
+      "text": "HTML 5",
+      "imgSrc": "html.svg",
+      "alt": "HTML logo"
+    },
+    {
+      "color": "#00272c",
+      "text": "CSS",
+      "imgSrc": "css.svg",
+      "alt": "CSS logo"
+    },
+    {
+      "color": "#31001a",
+      "text": "SASS",
+      "imgSrc": "sass.svg",
+      "alt": "Sass logo"
+    },
+    {
       "color": "#0d47a1",
       "text": "React.js",
       "imgSrc": "react.svg",
@@ -61,13 +79,13 @@
       "alt": "PostgreSQL logo"
     },
     {
-      "color": "#fff",
+      "color": "#f46e3d",
       "text": "Linux",
       "imgSrc": "tux.svg",
       "alt": "Linux logo"
     },
     {
-      "color": "#fff",
+      "color": "#23404d",
       "text": "Shell Scripts",
       "imgSrc": "bash.svg",
       "alt": "BASH logo"

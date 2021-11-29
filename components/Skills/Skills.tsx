@@ -25,12 +25,12 @@ function SkillBlock(props: ISkill) {
             sm: 1,
           },
           height: {
-            xs: '5em',
-            sm: '6em',
+            xs: '4.5em',
+            sm: '5em',
           },
           width: {
-            xs: '5em',
-            sm: '6em',
+            xs: '4.5em',
+            sm: '5em',
           },
           borderRadius: theme.spacing(2),
 
