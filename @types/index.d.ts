@@ -1,4 +1,4 @@
-declare module "remark-code-blocks" {}
+declare module 'remark-code-blocks' {}
 
 export interface IFrontmatter {
   title: string;
@@ -28,12 +28,6 @@ export interface IEmail {
   name: string;
   email: string;
   message: string;
-  token: {
-    challenge_ts: string;
-    credit: boolean;
-    hostname: string;
-    success: true;
-  };
 }
 
 export interface ISkill {
