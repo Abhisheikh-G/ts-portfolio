@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-
+import Script from 'next/script';
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
@@ -102,6 +102,10 @@ const Contact: React.FC = () => {
   };
   return (
     <React.Fragment>
+      <Script
+        src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad"
+        strategy="lazyOnload"
+      />
       <Box
         id="contact"
         component="section"

@@ -56,11 +56,6 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/icons/apple-icon.png" />
           <meta name="theme-color" content="#317EFB" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-          <script
-            src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad "
-            async
-            defer
-          ></script>
         </Head>
         <body>
           <Main />
