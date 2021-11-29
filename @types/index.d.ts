@@ -35,5 +35,4 @@ export interface ISkill {
   text: string;
   alt: string;
   color: string;
-  textColor: string;
 }
