@@ -231,6 +231,8 @@ const Contact: React.FC = () => {
               src="https://hcaptcha.com/1/api.js?render=explicit&amp;onload=hcaptchaOnLoad"
               strategy="lazyOnload"
               onLoad={() => setShowCaptcha(true)}
+              async
+              defer
             />
             {showCaptcha && (
               <HCaptcha
