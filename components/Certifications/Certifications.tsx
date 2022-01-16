@@ -31,7 +31,8 @@ export default function Certifications(props: any) {
     <React.Fragment>
       <Box
         sx={{
-          paddingTop: 2,
+          pt: 2,
+          pb: 6,
         }}
         component="section"
       >
