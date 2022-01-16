@@ -29,17 +29,14 @@ export default function MyApp(props: MyAppProps) {
         <Head>
           <title>Abhisheikh Gill | My Portfolio</title>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
-          <meta
-            name="description"
-            content={`Hello, my name is Abhisheikh Gill. 
-        I'm a full stack web developer and an IT solutions expert. 
-        I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git. 
-        I'm also a certified network and cyber security specialist as well a proficient Linux Administrator.`}
-          />
           <meta content="index, follow" name="robots" />
-
-          <meta itemProp="name" content="Abhisheikh Gill | My Portfolio" />
           <meta
+            itemProp="name"
+            key="name"
+            content="Abhisheikh Gill | My Portfolio"
+          />
+          <meta
+            key="description"
             itemProp="description"
             content="Hello, my name is Abhisheikh Gill.
         I'm a full stack web developer and an IT solutions expert.
@@ -47,14 +44,24 @@ export default function MyApp(props: MyAppProps) {
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta
+            key="image"
             itemProp="image"
             content="https://abhisheikhgill.com/meta-image.png"
           />
 
-          <meta property="og:url" content="https://abhisheikhgill.com" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Abhisheikh Gill | My Portfolio" />
           <meta
+            property="og:url"
+            content="https://abhisheikhgill.com"
+            key="url"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Abhisheikh Gill | My Portfolio"
+            key="title"
+          />
+          <meta
+            key="description"
             property="og:description"
             content="Hello, my name is Abhisheikh Gill.
         I'm a full stack web developer and an IT solutions expert.
@@ -62,14 +69,20 @@ export default function MyApp(props: MyAppProps) {
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta
+            key="image"
             property="og:image"
             content="https://abhisheikhgill.com/meta-image.png"
           />
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Abhisheikh Gill | My Portfolio" />
+          <meta
+            name="twitter:title"
+            content="Abhisheikh Gill | My Portfolio"
+            key="title"
+          />
           <meta
             name="twitter:description"
+            key="description"
             content="Hello, my name is Abhisheikh Gill.
         I'm a full stack web developer and an IT solutions expert.
         I work with web development technologies like Next.js, Node.js, React.js, MongoDB, PostgreSQL, and Git.
@@ -77,6 +90,7 @@ export default function MyApp(props: MyAppProps) {
           />
           <meta
             name="twitter:image"
+            key="image"
             content="https://abhisheikhgill.com/meta-image.png"
           />
 

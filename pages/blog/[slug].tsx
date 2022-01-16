@@ -58,7 +58,11 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
           itemProp="name"
           content={`Abhisheikh Gill | ${frontmatter.title}`}
         />
-        <meta itemProp="description" content={frontmatter.excerpt} />
+        <meta
+          itemProp="description"
+          key="description"
+          content={frontmatter.excerpt}
+        />
         <meta
           itemProp="image"
           content={`https://abhisheikhgill.com${router.asPath}`}
@@ -67,27 +71,32 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
         <meta
           property="og:url"
           content={`https://abhisheikhgill.com${router.asPath}`}
+          key="url"
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
           content={`Abhisheikh Gill | ${frontmatter.title}`}
+          key="title"
         />
         <meta property="og:description" content={frontmatter.excerpt} />
         <meta
           property="og:image"
           content={`https://abhisheikhgill.com${frontmatter.cover_image}`}
+          key="image"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content={`Abhisheikh Gill | ${frontmatter.title}`}
+          key="title"
         />
         <meta name="twitter:description" content={frontmatter.excerpt} />
         <meta
           name="twitter:image"
           content={`https://abhisheikhgill.com${frontmatter.cover_image}`}
+          key="image"
         />
       </Head>
       <Fade in={true} timeout={1000}>
