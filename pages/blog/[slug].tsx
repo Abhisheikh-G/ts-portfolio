@@ -133,7 +133,8 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                     style={{
                       borderLeft: `5px solid ${theme.palette.secondary.main}`,
                       backgroundColor: theme.palette.primary.light,
-                      padding: '1em',
+                      borderRadius: '1em',
+                      padding: '.5em',
                       margin: 0,
                     }}
                     {...props}

@@ -20,8 +20,8 @@ const styles = {
     my: 2,
     mx: 1,
     p: 2,
-    width: { xs: '100%', sm: 200 },
-    height: { xs: '100%', sm: 200 },
+    width: { xs: '100%', sm: 225 },
+    height: { xs: '100%', sm: 110 },
   },
   link: {
     textDecoration: 'none',
@@ -78,7 +78,6 @@ const Post: React.FC<PostProps> = ({ post }) => {
           >
             {post.frontmatter.category}
           </Typography>
-          <Typography variant="body2">{post.frontmatter.excerpt}</Typography>
         </Box>
       </Grid>
     </Fade>
