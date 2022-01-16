@@ -83,7 +83,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
         <meta
           property="og:image"
           content={`https://abhisheikhgill.com${frontmatter.cover_image}`}
-          key="image"
+          key="og:image"
         />
 
         <meta name="twitter:card" content="summary_large_image" />

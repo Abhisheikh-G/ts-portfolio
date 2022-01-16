@@ -69,7 +69,7 @@ export default function MyApp(props: MyAppProps) {
         I'm also a certified network and cyber security specialist as well a proficient Linux Administrator."
           />
           <meta
-            key="image"
+            key="og:image"
             property="og:image"
             content="https://abhisheikhgill.com/meta-image.png"
           />
