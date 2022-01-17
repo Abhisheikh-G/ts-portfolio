@@ -19,6 +19,7 @@ export default function Index() {
       <Hero />
       <Skills skills={skills} />
       <Certifications certificates={certificates} />
+
       {/* <Projects projects={projects} /> */}
       <Contact />
     </Box>
