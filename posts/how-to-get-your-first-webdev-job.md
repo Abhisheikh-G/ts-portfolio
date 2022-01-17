@@ -84,4 +84,5 @@ requires knowledge of 10 different skills you've never heard of) you should stil
 and you'll learn a lot about what to say and not say, how to present yourself succinctly, and you'll gain insight into how you can improve.
 
 You should never look at a failed interview as a bad thing. It's just another chance to succeed. In essence, it's no different than dealing
-with an error in your console. You simply need to figure out where to improve and it will only be a matter of time.
+with an error in your console. You simply need to figure out where to improve and it will only be a matter of time. I hope you found this
+article helpful. I will keep updating it as I grow and gain more insights. Take care of yourself and remember you can do it if you sincerely try.
