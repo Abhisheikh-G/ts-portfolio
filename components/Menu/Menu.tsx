@@ -123,7 +123,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
         </Fade>
         <Divider sx={{ backgroundColor: 'secondary.main' }} />
 
-        <Fade in={true} timeout={1000}>
+        {/* <Fade in={true} timeout={1000}>
           <ListItem>
             <Link
               href="/#mywork"
@@ -142,7 +142,7 @@ const Menu: React.FC<Props> = ({ open, setOpen }) => {
           </ListItem>
         </Fade>
 
-        <Divider sx={{ backgroundColor: 'secondary.main' }} />
+        <Divider sx={{ backgroundColor: 'secondary.main' }} /> */}
 
         <Fade in={true} timeout={1000}>
           <ListItem>

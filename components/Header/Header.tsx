@@ -108,14 +108,14 @@ export default function Header() {
                 >
                   CONTACT
                 </Link>
-                <Link
+                {/* <Link
                   href="/#mywork"
                   sx={{
                     ...styles.link,
                   }}
                 >
                   MY WORK
-                </Link>
+                </Link> */}
                 <Link
                   href="/blog"
                   sx={{
