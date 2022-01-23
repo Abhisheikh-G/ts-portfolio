@@ -8,8 +8,8 @@ category: "Productivity"
 author: "Abhisheikh"
 ---
 
-> Time flies over us, but leaves its shadow behind.  
-> -_Nathanial Hawthorne_
+> _Time flies over us, but leaves its shadow behind._  
+> -- Nathanial Hawthorne
 
 The internet is filled with articles and apps on how to tweak or hack some aspect of our lives to eek that extra bit of value out so I won't be covering any of that today. You might be asking, what could be more important than "hacks" or tips like keeping a checklist, time blocking your day, or minimizing distractions? In my humble experience, nothing is more important than the mindset you approach your work with. Approaching productivity with the wrong mindset can lead to burnout, poor results, and a declining mental state. There are ways to remain productive and live a balanced life but first we must answer the question..
 

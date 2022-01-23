@@ -26,6 +26,7 @@ type Props = React.PropsWithChildren<{
 const styles = {
   markdown: {
     color: 'white',
+    fontSize: "1.21em"
   },
   link: {
     color: 'secondary.main',
@@ -149,6 +150,7 @@ const Posts: React.FC<Props> = ({ frontmatter, content }) => {
                     {...props}
                   />
                 ),
+                a: (props) => <a style={{color: theme.palette.secondary.main}} {...props}/>
               }}
               remarkPlugins={[remarkGfm]}
             />
