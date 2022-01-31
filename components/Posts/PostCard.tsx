@@ -31,7 +31,7 @@ const styles = {
 
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
-    <Fade in={true} timeout={750}>
+    <Fade in={true} timeout={750} key={post.slug}>
       <Grid
         item
         sx={{
