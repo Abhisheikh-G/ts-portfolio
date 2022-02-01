@@ -1,10 +1,10 @@
 ---
-title: 'Experimenting With Rust And WebAssembly'
-date: 'January 30, 2022'
-excerpt: 'I experimented with Rust and WebAssembly by building a snake game in the browser. Heres what I learned.'
-cover_image: '/images/posts/chandler-cruttenden-crab.webp'
-category: 'Rust'
-author: 'Abhisheikh'
+title: "Experimenting With Rust And WebAssembly"
+date: "January 30, 2022"
+excerpt: "I experimented with Rust and WebAssembly by building a snake game in the browser. Heres what I learned."
+cover_image: "/images/posts/chandler-cruttenden-crab.webp"
+category: "Rust"
+author: "Abhisheikh"
 ---
 
 > _You can’t connect the dots looking forward; you can only connect them looking backward. So you have to trust that the dots will somehow connect in your future. You have to trust in something–your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life._
@@ -29,13 +29,26 @@ import init, { World, Direction, GameStatus } from "snake_game";
 
 init().then((wasm) => {
   // use wasm modules here
-}    
+}
 
+```
+
+or using async/await syntax
+
+```javascript
+import init, { World, Direction, GameStatus } from "snake_game";
+
+async function start() {
+  const wasm = await init();
+  //use wasm modules here
+}
 ```
 
 You can see the [full example here](https://github.com/Abhisheikh-G/rust_wasm_ts_snake_game/blob/main/www/index.ts). Aside from the logic within Rust, once all of the modules are imported into JavaScript there isn't anything special you need to do. I think this makes using WebAssembly incredibly powerful because only pieces of an application can be surgically replaced with WebAssembly code to maximize performance and open up new possibilities.
 
-There is definitely a slight shock when you first start coding in Rust after working with JavaScript for so long. It wasn't all too bad for me since I'm familiar with other languages like Java and C#. Rust actually feels modern after writing it for a bit and I have to say there's something elegant about it. One thing I noticed is that the compiler is so amazing at pointing out what's wrong. It's like having a coach right there next to you, yelling in your ear about the error on line 52.
+There is definitely a slight shock when you first start coding in Rust after working with JavaScript for so long. It won't be too bad if you're already familiar with languages like Java, C/C++, or C#.. Rust actually feels modern after writing it for a bit and I have to say there's something elegant about it. One thing I noticed is that the compiler is so amazing at pointing out what's wrong. It's like having a coach right there next to you, yelling in your ear about the error on line 52.
+
+The rust borrow checker will also require some studying but the idea is simple: at all times in your code you must explicitly manage the ownership of a variable. The borrow checker is unique to Rust and is why handling memory allocation in Rust is easy. I think the borrow checker makes code more deliberate and well thought out. It's less of a hassle and in the end it enhances developer experience.
 
 ### The Cons
 
