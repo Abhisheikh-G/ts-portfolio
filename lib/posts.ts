@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { sortByDate } from "../utils/index";
-
+console.log()
 const files = fs.readdirSync(path.join("posts"));
 
 export function getPosts() {
